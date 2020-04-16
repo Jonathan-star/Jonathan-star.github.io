@@ -89,7 +89,7 @@
 </blockquote>
 <h2 id="敛散性">敛散性</h2>
 <h3 id="其一比较判别法">其一：比较判别法</h3>
-<p><strong>定理：</strong>设从某一值<span class="math inline">\(a_0 &gt; a\)</span>开始，<span class="math inline">\(|f(x)| \leq C\phi(x)\)</span>，<span class="math inline">\(C\)</span>是常数，若积分<span class="math inline">\(\int_{a}^{+\infty} \phi (x)dx\)</span>收敛，<span class="math inline">\(f(x)\)</span>绝对收敛。反过来显然。</p>
+<p><strong>定理：</strong>设从某一值<span class="math inline">\(a_0 &gt; a\)</span>开始，<span class="math inline">\(|f(x)| \leq C\phi(x)\)</span>，<span class="math inline">\(C\)</span>是常数，若积分<span class="math inline">\(\int_{a}^{+\infty}\phi (x)dx\)</span>收敛，<span class="math inline">\(f(x)\)</span>绝对收敛。反过来显然。</p>
 <p><strong>极限形式表达：</strong> <span class="math display">\[
 \lim _{x \rightarrow+\infty} \frac{|f(x)|}{\phi(x)}=l
 \]</span> <span class="math inline">\(f(x)\)</span>的绝对收敛性和<span class="math inline">\(\phi(x)\)</span>相同。<span class="math inline">\(l\ \)</span>是常数。</p>
@@ -117,36 +117,36 @@
 <blockquote>
 <p>引入一个<strong>第二中值定理</strong></p>
 </blockquote>
-<h4 id="第二中值定理">第二中值定理</h4>
+<h4 id="第二中值定理设fx在ab上可积gx在ab上单调那么存在ab上的xi使">第二中值定理：设<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([a,b]\)</span>上可积，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,b]\)</span>上单调，那么存在<span class="math inline">\([a,b]\)</span>上的<span class="math inline">\(\xi\)</span>，使</h4>
+<p><span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx+g(b)\int_{\xi}^{b}f(x)dx;
+\]</span></p>
+<p>若<span class="math inline">\(g(x)\)</span>单调递增，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(b)\int_{\xi}^{b}f(x)dx
+\]</span> 若<span class="math inline">\(g(x)\)</span>单调递减，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx
+\]</span></p>
+<p>贴一个单调递增情况的证明：</p>
+<p><strong>证明：</strong></p>
+<p>构造<span class="math inline">\(F(x)=\int_{x}^{b}f(t)dt\)</span>，显然该函数连续，在区间<span class="math inline">\([a,b]\)</span>上必然有界，记最大值<span class="math inline">\(M\)</span>，最小值<span class="math inline">\(m\)</span>，</p>
+<p>将要证明的左边变形： <span class="math display">\[
+\begin{aligned} \int_{a}^{b} f(x) g(x) d x &amp;=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &amp;=\sigma+\rho \end{aligned}
+\]</span></p>
+<h5 id="这里将gx_i分离出积分由于x_i与x无关故直接提出int">这里将<span class="math inline">\(g(x_{i})\)</span>分离出积分，由于<span class="math inline">\(x_{i}\)</span>与<span class="math inline">\(x\)</span>无关，故直接提出<span class="math inline">\(\int\)</span></h5>
+<p>后一项<span class="math inline">\(\rho\)</span>可以打绝对值分析，里面<span class="math inline">\(|f(x)| \leq M\)</span>，将其放缩： <span class="math display">\[
+\begin{aligned}|\rho| &amp;=\left|\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x\right| \\ &amp; \leq \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}}\left|f(x) \| g(x)-g\left(x_{i}\right)\right| d x \\ &amp; \leq L \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} \omega_{i} d x=L \sum_{i=1}^{n} \omega_{i} \Delta x_{i} \end{aligned}
+\]</span></p>
+<p>由定积分存在的判定条件，得到<span class="math inline">\(\sum_{i=1}^{n} \omega_{i} \Delta x_{i}\)</span>是无穷小量，即<span class="math inline">\(\rho \rightarrow 0\)</span>，</p>
+<p>只需要分析<span class="math inline">\(\sigma\)</span>，</p>
+<p><span class="math inline">\(\sigma\)</span>式中的积分部分可以根据牛顿-莱布尼茨公式变形得到<span class="math inline">\(F(x_{i-1})-F(x_{i})\)</span>，变形如下： <span class="math display">\[
+\begin{aligned} \sigma &amp;=\sum_{i=1}^{n} g\left(x_{i}\right)\left[F\left(x_{i-1}\right)-F\left(x_{i}\right)\right] \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=2}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n-1} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=1}^{n-1}\left[g\left(x_{i+1}\right)-g\left(x_{i}\right)\right] F\left(x_{i}\right) \end{aligned}
+\]</span></p>
+<p>这里对<span class="math inline">\(F(x)\)</span>放缩，即： <span class="math display">\[
+m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)
+\]</span></p>
+<p>小括号里面的式子即<span class="math inline">\(g(b)\)</span>，有由于<span class="math inline">\(F(x)\in[m,M]\)</span>，故存在<span class="math inline">\(F(\xi)\)</span>，即命题得证。</p>
 </p>
       <div class="post-button"><a class="btn" href="/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
-    </div>
-  </div>
-  <div class="lx-entry padding">
-    <div>
-      <h2 class="title"><a href="/2020/04/15/hello-world/">Hello World</a></h2>
-      <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-15</span>
-      <p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h3 id="test">test</h3>
-<p><span class="math display">\[
-\lim_{z \rightarrow \infty}
-\]</span></p>
-<p><span class="math inline">\(\lim\)</span></p>
-</p>
-      <div class="post-button"><a class="btn" href="/2020/04/15/hello-world/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
 
