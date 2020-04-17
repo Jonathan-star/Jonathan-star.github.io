@@ -82,6 +82,7 @@
       <div>
         <h1 id="广义积分基本定理">广义积分基本定理</h1>
 <blockquote>
+<p>关于无穷限的广义积分</p>
 <p>简单的定义就不po啦</p>
 </blockquote>
 <h2 id="敛散性">敛散性</h2>
@@ -142,6 +143,12 @@
 m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)
 \]</span></p>
 <p>小括号里面的式子即<span class="math inline">\(g(b)\)</span>，有由于<span class="math inline">\(F(x)\in[m,M]\)</span>，故存在<span class="math inline">\(F(\xi)\)</span>，即命题得证。</p>
+<h4 id="abel判别法若int_ainftyfxdx收敛gx在ainfty单调有界则积分i-int_ainftyfxgxdx收敛"><span class="math inline">\(Abel\)</span>判别法：若<span class="math inline">\(\int_{a}^{+\infty}f(x)dx\)</span>收敛，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>单调有界，则积分<span class="math inline">\(I = \int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h4>
+<p>简单叙述一下证明，<span class="math inline">\(|g(x)|\leq M\)</span>，将积分式放缩为<span class="math inline">\(I \leq M\int_{a}^{+\infty}f(x)dx\)</span>，显然成立。</p>
+<h5 id="dirichlet判别法若fxint_axfxdx有界gx在ainfty上单调收敛于零那么int_ainftyfxgxdx收敛"><span class="math inline">\(Dirichlet\)</span>判别法：若<span class="math inline">\(F(x)=\int_{a}^{x}f(x)dx\)</span>有界，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>上单调，收敛于零，那么<span class="math inline">\(\int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h5>
+<blockquote>
+<p>思考：这里的<span class="math inline">\(g(x)\)</span>是不是不需要单调这么强的性质，只需要不变号，有界即可？</p>
+</blockquote>
 
       </div>
     </div>
