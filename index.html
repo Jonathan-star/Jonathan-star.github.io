@@ -70,7 +70,7 @@
     <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
     <span>weiwei</span>
     <h1>weiwei的摸鱼生活</h1>
-    <span>——一起摸鱼吧</span>
+    <span>——来摸鱼吧</span>
     
   </div>
   </div>
@@ -83,7 +83,19 @@
     <div>
       <h2 class="title"><a href="/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/">需要解决的问题</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-18</span>
-      <p><h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><h2 id="数分"><a href="#数分" class="headerlink" title="数分"></a>数分</h2><h3 id="1⃣️-广义积分"><a href="#1⃣️-广义积分" class="headerlink" title="1⃣️ 广义积分"></a>1⃣️ 广义积分</h3><h3 id="2⃣️-条件收敛级数相关"><a href="#2⃣️-条件收敛级数相关" class="headerlink" title="2⃣️ 条件收敛级数相关"></a>2⃣️ 条件收敛级数相关</h3><h2 id="高代"><a href="#高代" class="headerlink" title="高代"></a>高代</h2><h3 id="1⃣️-线性空间相关"><a href="#1⃣️-线性空间相关" class="headerlink" title="1⃣️ 线性空间相关"></a>1⃣️ 线性空间相关</h3><h2 id="大物"><a href="#大物" class="headerlink" title="大物"></a>大物</h2><h3 id="1⃣️-玻尔兹曼分布律"><a href="#1⃣️-玻尔兹曼分布律" class="headerlink" title="1⃣️ 玻尔兹曼分布律"></a>1⃣️ 玻尔兹曼分布律</h3><h3 id="2⃣️-摩尔热容相关"><a href="#2⃣️-摩尔热容相关" class="headerlink" title="2⃣️ 摩尔热容相关"></a>2⃣️ 摩尔热容相关</h3><h3 id="3⃣️-克劳修斯熵公式"><a href="#3⃣️-克劳修斯熵公式" class="headerlink" title="3⃣️ 克劳修斯熵公式"></a>3⃣️ 克劳修斯熵公式</h3><h2 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2></p>
+      <p><h1 id="问题记录">问题记录</h1>
+<h2 id="数分">数分</h2>
+<h3 id="广义积分">1⃣️ 广义积分</h3>
+<h3 id="条件收敛级数相关">2⃣️ 条件收敛级数相关</h3>
+<h2 id="高代">高代</h2>
+<h3 id="线性空间相关">1⃣️ 线性空间相关</h3>
+<h2 id="大物">大物</h2>
+<h3 id="玻尔兹曼分布律">1⃣️ 玻尔兹曼分布律</h3>
+<h3 id="摩尔热容相关">2⃣️ 摩尔热容相关</h3>
+<h3 id="克劳修斯熵公式">3⃣️ 克劳修斯熵公式</h3>
+<h2 id="swift">swift</h2>
+<h2 id="c">C++</h2>
+</p>
       <div class="post-button"><a class="btn" href="/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
@@ -91,57 +103,77 @@
     <div>
       <h2 class="title"><a href="/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/">广义积分 其一</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-15</span>
-      <p><h1 id="广义积分基本定理"><a href="#广义积分基本定理" class="headerlink" title="广义积分基本定理"></a>广义积分基本定理</h1><blockquote>
+      <p><h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
 <p>关于无穷限的广义积分</p>
 <p>简单的定义就不po啦</p>
 </blockquote>
-<h2 id="敛散性"><a href="#敛散性" class="headerlink" title="敛散性"></a>敛散性</h2><h3 id="其一：比较判别法"><a href="#其一：比较判别法" class="headerlink" title="其一：比较判别法"></a>其一：比较判别法</h3><p><strong>定理：</strong>设从某一值$a_0 &gt; a$开始，$|f(x)| \leq C\phi(x)$，$C$是常数，若积分$\int_{a}^{+\infty}\phi (x)dx$收敛，$f(x)$绝对收敛。反过来显然。</p>
-<p><strong>极限形式表达：</strong></p>
-<script type="math/tex; mode=display">
-\lim _{x \rightarrow+\infty} \frac{|f(x)|}{\phi(x)}=l</script><p>$f(x)$的绝对收敛性和$\phi(x)$相同。$l\ $是常数。</p>
-<h3 id="其二：-Cauchy-判别法"><a href="#其二：-Cauchy-判别法" class="headerlink" title="其二：$Cauchy$判别法"></a>其二：$Cauchy$判别法</h3><p><strong>定理：</strong>如果$|f(x)| \leq \frac{c}{x^{p}},p &gt; 1$，那么积分$\int_{a}^{+\infty} f(x)$绝对收敛。反之显然。</p>
-<p><strong>极限形式表达：</strong></p>
-<script type="math/tex; mode=display">
-\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0\leq l < +\infty</script><p>其中，$p &gt; 1\ $时，函数绝对收敛。</p>
-<script type="math/tex; mode=display">
-\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0 < l \leq +\infty</script><p>$p \leq 1$ 时，函数发散。</p>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一比较判别法">其一：比较判别法</h3>
+<p><strong>定理：</strong>设从某一值<span class="math inline">\(a_0 &gt; a\)</span>开始，<span class="math inline">\(|f(x)| \leq C\phi(x)\)</span>，<span class="math inline">\(C\)</span>是常数，若积分<span class="math inline">\(\int_{a}^{+\infty}\phi (x)dx\)</span>收敛，<span class="math inline">\(f(x)\)</span>绝对收敛。反过来显然。</p>
+<p><strong>极限形式表达：</strong> <span class="math display">\[
+\lim _{x \rightarrow+\infty} \frac{|f(x)|}{\phi(x)}=l
+\]</span> <span class="math inline">\(f(x)\)</span>的绝对收敛性和<span class="math inline">\(\phi(x)\)</span>相同。<span class="math inline">\(l\ \)</span>是常数。</p>
+<h3 id="其二cauchy判别法">其二：<span class="math inline">\(Cauchy\)</span>判别法</h3>
+<p><strong>定理：</strong>如果<span class="math inline">\(|f(x)| \leq \frac{c}{x^{p}},p &gt; 1\)</span>，那么积分<span class="math inline">\(\int_{a}^{+\infty} f(x)\)</span>绝对收敛。反之显然。</p>
+<p><strong>极限形式表达：</strong> <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0\leq l &lt; +\infty
+\]</span> 其中，<span class="math inline">\(p &gt; 1\ \)</span>时，函数绝对收敛。 <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0 &lt; l \leq +\infty
+\]</span> <span class="math inline">\(p \leq 1\)</span> 时，函数发散。</p>
 <p>简单的贴一个🌰</p>
-<h4 id="例"><a href="#例" class="headerlink" title="例"></a>例</h4><p>讨论积分$\int_{2}^{+\infty} \frac{d x}{x^{\lambda} \ln x}$的敛散性。（实数$\lambda$）</p>
-<h4 id="解"><a href="#解" class="headerlink" title="解"></a>解</h4><p>当 $\lambda &gt; 1$,</p>
-<script type="math/tex; mode=display">
-\lim_{x \rightarrow +\infty} x^{\lambda} \frac{dx}{x^{\lambda} \ln x} = 0,</script><p>此积分收敛；</p>
-<p>当$\lambda = 1$,</p>
-<script type="math/tex; mode=display">
-\int_{2}^{+\infty} \frac{dx}{x\ln x} = \ln\ln x |_{2}^{+\infty}</script><p>此积分发散；</p>
-<p>当$\lambda &lt; 1$,</p>
-<script type="math/tex; mode=display">
-\lim_{x \rightarrow +\infty}x\frac{1}{x^{\lambda}\ln x}=+\infty</script><p>由$cauchy$判别法，此积分发散。</p>
-<h3 id="其三：-Abel-判别法与-Dirichlet-判别法"><a href="#其三：-Abel-判别法与-Dirichlet-判别法" class="headerlink" title="其三：$Abel$判别法与$Dirichlet$判别法"></a>其三：$Abel$判别法与$Dirichlet$判别法</h3><blockquote>
+<h4 id="例">例</h4>
+<p>讨论积分<span class="math inline">\(\int_{2}^{+\infty} \frac{d x}{x^{\lambda} \ln x}\)</span>的敛散性。（实数<span class="math inline">\(\lambda\)</span>）</p>
+<h4 id="解">解</h4>
+<p>当 <span class="math inline">\(\lambda &gt; 1\)</span>, <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{\lambda} \frac{dx}{x^{\lambda} \ln x} = 0,
+\]</span> 此积分收敛；</p>
+<p>当<span class="math inline">\(\lambda = 1\)</span>, <span class="math display">\[
+\int_{2}^{+\infty} \frac{dx}{x\ln x} = \ln\ln x |_{2}^{+\infty}
+\]</span> 此积分发散；</p>
+<p>当<span class="math inline">\(\lambda &lt; 1\)</span>, <span class="math display">\[
+\lim_{x \rightarrow +\infty}x\frac{1}{x^{\lambda}\ln x}=+\infty
+\]</span> 由<span class="math inline">\(cauchy\)</span>判别法，此积分发散。</p>
+<h3 id="其三abel判别法与dirichlet判别法">其三：<span class="math inline">\(Abel\)</span>判别法与<span class="math inline">\(Dirichlet\)</span>判别法</h3>
+<blockquote>
 <p>引入一个<strong>第二中值定理</strong></p>
 </blockquote>
-<h4 id="第二中值定理：设-f-x-在-a-b-上可积，-g-x-在-a-b-上单调，那么存在-a-b-上的-xi-，使"><a href="#第二中值定理：设-f-x-在-a-b-上可积，-g-x-在-a-b-上单调，那么存在-a-b-上的-xi-，使" class="headerlink" title="第二中值定理：设$f(x)$在$[a,b]$上可积，$g(x)$在$[a,b]$上单调，那么存在$[a,b]$上的$\xi$，使"></a>第二中值定理：设$f(x)$在$[a,b]$上可积，$g(x)$在$[a,b]$上单调，那么存在$[a,b]$上的$\xi$，使</h4><script type="math/tex; mode=display">
-\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx+g(b)\int_{\xi}^{b}f(x)dx;</script><p>若$g(x)$单调递增，且恒大于0⃣️，有</p>
-<script type="math/tex; mode=display">
-\int_{a}^{b}f(x)g(x)dx=g(b)\int_{\xi}^{b}f(x)dx</script><p>若$g(x)$单调递减，且恒大于0⃣️，有</p>
-<script type="math/tex; mode=display">
-\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx</script><p> 贴一个单调递增情况的证明：</p>
+<h4 id="第二中值定理设fx在ab上可积gx在ab上单调那么存在ab上的xi使">第二中值定理：设<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([a,b]\)</span>上可积，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,b]\)</span>上单调，那么存在<span class="math inline">\([a,b]\)</span>上的<span class="math inline">\(\xi\)</span>，使</h4>
+<p><span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx+g(b)\int_{\xi}^{b}f(x)dx;
+\]</span></p>
+<p>若<span class="math inline">\(g(x)\)</span>单调递增，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(b)\int_{\xi}^{b}f(x)dx
+\]</span> 若<span class="math inline">\(g(x)\)</span>单调递减，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx
+\]</span></p>
+<p>贴一个单调递增情况的证明：</p>
 <p><strong>证明：</strong></p>
-<p>构造$F(x)=\int_{x}^{b}f(t)dt$，显然该函数连续，在区间$[a,b]$上必然有界，记最大值$M$，最小值$m$，</p>
-<p>将要证明的左边变形：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \int_{a}^{b} f(x) g(x) d x &=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &=\sigma+\rho \end{aligned}</script><h5 id="这里将-g-x-i-分离出积分，由于-x-i-与-x-无关，故直接提出-int"><a href="#这里将-g-x-i-分离出积分，由于-x-i-与-x-无关，故直接提出-int" class="headerlink" title="这里将$g(x_{i})$分离出积分，由于$x_{i}$与$x$无关，故直接提出$\int$"></a>这里将$g(x_{i})$分离出积分，由于$x_{i}$与$x$无关，故直接提出$\int$</h5><p>后一项$\rho$可以打绝对值分析，里面$|f(x)| \leq M$，将其放缩：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}|\rho| &=\left|\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x\right| \\ & \leq \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}}\left|f(x) \| g(x)-g\left(x_{i}\right)\right| d x \\ & \leq L \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} \omega_{i} d x=L \sum_{i=1}^{n} \omega_{i} \Delta x_{i} \end{aligned}</script><p>由定积分存在的判定条件，得到$\sum_{i=1}^{n} \omega_{i} \Delta x_{i}$是无穷小量，即$\rho \rightarrow 0$，</p>
-<p>只需要分析$\sigma$，</p>
-<p>$\sigma$式中的积分部分可以根据牛顿-莱布尼茨公式变形得到$F(x_{i-1})-F(x_{i})$，变形如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \sigma &=\sum_{i=1}^{n} g\left(x_{i}\right)\left[F\left(x_{i-1}\right)-F\left(x_{i}\right)\right] \\ &=\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i}\right) \\ &=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=2}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n-1} g\left(x_{i}\right) F\left(x_{i}\right) \\ &=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=1}^{n-1}\left[g\left(x_{i+1}\right)-g\left(x_{i}\right)\right] F\left(x_{i}\right) \end{aligned}</script><p>这里对$F(x)$放缩，即：</p>
-<script type="math/tex; mode=display">
-m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)</script><p>小括号里面的式子即$g(b)$，有由于$F(x)\in[m,M]$，故存在$F(\xi)$，即命题得证。</p>
-<h4 id="Abel-判别法：若-int-a-infty-f-x-dx-收敛，-g-x-在-a-infty-单调有界，则积分-I-int-a-infty-f-x-g-x-dx-收敛。"><a href="#Abel-判别法：若-int-a-infty-f-x-dx-收敛，-g-x-在-a-infty-单调有界，则积分-I-int-a-infty-f-x-g-x-dx-收敛。" class="headerlink" title="$Abel$判别法：若$\int_{a}^{+\infty}f(x)dx$收敛，$g(x)$在$[a,+\infty)$单调有界，则积分$I = \int_{a}^{+\infty}f(x)g(x)dx$收敛。"></a>$Abel$判别法：若$\int_{a}^{+\infty}f(x)dx$收敛，$g(x)$在$[a,+\infty)$单调有界，则积分$I = \int_{a}^{+\infty}f(x)g(x)dx$收敛。</h4><p><del>简单叙述一下证明，$|g(x)|\leq M$，将积分式放缩为$I \leq M\int_{a}^{+\infty}f(x)dx$，显然成立。</del>猜想啦！！！</p>
-<h4 id="Dirichlet-判别法：若-F-x-int-a-x-f-x-dx-有界，-g-x-在-a-infty-上单调，收敛于零，那么-int-a-infty-f-x-g-x-dx-收敛。"><a href="#Dirichlet-判别法：若-F-x-int-a-x-f-x-dx-有界，-g-x-在-a-infty-上单调，收敛于零，那么-int-a-infty-f-x-g-x-dx-收敛。" class="headerlink" title="$Dirichlet$判别法：若$F(x)=\int_{a}^{x}f(x)dx$有界，$g(x)$在$[a,+\infty)$上单调，收敛于零，那么$\int_{a}^{+\infty}f(x)g(x)dx$收敛。"></a>$Dirichlet$判别法：若$F(x)=\int_{a}^{x}f(x)dx$有界，$g(x)$在$[a,+\infty)$上单调，收敛于零，那么$\int_{a}^{+\infty}f(x)g(x)dx$收敛。</h4><blockquote>
-<p>思考：这里的$g(x)$是不是不需要单调这么强的性质，只需要不变号，有界即可？</p>
-<p>回答：不行，可以简单的举出一个例子，即：$f(x)=\frac{\sin x}{x}$，$g(x) = \operatorname{sgn} f(x)$，或者将$g(x)$中负数部分变成0。易知两者相乘不是可积函数。这种条件收敛的函数的积分可以看成将大于零小于零部分的积分看作项数的级数。(<del>定理发现的过程</del>)⬆️ </p>
+<p>构造<span class="math inline">\(F(x)=\int_{x}^{b}f(t)dt\)</span>，显然该函数连续，在区间<span class="math inline">\([a,b]\)</span>上必然有界，记最大值<span class="math inline">\(M\)</span>，最小值<span class="math inline">\(m\)</span>，</p>
+<p>将要证明的左边变形： <span class="math display">\[
+\begin{aligned} \int_{a}^{b} f(x) g(x) d x &amp;=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &amp;=\sigma+\rho \end{aligned}
+\]</span></p>
+<h5 id="这里将gx_i分离出积分由于x_i与x无关故直接提出int">这里将<span class="math inline">\(g(x_{i})\)</span>分离出积分，由于<span class="math inline">\(x_{i}\)</span>与<span class="math inline">\(x\)</span>无关，故直接提出<span class="math inline">\(\int\)</span></h5>
+<p>后一项<span class="math inline">\(\rho\)</span>可以打绝对值分析，里面<span class="math inline">\(|f(x)| \leq M\)</span>，将其放缩： <span class="math display">\[
+\begin{aligned}|\rho| &amp;=\left|\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x\right| \\ &amp; \leq \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}}\left|f(x) \| g(x)-g\left(x_{i}\right)\right| d x \\ &amp; \leq L \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} \omega_{i} d x=L \sum_{i=1}^{n} \omega_{i} \Delta x_{i} \end{aligned}
+\]</span></p>
+<p>由定积分存在的判定条件，得到<span class="math inline">\(\sum_{i=1}^{n} \omega_{i} \Delta x_{i}\)</span>是无穷小量，即<span class="math inline">\(\rho \rightarrow 0\)</span>，</p>
+<p>只需要分析<span class="math inline">\(\sigma\)</span>，</p>
+<p><span class="math inline">\(\sigma\)</span>式中的积分部分可以根据牛顿-莱布尼茨公式变形得到<span class="math inline">\(F(x_{i-1})-F(x_{i})\)</span>，变形如下： <span class="math display">\[
+\begin{aligned} \sigma &amp;=\sum_{i=1}^{n} g\left(x_{i}\right)\left[F\left(x_{i-1}\right)-F\left(x_{i}\right)\right] \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=2}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n-1} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=1}^{n-1}\left[g\left(x_{i+1}\right)-g\left(x_{i}\right)\right] F\left(x_{i}\right) \end{aligned}
+\]</span></p>
+<p>这里对<span class="math inline">\(F(x)\)</span>放缩，即： <span class="math display">\[
+m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)
+\]</span></p>
+<p>小括号里面的式子即<span class="math inline">\(g(b)\)</span>，有由于<span class="math inline">\(F(x)\in[m,M]\)</span>，故存在<span class="math inline">\(F(\xi)\)</span>，即命题得证。</p>
+<h4 id="abel判别法若int_ainftyfxdx收敛gx在ainfty单调有界则积分i-int_ainftyfxgxdx收敛"><span class="math inline">\(Abel\)</span>判别法：若<span class="math inline">\(\int_{a}^{+\infty}f(x)dx\)</span>收敛，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>单调有界，则积分<span class="math inline">\(I = \int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h4>
+<p><del>简单叙述一下证明，<span class="math inline">\(|g(x)|\leq M\)</span>，将积分式放缩为<span class="math inline">\(I \leq M\int_{a}^{+\infty}f(x)dx\)</span>，显然成立。</del>猜想啦！！！</p>
+<h4 id="dirichlet判别法若fxint_axfxdx有界gx在ainfty上单调收敛于零那么int_ainftyfxgxdx收敛"><span class="math inline">\(Dirichlet\)</span>判别法：若<span class="math inline">\(F(x)=\int_{a}^{x}f(x)dx\)</span>有界，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>上单调，收敛于零，那么<span class="math inline">\(\int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h4>
+<blockquote>
+<p>思考：这里的<span class="math inline">\(g(x)\)</span>是不是不需要单调这么强的性质，只需要不变号，有界即可？</p>
+</blockquote>
+<blockquote>
+<p>回答：不行，可以简单的举出一个例子，即：<span class="math inline">\(f(x)=\frac{\sin x}{x}\)</span>，<span class="math inline">\(g(x) = \operatorname{sgn} f(x)\)</span>，或者将<span class="math inline">\(g(x)\)</span>中负数部分变成0。易知两者相乘不是可积函数。这种条件收敛的函数的积分可以看成将大于零小于零部分的积分看作项数的级数。(<del>定理发现的过程</del>)⬆️</p>
 </blockquote>
 <p>鉴于weiwei的猜想是错的，于是仔细补一个(<del>抄一个</del>)完整证明。</p>
 <p><strong>证明：</strong></p>
