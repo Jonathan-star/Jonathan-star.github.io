@@ -156,7 +156,18 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 <p>回答：不行，可以简单的举出一个例子，即：<span class="math inline">\(f(x)=\frac{\sin x}{x}\)</span>，<span class="math inline">\(g(x) = \operatorname{sgn} f(x)\)</span>，或者将<span class="math inline">\(g(x)\)</span>中负数部分变成0。易知两者相乘不是可积函数。这种条件收敛的函数的积分可以看成将大于零小于零部分的积分看作项数的级数。(<del>定理发现的过程</del>)⬆️</p>
 </blockquote>
 <p>鉴于weiwei的猜想是错的，于是仔细补一个(<del>抄一个</del>)完整证明。</p>
-<p><strong>证明：</strong></p>
+<p>由于两定理类似，一起来。</p>
+<p><strong>证明：</strong> <span class="math display">\[
+若\int_{a}^{+\infty} f(x)g(x)dx要收敛，由柯西收敛准则判定
+需要：
+\]</span></p>
+<p><span class="math display">\[
+\int_{A_{1}}^{A_{2}}f(x)g(x)dx，（其中A_{1},A_{2}在积分区域内）是无穷小量。
+\]</span></p>
+<p>由上述积分中值定理， <span class="math display">\[
+\int_{A_{1}}^{A_{2}}f(x)g(x)dx=g(A_{1})\int_{A_{1}}^{\xi}f(x)dx+g(A_{2})\int_{\xi}^{A_{2}}f(x)dx
+\]</span></p>
+<p>其中，<span class="math inline">\(Abel\)</span>判别法<span class="math inline">\(g(x)\)</span>有界，<span class="math inline">\(Dirichlet\)</span>判别法<span class="math inline">\(F(x)=\int_{a}^{x}f(t)dt\)</span>有界，令之都为<span class="math inline">\(M\)</span>，对应的另一因函数都是无穷小量，可以简单的放缩得到<span class="math inline">\([A_{1},A_{2}]\)</span>上的积分是无穷小量，两者得证。</p>
 
       </div>
     </div>
