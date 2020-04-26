@@ -65,7 +65,7 @@
 <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="single">
 
 <div id="page">
-<div id="lx-aside" style="background-image: url(/images/IMG_1585.jpg)" data-stellar-background-ratio="0.5">
+<div id="lx-aside" style="background-image: url(/images/IMG_1585.JPG)" data-stellar-background-ratio="0.5">
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
@@ -83,25 +83,32 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h1 id="广义积分基本定理"><a href="#广义积分基本定理" class="headerlink" title="广义积分基本定理"></a>广义积分基本定理</h1><blockquote>
+        <h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
 <p>关于无界函数的广义积分</p>
 <p>定义略</p>
 </blockquote>
-<h5 id="可以把这种积分看成前一篇的积分的反函数呀！"><a href="#可以把这种积分看成前一篇的积分的反函数呀！" class="headerlink" title="可以把这种积分看成前一篇的积分的反函数呀！"></a>可以把这种积分看成前一篇的积分的反函数呀！</h5><h2 id="敛散性"><a href="#敛散性" class="headerlink" title="敛散性"></a>敛散性</h2><h3 id="其一：-Cauchy-收敛原理"><a href="#其一：-Cauchy-收敛原理" class="headerlink" title="其一：$Cauchy$收敛原理"></a>其一：$Cauchy$收敛原理</h3><p><strong>定理：</strong>若$a$是函数$f(x)$的奇点，那么$\int_{a}^{b}f(x)dx$收敛的条件是，对任意的正数$\eta, \eta^{\prime}$积分$\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx$是无穷小量。</p>
+<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
+<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
 <blockquote>
 <p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
 <p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
 </blockquote>
-<h3 id="不知道第几：-Cauchy-积分主值"><a href="#不知道第几：-Cauchy-积分主值" class="headerlink" title="不知道第几：$Cauchy$积分主值"></a>不知道第几：$Cauchy$积分主值</h3><p><strong>定义：</strong>对于区间$[a,b]$其中有奇点$c$，积分$\int_{a}^{c}f(x)dx$与积分$\int_{c}^{b}f(x)dx$并不单独存在，但是：</p>
-<script type="math/tex; mode=display">
-\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><p>却存在（收敛），称之为函数$f(x)$的$Cauchy$主值，可以用下式表示：</p>
-<script type="math/tex; mode=display">
-P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><blockquote>
+<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
+<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
+\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
+P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<blockquote>
 <p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
 <p>可以这样理解：</p>
-<p>将数轴正负无穷连起来，如此便可以的到$\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx$</p>
-<p>当然这是不合适的，但是$Cauchy$主值可以这样看。</p>
-<p>这里就是$+\frac{1}{0}\&amp;-\frac{1}{0}$的一个体现？</p>
+<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
+<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
+<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
 <p>（粗浅认识，不足挂齿）</p>
 </blockquote>
 
