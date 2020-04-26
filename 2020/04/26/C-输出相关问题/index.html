@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>广义积分 其二 | weiwei的摸鱼生活</title>
+  <title>C++输出相关问题 | weiwei的摸鱼生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="weiwei">
   <meta name="keywords" content="math, swift, C++, python">
@@ -69,9 +69,9 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/avatar.jpeg"></a></div>
-    <span>2020-04-23</span>
-    <h2>广义积分 其二</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></div>
+    <span>2020-04-26</span>
+    <h2>C++输出相关问题</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/C/" rel="tag">C++</a></div>
     <div class="social-links">
     <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
     <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
@@ -83,34 +83,9 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h1 id="广义积分基本定理">广义积分基本定理</h1>
-<blockquote>
-<p>关于无界函数的广义积分</p>
-<p>定义略</p>
-</blockquote>
-<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
-<h2 id="敛散性">敛散性</h2>
-<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
-<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
-<blockquote>
-<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
-<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
-</blockquote>
-<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
-<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
-\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
-<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
-P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
-<blockquote>
-<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
-<p>可以这样理解：</p>
-<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
-<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
-<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
-<p>（粗浅认识，不足挂齿）</p>
-</blockquote>
+        <h1 id="c输出相关问题">C++输出相关问题</h1>
+<h2 id="一些输出函数模版">一些输出函数模版</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       </div>
     </div>
@@ -119,12 +94,12 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>C++输出相关问题</h3>
+						<h3>没有更新的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -132,12 +107,12 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/21/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+		<a class="copy" href="/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>电磁学</h3>
+						<h3>广义积分 其二</h3>
 					</div>
 				</div>
 			</div>
@@ -221,39 +196,7 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 		goToTop();
 	});
 }());
-</script>
-
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-  TeX: {
-          extensions: ["mhchem.js"]
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -271,5 +214,7 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
+
+
 </body>
 </html>
