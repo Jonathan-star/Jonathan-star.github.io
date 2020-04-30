@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme-color" content=#58b77a>
+  <title>广义积分 其二 | weiwei的摸鱼生活</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="weiwei">
+  <meta name="keywords" content="math, swift, C++, python">
+  <meta name="description" content="">
+  <script id="hexo-configurations">
+  var CONFIG = {
+    root: '/',
+    theme: 'lx',
+    version: '0.3.9',
+    localsearch:{
+      "enable": true,
+      "trigger": "auto",
+      "top_n_per_article": 1,
+      "unescape": false,
+      "preload": false
+      },
+    path: 'search.xml'
+  };
+</script>
+
+  <link rel="shortcut icon" href="/Fish-tank.svg">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
+  <style type="text/css">
+    pre,
+    code {
+      font-family: 'Fira Code', monospace;
+    }
+    html {
+      font-family: sans-serif;
+    }
+    body {
+      font-family: sans-serif;
+    }
+    h1, h2, h3, h4, h5, figure {
+      font-family: sans-serif;
+    }
+    .menu-container{
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.jside.menu.js"></script>
+	<script>
+	$(document).ready(function(){
+	$(".menu-container").jSideMenu({
+	    jSidePosition: "position-right",
+	    jSideSticky: true,
+	    jSideSkin: "greenish",
+	     });
+	}); 
+	</script>
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="single">
+<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
+<div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="是你的话，都可以哟❤️❤️❤️" spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+<div id="page">
+<div id="lx-aside" style="background-image: url(/images/IMG_1585.JPG)" data-stellar-background-ratio="0.5">
+  <div class="overlay">
+  <div class="page-title">
+    <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
+    <span>2020-04-23</span>
+    <h2>广义积分 其二</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></div>
+    <div class="social-links">
+    <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
+    <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+    <a href="https://twitter.com/weiwei_Jonathan" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+</div></div>
+</div>
+</div>
+
+<div id="lx-main-content">
+  <div class="lx-post">
+    <div class="lx-entry padding">
+      <div>
+        <h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
+<p>关于无界函数的广义积分</p>
+<p>定义略</p>
+</blockquote>
+<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
+<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
+<blockquote>
+<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
+<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
+</blockquote>
+<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
+<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
+\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
+P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<blockquote>
+<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
+<p>可以这样理解：</p>
+<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
+<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
+<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
+<p>（粗浅认识，不足挂齿）</p>
+</blockquote>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lx-navigation">
+	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Next</span>
+						<h3>C++输出相关问题</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
+		<div class="overlay"></div>
+		<a class="copy" href="/2020/04/21/%E7%94%B5%E7%A3%81%E5%AD%A6/">
+			<div class="display-t">
+				<div class="display-tc">
+					<div>
+						<span>Prev</span>
+						<h3>电磁学</h3>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+</div>
+
+<footer>
+  <div>
+  Copyright &copy; 2019.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  </div>
+</footer>
+
+</div>
+
+<button class="hamburger hamburger--arrow-r" type="button">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+</button> 
+<div class="menu visibility">
+  <div class="menu-head">
+    <span class="layer">
+      <div class="col">
+        <div class="row for-pic">
+          <div class="profile-pic">
+            <a href="/"><img src="/images/IMG_1541.jpg" alt="weiwei"/></a>
+          </div>
+        </div>
+        <div class="row for-name">
+          <p>weiwei</p>
+          <span class="tagline">Fish-touching master</span>
+        </div>
+      </div>
+    </span>
+  </div>
+  <nav class="menu-container">
+  <ul class="menu-items">
+    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
+    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+    
+    <li class="has-sub"><span class="dropdown-heading">
+      <i class="fa fa-bookmark fa-fw"></i>页面</span>
+        <ul>
+          <li><a href="/guestbook/">Guestbook</a></li>
+        <li><a href="/about/">About</a></li>
+        </ul>
+    </li>
+    
+  </ul>
+  </nav>
+</div>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
+</div>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/jquery.easing.min.js"></script>
+<script>
+(function () {
+	"use strict";
+	var goToTop = function() {
+		$(".js-gotop").on("click", function(event){
+			event.preventDefault();
+			$("html, body").animate({
+				scrollTop: $("html").offset().top
+			}, 500, "easeInOutExpo");
+			return false;
+		});
+		$(window).scroll(function(){
+			var $win = $(window);
+			if ($win.scrollTop() > 200) {
+				$(".js-top").addClass("active");
+			} else {
+				$(".js-top").removeClass("active");
+			}
+		});
+	};
+	$(function(){
+		goToTop();
+	});
+}());
+</script>
+<script src="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/js/local.search.js"></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
