@@ -101,59 +101,45 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h1 id="大物电磁学">大物电磁学</h1>
-<blockquote>
+        <h1 id="大物电磁学"><a href="#大物电磁学" class="headerlink" title="大物电磁学"></a>大物电磁学</h1><blockquote>
 <p>记一点简单模型吧，省的忘掉了。。。</p>
 </blockquote>
-<h2 id="电偶极子模型">电偶极子模型</h2>
-<p><strong>描述：</strong>两个等电荷量，电性相反的电荷组成的系统，对于任意外来电荷，电偶极子之间距离远小于试探电荷到电偶极子中点距离。</p>
-<p>并且引入：电偶极矩<span class="math inline">\(\boldsymbol{P}_{e}\)</span>，其中<span class="math inline">\(\boldsymbol{l}\)</span>是电偶极子间的距离。 <span class="math display">\[
-\boldsymbol{P}_{\mathrm{e}} = q\boldsymbol{l}
-\]</span></p>
-<blockquote>
+<h2 id="电偶极子模型"><a href="#电偶极子模型" class="headerlink" title="电偶极子模型"></a>电偶极子模型</h2><p><strong>描述：</strong>两个等电荷量，电性相反的电荷组成的系统，对于任意外来电荷，电偶极子之间距离远小于试探电荷到电偶极子中点距离。</p>
+<p>并且引入：电偶极矩$\boldsymbol{P}_{e}$，其中$\boldsymbol{l}$是电偶极子间的距离。</p>
+<script type="math/tex; mode=display">
+\boldsymbol{P}_{\mathrm{e}} = q\boldsymbol{l}</script><blockquote>
 <p>好像<code>markdown</code>画图挺麻烦的，就不贴了，来个网址就行吧<a href="https://zh.wikipedia.org/wiki/偶極子" target="_blank" rel="noopener">维基百科上的定义</a></p>
 </blockquote>
 <p>根据目前所学，列两个相关知识点：</p>
-<h3 id="电场强度">电场强度</h3>
-<blockquote>
+<h3 id="电场强度"><a href="#电场强度" class="headerlink" title="电场强度"></a>电场强度</h3><blockquote>
 <p>画图太难了吧。。。</p>
 </blockquote>
 <p>分两种比较好讨论的情况来说</p>
-<h4 id="偶极子连线上">偶极子连线上</h4>
-<h4 id="screen-shot-2020-04-28-at-22.16.28"><img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.16.28.png" alt="Screen Shot 2020-04-28 at 22.16.28" /></h4>
-<p>试探电荷子在正电荷右边，负电荷在正电荷左边，试探电荷到偶极子中点距离是<span class="math inline">\(r\)</span>。</p>
-<p>正电荷产生的电场： <span class="math display">\[
-\boldsymbol{E}_{+}=\boldsymbol{K} \frac{q}{r_{+}^{2}} \boldsymbol{e}_{r_{+}}
-\]</span></p>
-<p>负电荷同理： <span class="math display">\[
-\boldsymbol{E}_{-}=\boldsymbol{K} \frac{-q}{r_{-}^{2}} \boldsymbol{e}_{r_{-}}
-\]</span> 其中<span class="math inline">\(r_{+} = r-\frac{l}{2} ,r_{-}= r +\frac{1}{2}\)</span>;</p>
-<p>相加： <span class="math display">\[
-\boldsymbol{E}_{P}=\boldsymbol{K} q\left[\frac{1}{(r-l / 2)^{2}}-\frac{1}{(r+l / 2)^{2}}\right] \boldsymbol{e}
-\]</span> 据说可以用泰勒展开，但是数学功底不到位呀。。。勉强用多项式和小量才得到结果 <span class="math display">\[
-\boldsymbol{E} \approx \boldsymbol{K}\frac{\boldsymbol{p}_{e}}{r^{3}}
-\]</span> 留一个泰勒展开的位置吧：</p>
+<h4 id="偶极子连线上"><a href="#偶极子连线上" class="headerlink" title="偶极子连线上"></a>偶极子连线上</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="/Users/yulongyi/Library/Application Support/typora-user-images/Screen Shot 2020-04-28 at 22.16.28.png" alt="Screen Shot 2020-04-28 at 22.16.28"></h4><p>试探电荷子在正电荷右边，负电荷在正电荷左边，试探电荷到偶极子中点距离是$r$。</p>
+<p>正电荷产生的电场：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}_{+}=\boldsymbol{K} \frac{q}{r_{+}^{2}} \boldsymbol{e}_{r_{+}}</script><p>负电荷同理：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}_{-}=\boldsymbol{K} \frac{-q}{r_{-}^{2}} \boldsymbol{e}_{r_{-}}</script><p>其中$r_{+} = r-\frac{l}{2}  ,r_{-}= r +\frac{1}{2}$;</p>
+<p>相加：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E}_{P}=\boldsymbol{K} q\left[\frac{1}{(r-l / 2)^{2}}-\frac{1}{(r+l / 2)^{2}}\right] \boldsymbol{e}</script><p>据说可以用泰勒展开，但是数学功底不到位呀。。。勉强用多项式和小量才得到结果</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E} \approx \boldsymbol{K}\frac{\boldsymbol{p}_{e}}{r^{3}}</script><p>留一个泰勒展开的位置吧：</p>
 <p><strong>泰勒展开化简</strong></p>
-<p>小量化简，高次小量就可以消去，于是我们将分母的<span class="math inline">\(r\)</span>提出来，得到<span class="math inline">\((1+x)^{n}\)</span>在<span class="math inline">\(0\)</span>的展开。</p>
-<h4 id="电偶极子中垂线上">电偶极子中垂线上</h4>
-<figure>
-<img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.17.48.png" alt="" /><figcaption>Screen Shot 2020-04-28 at 22.17.48</figcaption>
-</figure>
-<p>简单分析，两电荷在如图位置产生的电场大小相等，合成之后就是向左的<span class="math inline">\(\boldsymbol{E}_{\boldsymbol{p}}\)</span></p>
-<p>直接写<span class="math inline">\(\boldsymbol{E_{+}} \&amp; \boldsymbol{E_{+}}\)</span></p>
-<p><span class="math display">\[
-\boldsymbol{E_{+}} =\boldsymbol{K} \frac{q}{(\frac{l^{2}}{4}+r^{2})}
-\]</span> 之后 <span class="math display">\[
-\boldsymbol{E_{p}}= 2\boldsymbol{E_{+}}\cos \alpha
-\]</span></p>
-<p><span class="math display">\[
-\cos \alpha = \frac{l/2}{\sqrt{l^{2}/4+r^{2}}}
-\]</span></p>
-<p>故，此处场强是： <span class="math display">\[
-\boldsymbol{K}\frac{q\boldsymbol{l}}{2\left ( l^{2}/4 + r^{2}\right)^{\frac{3}{2}}}
-\]</span> 和上面一样，提出<span class="math inline">\(r^{2}\)</span>展开，发现只能保留<span class="math inline">\(1\)</span>，于是得到结果： <span class="math display">\[
-\boldsymbol{E_{P}}=-\frac{p_{\mathrm{e}}}{4 \pi \varepsilon_{0} r^{3}}
-\]</span> 电偶极子的力矩什么的就不贴了，套定义就行。</p>
+<p>小量化简，高次小量就可以消去，于是我们将分母的$r$提出来，得到$(1+x)^{n}$在$0$的展开。</p>
+<h4 id="电偶极子中垂线上"><a href="#电偶极子中垂线上" class="headerlink" title="电偶极子中垂线上"></a>电偶极子中垂线上</h4><p><img src="/Users/yulongyi/Library/Application Support/typora-user-images/Screen Shot 2020-04-28 at 22.17.48.png" alt="Screen Shot 2020-04-28 at 22.17.48"></p>
+<p>简单分析，两电荷在如图位置产生的电场大小相等，合成之后就是向左的$\boldsymbol{E}_{\boldsymbol{p}}$</p>
+<p>直接写$\boldsymbol{E_{+}} \&amp; \boldsymbol{E_{+}}$</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E_{+}} =\boldsymbol{K} \frac{q}{(\frac{l^{2}}{4}+r^{2})}</script><p>之后</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E_{p}}= 2\boldsymbol{E_{+}}\cos \alpha</script><script type="math/tex; mode=display">
+\cos \alpha = \frac{l/2}{\sqrt{l^{2}/4+r^{2}}}</script><p>故，此处场强是：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{K}\frac{q\boldsymbol{l}}{2\left ( l^{2}/4 + r^{2}\right)^{\frac{3}{2}}}</script><p>和上面一样，提出$r^{2}$展开，发现只能保留$1$，于是得到结果：</p>
+<script type="math/tex; mode=display">
+\boldsymbol{E_{P}}=-\frac{p_{\mathrm{e}}}{4 \pi \varepsilon_{0} r^{3}}</script><p>电偶极子的力矩什么的就不贴了，套定义就行。</p>
 
       </div>
     </div>
@@ -191,8 +177,9 @@
 </div>
 
 <footer>
+
   <div>
-  Copyright &copy; 2019.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
+  
   </div>
 </footer>
 
