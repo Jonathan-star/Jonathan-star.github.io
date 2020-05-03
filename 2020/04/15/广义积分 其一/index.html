@@ -148,6 +148,8 @@
 <p>贴一个单调递增情况的证明：</p>
 <p><strong>证明：</strong></p>
 <p>构造<span class="math inline">\(F(x)=\int_{x}^{b}f(t)dt\)</span>，显然该函数连续，在区间<span class="math inline">\([a,b]\)</span>上必然有界，记最大值<span class="math inline">\(M\)</span>，最小值<span class="math inline">\(m\)</span>，</p>
+<p>同时，在闭区间上的单调，有界（仅有限个间断点），连续函数，均可积。</p>
+<p>联想达布和可以尝试分离出<span class="math inline">\(g(x_{i})\)</span>。</p>
 <p>将要证明的左边变形： <span class="math display">\[
 \begin{aligned} \int_{a}^{b} f(x) g(x) d x &amp;=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &amp;=\sigma+\rho \end{aligned}
 \]</span></p>
@@ -225,7 +227,7 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 <footer>
 
   <div>
-  Copyright &copy; 2020.<a href="/">weiwei的摸鱼生活
+  Copyright &copy; 2020.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
   </div>
 </footer>
 

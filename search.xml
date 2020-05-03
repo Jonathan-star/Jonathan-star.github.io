@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>C++输出相关问题</title>
+    <url>/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="c基本问题">C++基本问题</h1>
+<h2 id="一些输出函数模版">一些输出函数模版</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thread 1: signal SIGABRT</title>
+    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
+<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+<blockquote>
+<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>广义积分 其二</title>
+    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
+    <content><![CDATA[<h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
+<p>关于无界函数的广义积分</p>
+<p>定义略</p>
+</blockquote>
+<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
+<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
+<blockquote>
+<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
+<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
+</blockquote>
+<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
+<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
+\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
+P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<blockquote>
+<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
+<p>可以这样理解：</p>
+<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
+<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
+<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
+<p>（粗浅认识，不足挂齿）</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>广义积分习题记录</title>
+    <url>/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<h1 id="广义积分习题">广义积分习题</h1>
+<blockquote>
+<p>上课不听讲只能自己看书😭</p>
+</blockquote>
+<h2 id="记一个abel和dirichlet判别法运用的">记一个<span class="math inline">\(Abel\)</span>和<span class="math inline">\(Dirichlet\)</span>判别法运用的🌰</h2>
+<p><strong>==例==：</strong>讨论 <span class="math display">\[
+\int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda &gt; 0)
+\]</span> 的敛散性。</p>
+<p><strong>解：</strong></p>
+<p>==1⃣️ 条件收敛性==</p>
+<p>由<span class="math inline">\(Dirichlet\)</span>判别法知道，<span class="math inline">\(\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx\)</span>是收敛的，另一部分，<span class="math inline">\(\arctan x\)</span>是有界的，根据<span class="math inline">\(Abel\)</span>判别法很简单就得到了整个积分是收敛的。</p>
+<p>2⃣️ 绝对收敛性</p>
+<p>放缩一下： <span class="math display">\[
+\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &lt; \left |\frac{\pi}{2}\frac{\sin x}{x^{\lambda}} \right |
+\]</span> 简单分两种情况</p>
+<p>其一：<span class="math inline">\(\lambda &gt; 1\)</span>时</p>
+<p>直接收敛没啥好说的。</p>
+<p>其二： $ 0&lt;$时</p>
+<p>由于是定义在无穷区间上的积分，可以取足够大的<span class="math inline">\(x\)</span>来分析问题，</p>
+<p>必存在一个时刻，<span class="math inline">\(\arctan x &gt; 1\)</span>，并且有 <span class="math inline">\(\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &gt; \left |\frac{\sin x}{x^{\lambda}}\right |\)</span> ，基本操作一下，把绝对值放缩<span class="math inline">\(|\sin x|&gt; \sin ^{2}x\)</span></p>
+<p>这里用一手半角公式，得到<span class="math inline">\(k\frac{1}{x^{2}}\)</span>和另一个可以用<span class="math inline">\(Dirichlet\)</span>判别法得到收敛的函数，于是，发散就得到了。</p>
+<h3 id="记下这个例子大致就能掌握ad判别法了">记下这个例子大致就能掌握AD判别法了</h3>
+]]></content>
+      <tags>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>广义积分 其一</title>
     <url>/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/</url>
     <content><![CDATA[<h1 id="广义积分基本定理">广义积分基本定理</h1>
@@ -50,6 +143,8 @@
 <p>贴一个单调递增情况的证明：</p>
 <p><strong>证明：</strong></p>
 <p>构造<span class="math inline">\(F(x)=\int_{x}^{b}f(t)dt\)</span>，显然该函数连续，在区间<span class="math inline">\([a,b]\)</span>上必然有界，记最大值<span class="math inline">\(M\)</span>，最小值<span class="math inline">\(m\)</span>，</p>
+<p>同时，在闭区间上的单调，有界（仅有限个间断点），连续函数，均可积。</p>
+<p>联想达布和可以尝试分离出<span class="math inline">\(g(x_{i})\)</span>。</p>
 <p>将要证明的左边变形： <span class="math display">\[
 \begin{aligned} \int_{a}^{b} f(x) g(x) d x &amp;=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &amp;=\sigma+\rho \end{aligned}
 \]</span></p>
@@ -91,33 +186,6 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 ]]></content>
       <tags>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++输出相关问题</title>
-    <url>/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="c基本问题">C++基本问题</h1>
-<h2 id="一些输出函数模版">一些输出函数模版</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Thread 1: signal SIGABRT</title>
-    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
-<h2 id="c数组中">C++数组中</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
-<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
-<blockquote>
-<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Xcode</tag>
       </tags>
   </entry>
   <entry>
@@ -199,42 +267,6 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 ]]></content>
       <tags>
         <tag>本周问题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>广义积分 其二</title>
-    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
-    <content><![CDATA[<h1 id="广义积分基本定理">广义积分基本定理</h1>
-<blockquote>
-<p>关于无界函数的广义积分</p>
-<p>定义略</p>
-</blockquote>
-<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
-<h2 id="敛散性">敛散性</h2>
-<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
-<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
-<blockquote>
-<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
-<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
-</blockquote>
-<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
-<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
-\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
-<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
-P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
-<blockquote>
-<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
-<p>可以这样理解：</p>
-<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
-<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
-<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
-<p>（粗浅认识，不足挂齿）</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>分析</tag>
       </tags>
   </entry>
 </search>
