@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+
+  
+  <title>广义积分 其一 | weiwei的摸鱼生活</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="广义积分基本定理  关于无穷限的广义积分 简单的定义就不po啦  敛散性 其一：比较判别法 定理：设从某一值\(a_0 &gt; a\)开始，\(|f(x)| \leq C\phi(x)\)，\(C\)是常数，若积分\(\int_{a}^{+\infty}\phi (x)dx\)收敛，\(f(x)\)绝对收敛。反过来显然。 极限形式表达： \[ \lim _{x \rightarrow+\inft">
+<meta property="og:type" content="article">
+<meta property="og:title" content="广义积分 其一">
+<meta property="og:url" content="http://weiweistar.com/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/index.html">
+<meta property="og:site_name" content="weiwei的摸鱼生活">
+<meta property="og:description" content="广义积分基本定理  关于无穷限的广义积分 简单的定义就不po啦  敛散性 其一：比较判别法 定理：设从某一值\(a_0 &gt; a\)开始，\(|f(x)| \leq C\phi(x)\)，\(C\)是常数，若积分\(\int_{a}^{+\infty}\phi (x)dx\)收敛，\(f(x)\)绝对收敛。反过来显然。 极限形式表达： \[ \lim _{x \rightarrow+\inft">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-04-15T13:51:46.000Z">
+<meta property="article:modified_time" content="2020-04-15T13:51:46.000Z">
+<meta property="article:author" content="weiwei">
+<meta property="article:tag" content="分析">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="weiwei的摸鱼生活" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">weiwei的摸鱼生活</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">来摸鱼吧</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://weiweistar.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-广义积分 其一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/" class="article-date">
+  <time datetime="2020-04-15T13:51:46.000Z" itemprop="datePublished">2020-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      广义积分 其一
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
+<p>关于无穷限的广义积分</p>
+<p>简单的定义就不po啦</p>
+</blockquote>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一比较判别法">其一：比较判别法</h3>
+<p><strong>定理：</strong>设从某一值<span class="math inline">\(a_0 &gt; a\)</span>开始，<span class="math inline">\(|f(x)| \leq C\phi(x)\)</span>，<span class="math inline">\(C\)</span>是常数，若积分<span class="math inline">\(\int_{a}^{+\infty}\phi (x)dx\)</span>收敛，<span class="math inline">\(f(x)\)</span>绝对收敛。反过来显然。</p>
+<p><strong>极限形式表达：</strong> <span class="math display">\[
+\lim _{x \rightarrow+\infty} \frac{|f(x)|}{\phi(x)}=l
+\]</span> <span class="math inline">\(f(x)\)</span>的绝对收敛性和<span class="math inline">\(\phi(x)\)</span>相同。<span class="math inline">\(l\ \)</span>是常数。</p>
+<h3 id="其二cauchy判别法">其二：<span class="math inline">\(Cauchy\)</span>判别法</h3>
+<p><strong>定理：</strong>如果<span class="math inline">\(|f(x)| \leq \frac{c}{x^{p}},p &gt; 1\)</span>，那么积分<span class="math inline">\(\int_{a}^{+\infty} f(x)\)</span>绝对收敛。反之显然。</p>
+<p><strong>极限形式表达：</strong> <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0\leq l &lt; +\infty
+\]</span> 其中，<span class="math inline">\(p &gt; 1\ \)</span>时，函数绝对收敛。 <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{p} |f(x)| = l \quad  0 &lt; l \leq +\infty
+\]</span> <span class="math inline">\(p \leq 1\)</span> 时，函数发散。</p>
+<p>简单的贴一个🌰</p>
+<h4 id="例">例</h4>
+<p>讨论积分<span class="math inline">\(\int_{2}^{+\infty} \frac{d x}{x^{\lambda} \ln x}\)</span>的敛散性。（实数<span class="math inline">\(\lambda\)</span>）</p>
+<h4 id="解">解</h4>
+<p>当 <span class="math inline">\(\lambda &gt; 1\)</span>, <span class="math display">\[
+\lim_{x \rightarrow +\infty} x^{\lambda} \frac{dx}{x^{\lambda} \ln x} = 0,
+\]</span> 此积分收敛；</p>
+<p>当<span class="math inline">\(\lambda = 1\)</span>, <span class="math display">\[
+\int_{2}^{+\infty} \frac{dx}{x\ln x} = \ln\ln x |_{2}^{+\infty}
+\]</span> 此积分发散；</p>
+<p>当<span class="math inline">\(\lambda &lt; 1\)</span>, <span class="math display">\[
+\lim_{x \rightarrow +\infty}x\frac{1}{x^{\lambda}\ln x}=+\infty
+\]</span> 由<span class="math inline">\(cauchy\)</span>判别法，此积分发散。</p>
+<h3 id="其三abel判别法与dirichlet判别法">其三：<span class="math inline">\(Abel\)</span>判别法与<span class="math inline">\(Dirichlet\)</span>判别法</h3>
+<blockquote>
+<p>引入一个<strong>第二中值定理</strong></p>
+</blockquote>
+<h4 id="第二中值定理设fx在ab上可积gx在ab上单调那么存在ab上的xi使">第二中值定理：设<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([a,b]\)</span>上可积，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,b]\)</span>上单调，那么存在<span class="math inline">\([a,b]\)</span>上的<span class="math inline">\(\xi\)</span>，使</h4>
+<p><span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx+g(b)\int_{\xi}^{b}f(x)dx;
+\]</span></p>
+<p>若<span class="math inline">\(g(x)\)</span>单调递增，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(b)\int_{\xi}^{b}f(x)dx
+\]</span> 若<span class="math inline">\(g(x)\)</span>单调递减，且恒大于0⃣️，有 <span class="math display">\[
+\int_{a}^{b}f(x)g(x)dx=g(a)\int_{a}^{\xi}f(x)dx
+\]</span></p>
+<p>贴一个单调递增情况的证明：</p>
+<p><strong>证明：</strong></p>
+<p>构造<span class="math inline">\(F(x)=\int_{x}^{b}f(t)dt\)</span>，显然该函数连续，在区间<span class="math inline">\([a,b]\)</span>上必然有界，记最大值<span class="math inline">\(M\)</span>，最小值<span class="math inline">\(m\)</span>，</p>
+<p>同时，在闭区间上的单调，有界（仅有限个间断点），连续函数，均可积。</p>
+<p>联想达布和可以尝试分离出<span class="math inline">\(g(x_{i})\)</span>。</p>
+<p>将要证明的左边变形： <span class="math display">\[
+\begin{aligned} \int_{a}^{b} f(x) g(x) d x &amp;=\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) g(x) d x \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) \int_{x_{i-1}}^{x_{i}} f(x) d x+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x \\ &amp;=\sigma+\rho \end{aligned}
+\]</span></p>
+<h5 id="这里将gx_i分离出积分由于x_i与x无关故直接提出int">这里将<span class="math inline">\(g(x_{i})\)</span>分离出积分，由于<span class="math inline">\(x_{i}\)</span>与<span class="math inline">\(x\)</span>无关，故直接提出<span class="math inline">\(\int\)</span></h5>
+<p>后一项<span class="math inline">\(\rho\)</span>可以打绝对值分析，里面<span class="math inline">\(|f(x)| \leq M\)</span>，将其放缩： <span class="math display">\[
+\begin{aligned}|\rho| &amp;=\left|\sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} f(x)\left[g(x)-g\left(x_{i}\right)\right] d x\right| \\ &amp; \leq \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}}\left|f(x) \| g(x)-g\left(x_{i}\right)\right| d x \\ &amp; \leq L \sum_{i=1}^{n} \int_{x_{i-1}}^{x_{i}} \omega_{i} d x=L \sum_{i=1}^{n} \omega_{i} \Delta x_{i} \end{aligned}
+\]</span></p>
+<p>由定积分存在的判定条件，得到<span class="math inline">\(\sum_{i=1}^{n} \omega_{i} \Delta x_{i}\)</span>是无穷小量，即<span class="math inline">\(\rho \rightarrow 0\)</span>，</p>
+<p>只需要分析<span class="math inline">\(\sigma\)</span>，</p>
+<p><span class="math inline">\(\sigma\)</span>式中的积分部分可以根据牛顿-莱布尼茨公式变形得到<span class="math inline">\(F(x_{i-1})-F(x_{i})\)</span>，变形如下： <span class="math display">\[
+\begin{aligned} \sigma &amp;=\sum_{i=1}^{n} g\left(x_{i}\right)\left[F\left(x_{i-1}\right)-F\left(x_{i}\right)\right] \\ &amp;=\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=2}^{n} g\left(x_{i}\right) F\left(x_{i-1}\right)-\sum_{i=1}^{n-1} g\left(x_{i}\right) F\left(x_{i}\right) \\ &amp;=g\left(x_{1}\right) F\left(x_{0}\right)+\sum_{i=1}^{n-1}\left[g\left(x_{i+1}\right)-g\left(x_{i}\right)\right] F\left(x_{i}\right) \end{aligned}
+\]</span></p>
+<p>这里对<span class="math inline">\(F(x)\)</span>放缩，即： <span class="math display">\[
+m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)
+\]</span></p>
+<p>小括号里面的式子即<span class="math inline">\(g(b)\)</span>，有由于<span class="math inline">\(F(x)\in[m,M]\)</span>，故存在<span class="math inline">\(F(\xi)\)</span>，即命题得证。</p>
+<h4 id="abel判别法若int_ainftyfxdx收敛gx在ainfty单调有界则积分i-int_ainftyfxgxdx收敛"><span class="math inline">\(Abel\)</span>判别法：若<span class="math inline">\(\int_{a}^{+\infty}f(x)dx\)</span>收敛，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>单调有界，则积分<span class="math inline">\(I = \int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h4>
+<p><del>简单叙述一下证明，<span class="math inline">\(|g(x)|\leq M\)</span>，将积分式放缩为<span class="math inline">\(I \leq M\int_{a}^{+\infty}f(x)dx\)</span>，显然成立。</del>猜想啦！！！</p>
+<h4 id="dirichlet判别法若fxint_axfxdx有界gx在ainfty上单调收敛于零那么int_ainftyfxgxdx收敛"><span class="math inline">\(Dirichlet\)</span>判别法：若<span class="math inline">\(F(x)=\int_{a}^{x}f(x)dx\)</span>有界，<span class="math inline">\(g(x)\)</span>在<span class="math inline">\([a,+\infty)\)</span>上单调，收敛于零，那么<span class="math inline">\(\int_{a}^{+\infty}f(x)g(x)dx\)</span>收敛。</h4>
+<blockquote>
+<p>思考：这里的<span class="math inline">\(g(x)\)</span>是不是不需要单调这么强的性质，只需要不变号，有界即可？</p>
+</blockquote>
+<blockquote>
+<p>回答：不行，可以简单的举出一个例子，即：<span class="math inline">\(f(x)=\frac{\sin x}{x}\)</span>，<span class="math inline">\(g(x) = \operatorname{sgn} f(x)\)</span>，或者将<span class="math inline">\(g(x)\)</span>中负数部分变成0。易知两者相乘不是可积函数。这种条件收敛的函数的积分可以看成将大于零小于零部分的积分看作项数的级数。(<del>定理发现的过程</del>)⬆️</p>
+</blockquote>
+<p>鉴于weiwei的猜想是错的，于是仔细补一个(<del>抄一个</del>)完整证明。</p>
+<p>由于两定理类似，一起来。</p>
+<p><strong>证明：</strong> <span class="math display">\[
+若\int_{a}^{+\infty} f(x)g(x)dx要收敛，由柯西收敛准则判定
+需要：
+\]</span></p>
+<p><span class="math display">\[
+\int_{A_{1}}^{A_{2}}f(x)g(x)dx，（其中A_{1},A_{2}在积分区域内）是无穷小量。
+\]</span></p>
+<p>由上述积分中值定理， <span class="math display">\[
+\int_{A_{1}}^{A_{2}}f(x)g(x)dx=g(A_{1})\int_{A_{1}}^{\xi}f(x)dx+g(A_{2})\int_{\xi}^{A_{2}}f(x)dx
+\]</span></p>
+<p>其中，<span class="math inline">\(Abel\)</span>判别法<span class="math inline">\(g(x)\)</span>有界，<span class="math inline">\(Dirichlet\)</span>判别法<span class="math inline">\(F(x)=\int_{a}^{x}f(t)dt\)</span>有界，令之都为<span class="math inline">\(M\)</span>，对应的另一因函数都是无穷小量，可以简单的放缩得到<span class="math inline">\([A_{1},A_{2}]\)</span>上的积分是无穷小量，两者得证。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://weiweistar.com/2020/04/15/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%20%E5%85%B6%E4%B8%80/" data-id="cka9f5juh00086w2631i7gyvc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          需要解决的问题
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E7%89%A9/" rel="tag">大物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%91%A8%E9%97%AE%E9%A2%98/" rel="tag">本周问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/%E5%88%86%E6%9E%90/" style="font-size: 20px;">分析</a> <a href="/tags/%E5%A4%A7%E7%89%A9/" style="font-size: 10px;">大物</a> <a href="/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tags/%E6%9C%AC%E5%91%A8%E9%97%AE%E9%A2%98/" style="font-size: 10px;">本周问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/">数组名与数组地址</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/">广义积分习题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/26/Thread-1-signal-SIGABRT/">Thread 1: signal SIGABRT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">C++输出相关问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 weiwei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

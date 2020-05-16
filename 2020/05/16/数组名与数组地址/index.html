@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+
+  
+  <title>数组名与数组地址 | weiwei的摸鱼生活</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数组名与数组地址的简单记录  粗浅认识，请多多指教  想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是&amp;iArray的形式，我一想，这也是地址，为啥不用iArray呢。。。  本文引用  iArray与&amp;iArray是省政府和市政府的区别 这里有一个例子可以清晰看出差别 123456789101112131415#include &lt;iostream&gt;#def">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组名与数组地址">
+<meta property="og:url" content="http://weiweistar.com/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/index.html">
+<meta property="og:site_name" content="weiwei的摸鱼生活">
+<meta property="og:description" content="数组名与数组地址的简单记录  粗浅认识，请多多指教  想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是&amp;iArray的形式，我一想，这也是地址，为啥不用iArray呢。。。  本文引用  iArray与&amp;iArray是省政府和市政府的区别 这里有一个例子可以清晰看出差别 123456789101112131415#include &lt;iostream&gt;#def">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-05-16T07:44:01.000Z">
+<meta property="article:modified_time" content="2020-05-16T07:44:01.000Z">
+<meta property="article:author" content="weiwei">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="weiwei的摸鱼生活" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">weiwei的摸鱼生活</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">来摸鱼吧</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://weiweistar.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-数组名与数组地址" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/" class="article-date">
+  <time datetime="2020-05-16T07:44:01.000Z" itemprop="datePublished">2020-05-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数组名与数组地址
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组名与数组地址的简单记录">数组名与数组地址的简单记录</h1>
+<blockquote>
+<p>粗浅认识，请多多指教</p>
+</blockquote>
+<p>想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是<code>&amp;iArray</code>的形式，我一想，这也是地址，为啥不用<code>iArray</code>呢。。。</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/jingzi123456789/article/details/66478310" target="_blank" rel="noopener">本文引用</a></p>
+</blockquote>
+<h2 id="iarray与iarray是省政府和市政府的区别"><code>iArray</code>与<code>&amp;iArray</code>是省政府和市政府的区别</h2>
+<p>这里有一个例子可以清晰看出差别</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _size_ (5)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> xiArray[_size_] = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"        xArray = "</span>&lt;&lt;xiArray&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//-64424496976</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"       &amp;xArray = "</span>&lt;&lt; &amp;xiArray&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"    xArray + 1 = "</span>&lt;&lt; xiArray  + <span class="number">1</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&amp;xArray[0] + 1 = "</span>&lt;&lt;&amp;xiArray[<span class="number">0</span>] + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496972</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"   &amp;xArray + 1 = "</span>&lt;&lt; &amp;xiArray + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496956</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到的结果：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        xArray = 0x1000030b0</span><br><span class="line">       &amp;xArray = 0x1000030b0</span><br><span class="line">    xArray + 1 = 0x1000030b4</span><br><span class="line">&amp;xArray[0] + 1 = 0x1000030b4</span><br><span class="line">   &amp;xArray + 1 = 0x1000030c4</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>地址是16进制数，上面的注释是转化的10进制数</p>
+</blockquote>
+<p>这里看到，<code>&amp;xArray</code>的增量单位是数组大小<code>sizeof(_size_ * sizeof(int))</code>，而<code>xArray</code>的增量是元素类型大小<code>sizeof(int) == 4</code></p>
+<p>就像省政府的增量就是下一个省政府，市政府的增量就是下一个市政府。</p>
+<p>这里用指针的理论来说，<code>xArray</code>等价于<code>&amp;xArray[0]</code>，<code>&amp;xArray</code>就是本身的意思。这样就好理解了：指针的增量<code>++</code>的单位是指针类型的大小。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://weiweistar.com/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/" data-id="cka9f5juf00046w262djkgbza" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">正则表达式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/" rel="tag">Xcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%A7%E7%89%A9/" rel="tag">大物</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91/" rel="tag">开发</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%AC%E5%91%A8%E9%97%AE%E9%A2%98/" rel="tag">本周问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 15px;">C++</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/%E5%88%86%E6%9E%90/" style="font-size: 20px;">分析</a> <a href="/tags/%E5%A4%A7%E7%89%A9/" style="font-size: 10px;">大物</a> <a href="/tags/%E5%BC%80%E5%8F%91/" style="font-size: 10px;">开发</a> <a href="/tags/%E6%9C%AC%E5%91%A8%E9%97%AE%E9%A2%98/" style="font-size: 10px;">本周问题</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/">数组名与数组地址</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/">广义积分习题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/26/Thread-1-signal-SIGABRT/">Thread 1: signal SIGABRT</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">C++输出相关问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 weiwei<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
