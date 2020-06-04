@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++输出相关问题</title>
-    <url>/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="c基本问题">C++基本问题</h1>
-<h2 id="一些输出函数模版">一些输出函数模版</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Thread 1: signal SIGABRT</title>
     <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
     <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
@@ -25,6 +14,17 @@
 ]]></content>
       <tags>
         <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C++输出相关问题</title>
+    <url>/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="c基本问题">C++基本问题</h1>
+<h2 id="一些输出函数模版">一些输出函数模版</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -243,6 +243,37 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
       </tags>
   </entry>
   <entry>
+    <title>指针操作相关</title>
+    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
+<blockquote>
+<p>一下午速成计划</p>
+</blockquote>
+<h2 id="指针定义">指针定义</h2>
+<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针">常量指针</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
+<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
+<h2 id="指针常量">指针常量</h2>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
+<h2 id="section"></h2>
+]]></content>
+      <tags>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数组名与数组地址</title>
     <url>/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<h1 id="数组名与数组地址的简单记录">数组名与数组地址的简单记录</h1>
@@ -267,37 +298,6 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 ]]></content>
       <tags>
         <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
-<h2 id="section"></h2>
-]]></content>
-      <tags>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针操作相关</title>
-    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
-<blockquote>
-<p>一下午速成计划</p>
-</blockquote>
-<h2 id="指针定义">指针定义</h2>
-<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针">常量指针</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
-<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量">指针常量</h2>
-]]></content>
-      <tags>
-        <tag>c++</tag>
       </tags>
   </entry>
   <entry>
