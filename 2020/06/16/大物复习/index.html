@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content=#58b77a>
-  <title>C++输出相关问题 | weiwei的摸鱼生活</title>
+  <title>大物复习 | weiwei的摸鱼生活</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="weiwei">
   <meta name="keywords" content="math, swift, C++, python">
@@ -86,9 +86,9 @@
   <div class="overlay">
   <div class="page-title">
     <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
-    <span>2020-04-26</span>
-    <h2>C++输出相关问题</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/C/" rel="tag">C++</a></div>
+    <span>2020-06-16</span>
+    <h2>大物复习</h2>
+    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%A4%A7%E7%89%A9/" rel="tag">大物</a></div>
     <div class="social-links">
     <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
     <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
@@ -101,8 +101,24 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <h1 id="C-基本问题"><a href="#C-基本问题" class="headerlink" title="C++基本问题"></a>C++基本问题</h1><h2 id="一些输出函数模版"><a href="#一些输出函数模版" class="headerlink" title="一些输出函数模版"></a>一些输出函数模版</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="大物复习题记录"><a href="#大物复习题记录" class="headerlink" title="大物复习题记录"></a>大物复习题记录</h1><h2 id="质点力学"><a href="#质点力学" class="headerlink" title="质点力学"></a>质点力学</h2><p><strong>例</strong> 长度为$l$，质量为$m$的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力$F$的函数.</p>
+<p><strong>解</strong></p>
+<blockquote>
+<p>利用质心运动定理</p>
+</blockquote>
+<p>先计算质心的坐标</p>
+<script type="math/tex; mode=display">
+z_{c}= \frac{\int zdm}{m}</script><p>令绳子线密度是$\lambda = \frac{m}{l}$，我们将上式中$dm$化成关于$dz$的量，</p>
+<script type="math/tex; mode=display">
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}</script><p>对绳子列质心方程：</p>
+<script type="math/tex; mode=display">
+F_{合}= ma_{c}</script><p>因为$a_c=\frac{dv_{c}}{dt}$，$v_c= dz_c /dt$</p>
+<p>其中$dz/dt = v_绳$（自由落体速度），</p>
+<p>一通化简得到</p>
+<script type="math/tex; mode=display">
+a_{c} = \frac{g}{l}(2l-3z)</script><p>此时得到</p>
+<script type="math/tex; mode=display">
+F = 3mg(1-\frac{z}{l})</script>
       </div>
     </div>
   </div>
@@ -110,12 +126,12 @@
 <div class="lx-navigation">
 	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/26/Thread-1-signal-SIGABRT/">
+		<a class="copy" href="#">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Next</span>
-						<h3>Thread ...</h3>
+						<h3>没有更新的文章</h3>
 					</div>
 				</div>
 			</div>
@@ -123,12 +139,12 @@
 	</div>
         <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
 		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/">
+		<a class="copy" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">
 			<div class="display-t">
 				<div class="display-tc">
 					<div>
 						<span>Prev</span>
-						<h3>广义积分 其二</h3>
+						<h3>希腊字母</h3>
 					</div>
 				</div>
 			</div>
@@ -213,7 +229,38 @@
 	});
 }());
 </script>
-<script src="local.search.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script src="local.search.js"></script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+  TeX: {
+          extensions: ["mhchem.js"]
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -231,6 +278,5 @@
 </script>
 <!-- End: Injected MathJax -->
 <!-- hexo-inject:end -->
-
 </body>
 </html>
