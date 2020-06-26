@@ -1,56 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Thread 1: signal SIGABRT</title>
-    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
-<h2 id="c数组中">C++数组中</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
-<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
-<blockquote>
-<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大物复习</title>
-    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="大物复习题记录">大物复习题记录</h1>
-<h2 id="质点力学">质点力学</h2>
-<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
-<p><strong>解</strong></p>
-<blockquote>
-<p>利用质心运动定理</p>
-</blockquote>
-<p>先计算质心的坐标 <span class="math display">\[
-z_{c}= \frac{\int zdm}{m} 
-\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
-\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
-\]</span> 对绳子列质心方程： <span class="math display">\[
-F_{合}= ma_{c}
-\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
-<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
-<p>一通化简得到 <span class="math display">\[
-a_{c} = \frac{g}{l}(2l-3z)
-\]</span> 此时得到 <span class="math display">\[
-F = 3mg(1-\frac{z}{l})
-\]</span></p>
-<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
-<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
--\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
-\]</span> 两边移项，积分得到： <span class="math display">\[
-v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
-\]</span></p>
-]]></content>
-      <tags>
-        <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>希腊字母</title>
     <url>/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/</url>
     <content><![CDATA[<h1 id="不太好记的latex符号表达">不太好记的LaTeX符号表达</h1>
@@ -196,6 +146,22 @@ v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
       </tags>
   </entry>
   <entry>
+    <title>Thread 1: signal SIGABRT</title>
+    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
+<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+<blockquote>
+<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>函数项级数</title>
     <url>/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/</url>
     <content><![CDATA[<h1 id="函数项级数">函数项级数</h1>
@@ -233,39 +199,49 @@ v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
       </tags>
   </entry>
   <entry>
-    <title>广义积分 其二</title>
-    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
-    <content><![CDATA[<h1 id="广义积分基本定理">广义积分基本定理</h1>
+    <title>大物复习</title>
+    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="大物复习题记录">大物复习题记录</h1>
+<h2 id="质点力学">质点力学</h2>
+<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
+<p><strong>解</strong></p>
 <blockquote>
-<p>关于无界函数的广义积分</p>
-<p>定义略</p>
+<p>利用质心运动定理</p>
 </blockquote>
-<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
-<h2 id="敛散性">敛散性</h2>
-<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
-<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
+<p>先计算质心的坐标 <span class="math display">\[
+z_{c}= \frac{\int zdm}{m} 
+\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
+\]</span> 对绳子列质心方程： <span class="math display">\[
+F_{合}= ma_{c}
+\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
+<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
+<p>一通化简得到 <span class="math display">\[
+a_{c} = \frac{g}{l}(2l-3z)
+\]</span> 此时得到 <span class="math display">\[
+F = 3mg(1-\frac{z}{l})
+\]</span></p>
+<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
+<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
+-\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
+\]</span> 两边移项，积分得到： <span class="math display">\[
+v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
+\]</span></p>
+<p>发现其中<span class="math inline">\(R\)</span>以及<span class="math inline">\(t\)</span>是未知的量，我们根据<span class="math inline">\(S=\int vdt\)</span>，</p>
+<p>得到 <span class="math display">\[
+\pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
+\\
+v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
+\]</span> 结果显然。</p>
 <blockquote>
-<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
-<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
+<p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
 </blockquote>
-<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
-<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
-\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
-<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
-P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
-\]</span></p>
 <blockquote>
-<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
-<p>可以这样理解：</p>
-<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
-<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
-<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
-<p>（粗浅认识，不足挂齿）</p>
+<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个<span class="math inline">\(\int v^{2}ds\)</span>积分，理论可以算出来，有空可以思考。</p>
 </blockquote>
 ]]></content>
       <tags>
-        <tag>分析</tag>
+        <tag>大物</tag>
       </tags>
   </entry>
   <entry>
@@ -364,6 +340,42 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
       </tags>
   </entry>
   <entry>
+    <title>广义积分 其二</title>
+    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
+    <content><![CDATA[<h1 id="广义积分基本定理">广义积分基本定理</h1>
+<blockquote>
+<p>关于无界函数的广义积分</p>
+<p>定义略</p>
+</blockquote>
+<h5 id="可以把这种积分看成前一篇的积分的反函数呀">可以把这种积分看成前一篇的积分的反函数呀！</h5>
+<h2 id="敛散性">敛散性</h2>
+<h3 id="其一cauchy收敛原理">其一：<span class="math inline">\(Cauchy\)</span>收敛原理</h3>
+<p><strong>定理：</strong>若<span class="math inline">\(a\)</span>是函数<span class="math inline">\(f(x)\)</span>的奇点，那么<span class="math inline">\(\int_{a}^{b}f(x)dx\)</span>收敛的条件是，对任意的正数<span class="math inline">\(\eta, \eta^{\prime}\)</span>积分<span class="math inline">\(\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx\)</span>是无穷小量。</p>
+<blockquote>
+<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
+<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
+</blockquote>
+<h3 id="不知道第几cauchy积分主值">不知道第几：<span class="math inline">\(Cauchy\)</span>积分主值</h3>
+<p><strong>定义：</strong>对于区间<span class="math inline">\([a,b]\)</span>其中有奇点<span class="math inline">\(c\)</span>，积分<span class="math inline">\(\int_{a}^{c}f(x)dx\)</span>与积分<span class="math inline">\(\int_{c}^{b}f(x)dx\)</span>并不单独存在，但是： <span class="math display">\[
+\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<p>却存在（收敛），称之为函数<span class="math inline">\(f(x)\)</span>的<span class="math inline">\(Cauchy\)</span>主值，可以用下式表示： <span class="math display">\[
+P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]
+\]</span></p>
+<blockquote>
+<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
+<p>可以这样理解：</p>
+<p>将数轴正负无穷连起来，如此便可以的到<span class="math inline">\(\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx\)</span></p>
+<p>当然这是不合适的，但是<span class="math inline">\(Cauchy\)</span>主值可以这样看。</p>
+<p>这里就是<span class="math inline">\(+\frac{1}{0}\&amp;-\frac{1}{0}\)</span>的一个体现？</p>
+<p>（粗浅认识，不足挂齿）</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>广义积分习题记录</title>
     <url>/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="广义积分习题">广义积分习题</h1>
@@ -411,6 +423,27 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
       </tags>
   </entry>
   <entry>
+    <title>指针操作相关</title>
+    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
+<blockquote>
+<p>一下午速成计划</p>
+</blockquote>
+<h2 id="指针定义">指针定义</h2>
+<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针">常量指针</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
+<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
+<h2 id="指针常量">指针常量</h2>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数组名与数组地址</title>
     <url>/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<h1 id="数组名与数组地址的简单记录">数组名与数组地址的简单记录</h1>
@@ -449,27 +482,6 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
       </tags>
   </entry>
   <entry>
-    <title>指针操作相关</title>
-    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
-<blockquote>
-<p>一下午速成计划</p>
-</blockquote>
-<h2 id="指针定义">指针定义</h2>
-<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针">常量指针</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
-<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量">指针常量</h2>
-]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>需要解决的问题</title>
     <url>/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="问题记录">问题记录</h1>
@@ -487,67 +499,6 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 ]]></content>
       <tags>
         <tag>本周问题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电磁学</title>
-    <url>/2020/04/21/%E7%94%B5%E7%A3%81%E5%AD%A6/</url>
-    <content><![CDATA[<h1 id="大物电磁学">大物电磁学</h1>
-<blockquote>
-<p>记一点简单模型吧，省的忘掉了。。。</p>
-</blockquote>
-<h2 id="电偶极子模型">电偶极子模型</h2>
-<p><strong>描述：</strong>两个等电荷量，电性相反的电荷组成的系统，对于任意外来电荷，电偶极子之间距离远小于试探电荷到电偶极子中点距离。</p>
-<p>并且引入：电偶极矩<span class="math inline">\(\boldsymbol{P}_{e}\)</span>，其中<span class="math inline">\(\boldsymbol{l}\)</span>是电偶极子间的距离。 <span class="math display">\[
-\boldsymbol{P}_{\mathrm{e}} = q\boldsymbol{l}
-\]</span></p>
-<blockquote>
-<p>好像<code>markdown</code>画图挺麻烦的，就不贴了，来个网址就行吧<a href="https://zh.wikipedia.org/wiki/偶極子" target="_blank" rel="noopener">维基百科上的定义</a></p>
-</blockquote>
-<p>根据目前所学，列两个相关知识点：</p>
-<h3 id="电场强度">电场强度</h3>
-<blockquote>
-<p>画图太难了吧。。。</p>
-</blockquote>
-<p>分两种比较好讨论的情况来说</p>
-<h4 id="偶极子连线上">偶极子连线上</h4>
-<h4 id="screen-shot-2020-04-28-at-22.16.28"><img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.16.28.png" alt="Screen Shot 2020-04-28 at 22.16.28" /></h4>
-<p>试探电荷子在正电荷右边，负电荷在正电荷左边，试探电荷到偶极子中点距离是<span class="math inline">\(r\)</span>。</p>
-<p>正电荷产生的电场： <span class="math display">\[
-\boldsymbol{E}_{+}=\boldsymbol{K} \frac{q}{r_{+}^{2}} \boldsymbol{e}_{r_{+}}
-\]</span></p>
-<p>负电荷同理： <span class="math display">\[
-\boldsymbol{E}_{-}=\boldsymbol{K} \frac{-q}{r_{-}^{2}} \boldsymbol{e}_{r_{-}}
-\]</span> 其中<span class="math inline">\(r_{+} = r-\frac{l}{2} ,r_{-}= r +\frac{1}{2}\)</span>;</p>
-<p>相加： <span class="math display">\[
-\boldsymbol{E}_{P}=\boldsymbol{K} q\left[\frac{1}{(r-l / 2)^{2}}-\frac{1}{(r+l / 2)^{2}}\right] \boldsymbol{e}
-\]</span> 据说可以用泰勒展开，但是数学功底不到位呀。。。勉强用多项式和小量才得到结果 <span class="math display">\[
-\boldsymbol{E} \approx \boldsymbol{K}\frac{\boldsymbol{p}_{e}}{r^{3}}
-\]</span> 留一个泰勒展开的位置吧：</p>
-<p><strong>泰勒展开化简</strong></p>
-<p>小量化简，高次小量就可以消去，于是我们将分母的<span class="math inline">\(r\)</span>提出来，得到<span class="math inline">\((1+x)^{n}\)</span>在<span class="math inline">\(0\)</span>的展开。</p>
-<h4 id="电偶极子中垂线上">电偶极子中垂线上</h4>
-<figure>
-<img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.17.48.png" alt="" /><figcaption>Screen Shot 2020-04-28 at 22.17.48</figcaption>
-</figure>
-<p>简单分析，两电荷在如图位置产生的电场大小相等，合成之后就是向左的<span class="math inline">\(\boldsymbol{E}_{\boldsymbol{p}}\)</span></p>
-<p>直接写<span class="math inline">\(\boldsymbol{E_{+}} \&amp; \boldsymbol{E_{+}}\)</span></p>
-<p><span class="math display">\[
-\boldsymbol{E_{+}} =\boldsymbol{K} \frac{q}{(\frac{l^{2}}{4}+r^{2})}
-\]</span> 之后 <span class="math display">\[
-\boldsymbol{E_{p}}= 2\boldsymbol{E_{+}}\cos \alpha
-\]</span></p>
-<p><span class="math display">\[
-\cos \alpha = \frac{l/2}{\sqrt{l^{2}/4+r^{2}}}
-\]</span></p>
-<p>故，此处场强是： <span class="math display">\[
-\boldsymbol{K}\frac{q\boldsymbol{l}}{2\left ( l^{2}/4 + r^{2}\right)^{\frac{3}{2}}}
-\]</span> 和上面一样，提出<span class="math inline">\(r^{2}\)</span>展开，发现只能保留<span class="math inline">\(1\)</span>，于是得到结果： <span class="math display">\[
-\boldsymbol{E_{P}}=-\frac{p_{\mathrm{e}}}{4 \pi \varepsilon_{0} r^{3}}
-\]</span> 电偶极子的力矩什么的就不贴了，套定义就行。</p>
-]]></content>
-      <tags>
-        <tag>大物</tag>
       </tags>
   </entry>
   <entry>
@@ -620,6 +571,67 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 </tbody>
 </table>
 <p>大概先写这么多，其他的介质间场的变化关系可以简单的推导出来，也就不赘述。</p>
+]]></content>
+      <tags>
+        <tag>大物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电磁学</title>
+    <url>/2020/04/21/%E7%94%B5%E7%A3%81%E5%AD%A6/</url>
+    <content><![CDATA[<h1 id="大物电磁学">大物电磁学</h1>
+<blockquote>
+<p>记一点简单模型吧，省的忘掉了。。。</p>
+</blockquote>
+<h2 id="电偶极子模型">电偶极子模型</h2>
+<p><strong>描述：</strong>两个等电荷量，电性相反的电荷组成的系统，对于任意外来电荷，电偶极子之间距离远小于试探电荷到电偶极子中点距离。</p>
+<p>并且引入：电偶极矩<span class="math inline">\(\boldsymbol{P}_{e}\)</span>，其中<span class="math inline">\(\boldsymbol{l}\)</span>是电偶极子间的距离。 <span class="math display">\[
+\boldsymbol{P}_{\mathrm{e}} = q\boldsymbol{l}
+\]</span></p>
+<blockquote>
+<p>好像<code>markdown</code>画图挺麻烦的，就不贴了，来个网址就行吧<a href="https://zh.wikipedia.org/wiki/偶極子" target="_blank" rel="noopener">维基百科上的定义</a></p>
+</blockquote>
+<p>根据目前所学，列两个相关知识点：</p>
+<h3 id="电场强度">电场强度</h3>
+<blockquote>
+<p>画图太难了吧。。。</p>
+</blockquote>
+<p>分两种比较好讨论的情况来说</p>
+<h4 id="偶极子连线上">偶极子连线上</h4>
+<h4 id="screen-shot-2020-04-28-at-22.16.28"><img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.16.28.png" alt="Screen Shot 2020-04-28 at 22.16.28" /></h4>
+<p>试探电荷子在正电荷右边，负电荷在正电荷左边，试探电荷到偶极子中点距离是<span class="math inline">\(r\)</span>。</p>
+<p>正电荷产生的电场： <span class="math display">\[
+\boldsymbol{E}_{+}=\boldsymbol{K} \frac{q}{r_{+}^{2}} \boldsymbol{e}_{r_{+}}
+\]</span></p>
+<p>负电荷同理： <span class="math display">\[
+\boldsymbol{E}_{-}=\boldsymbol{K} \frac{-q}{r_{-}^{2}} \boldsymbol{e}_{r_{-}}
+\]</span> 其中<span class="math inline">\(r_{+} = r-\frac{l}{2} ,r_{-}= r +\frac{1}{2}\)</span>;</p>
+<p>相加： <span class="math display">\[
+\boldsymbol{E}_{P}=\boldsymbol{K} q\left[\frac{1}{(r-l / 2)^{2}}-\frac{1}{(r+l / 2)^{2}}\right] \boldsymbol{e}
+\]</span> 据说可以用泰勒展开，但是数学功底不到位呀。。。勉强用多项式和小量才得到结果 <span class="math display">\[
+\boldsymbol{E} \approx \boldsymbol{K}\frac{\boldsymbol{p}_{e}}{r^{3}}
+\]</span> 留一个泰勒展开的位置吧：</p>
+<p><strong>泰勒展开化简</strong></p>
+<p>小量化简，高次小量就可以消去，于是我们将分母的<span class="math inline">\(r\)</span>提出来，得到<span class="math inline">\((1+x)^{n}\)</span>在<span class="math inline">\(0\)</span>的展开。</p>
+<h4 id="电偶极子中垂线上">电偶极子中垂线上</h4>
+<figure>
+<img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/Screen%20Shot%202020-04-28%20at%2022.17.48.png" alt="" /><figcaption>Screen Shot 2020-04-28 at 22.17.48</figcaption>
+</figure>
+<p>简单分析，两电荷在如图位置产生的电场大小相等，合成之后就是向左的<span class="math inline">\(\boldsymbol{E}_{\boldsymbol{p}}\)</span></p>
+<p>直接写<span class="math inline">\(\boldsymbol{E_{+}} \&amp; \boldsymbol{E_{+}}\)</span></p>
+<p><span class="math display">\[
+\boldsymbol{E_{+}} =\boldsymbol{K} \frac{q}{(\frac{l^{2}}{4}+r^{2})}
+\]</span> 之后 <span class="math display">\[
+\boldsymbol{E_{p}}= 2\boldsymbol{E_{+}}\cos \alpha
+\]</span></p>
+<p><span class="math display">\[
+\cos \alpha = \frac{l/2}{\sqrt{l^{2}/4+r^{2}}}
+\]</span></p>
+<p>故，此处场强是： <span class="math display">\[
+\boldsymbol{K}\frac{q\boldsymbol{l}}{2\left ( l^{2}/4 + r^{2}\right)^{\frac{3}{2}}}
+\]</span> 和上面一样，提出<span class="math inline">\(r^{2}\)</span>展开，发现只能保留<span class="math inline">\(1\)</span>，于是得到结果： <span class="math display">\[
+\boldsymbol{E_{P}}=-\frac{p_{\mathrm{e}}}{4 \pi \varepsilon_{0} r^{3}}
+\]</span> 电偶极子的力矩什么的就不贴了，套定义就行。</p>
 ]]></content>
       <tags>
         <tag>大物</tag>
