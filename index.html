@@ -104,43 +104,37 @@
     <div>
       <h2 class="title"><a href="/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/">大物复习</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-06-16</span>
-      <p><h1 id="大物复习题记录">大物复习题记录</h1>
-<h2 id="质点力学">质点力学</h2>
-<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
+      <p><h1 id="大物复习题记录"><a href="#大物复习题记录" class="headerlink" title="大物复习题记录"></a>大物复习题记录</h1><h2 id="质点力学"><a href="#质点力学" class="headerlink" title="质点力学"></a>质点力学</h2><p><strong>例</strong> 长度为$l$，质量为$m$的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力$F$的函数.</p>
 <p><strong>解</strong></p>
 <blockquote>
 <p>利用质心运动定理</p>
 </blockquote>
-<p>先计算质心的坐标 <span class="math display">\[
-z_{c}= \frac{\int zdm}{m} 
-\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
-\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
-\]</span> 对绳子列质心方程： <span class="math display">\[
-F_{合}= ma_{c}
-\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
-<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
-<p>一通化简得到 <span class="math display">\[
-a_{c} = \frac{g}{l}(2l-3z)
-\]</span> 此时得到 <span class="math display">\[
-F = 3mg(1-\frac{z}{l})
-\]</span></p>
-<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
-<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
--\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
-\]</span> 两边移项，积分得到： <span class="math display">\[
-v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
-\]</span></p>
-<p>发现其中<span class="math inline">\(R\)</span>以及<span class="math inline">\(t\)</span>是未知的量，我们根据<span class="math inline">\(S=\int vdt\)</span>，</p>
-<p>得到 <span class="math display">\[
+<p>先计算质心的坐标</p>
+<script type="math/tex; mode=display">
+z_{c}= \frac{\int zdm}{m}</script><p>令绳子线密度是$\lambda = \frac{m}{l}$，我们将上式中$dm$化成关于$dz$的量，</p>
+<script type="math/tex; mode=display">
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}</script><p>对绳子列质心方程：</p>
+<script type="math/tex; mode=display">
+F_{合}= ma_{c}</script><p>因为$a_c=\frac{dv_{c}}{dt}$，$v_c= dz_c /dt$</p>
+<p>其中$dz/dt = v_绳$（自由落体速度），</p>
+<p>一通化简得到</p>
+<script type="math/tex; mode=display">
+a_{c} = \frac{g}{l}(2l-3z)</script><p>此时得到</p>
+<script type="math/tex; mode=display">
+F = 3mg(1-\frac{z}{l})</script><p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为$m$的滑块以速度$v_{0}$，沿切线方向进入屏障，滑块与屏障之间摩擦因数为$\mu_{k}$，计算滑块离开屏障时的动能。    </p>
+<p><strong>解</strong> 牛顿定律分析运动过程：</p>
+<script type="math/tex; mode=display">
+-\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}</script><p>两边移项，积分得到：</p>
+<script type="math/tex; mode=display">
+v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}</script><p>发现其中$R$以及$t$是未知的量，我们根据$S=\int vdt$，</p>
+<p>得到</p>
+<script type="math/tex; mode=display">
 \pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
 \\
-v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
-\]</span> 结果显然。</p>
+v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}</script><p>结果显然。</p>
 <blockquote>
 <p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
-</blockquote>
-<blockquote>
-<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个<span class="math inline">\(\int v^{2}ds\)</span>积分，理论可以算出来，有空可以思考。</p>
+<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个$\int v^{2}ds$积分，理论可以算出来，有空可以思考。</p>
 </blockquote>
 </p>
       <div class="post-button"><a class="btn" href="/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
@@ -150,144 +144,147 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">希腊字母</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-06-08</span>
-      <p><h1 id="不太好记的latex符号表达">不太好记的LaTeX符号表达</h1>
-<h2 id="希腊字母">希腊字母</h2>
+      <p><h1 id="不太好记的LaTeX符号表达"><a href="#不太好记的LaTeX符号表达" class="headerlink" title="不太好记的LaTeX符号表达"></a>不太好记的LaTeX符号表达</h1><h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><div class="table-container">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Alpha\)</span></td>
+<tr>
+<td>$\alpha$ $\Alpha$</td>
 <td><code>\alpha</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\beta\)</span> <span class="math inline">\(\Beta\)</span></td>
+<tr>
+<td>$\beta$ $\Beta$</td>
 <td><code>\beta</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\gamma\)</span> <span class="math inline">\(\Gamma\)</span></td>
+<tr>
+<td>$\gamma$ $\Gamma$</td>
 <td><code>\gamma</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\delta\)</span> <span class="math inline">\(\Delta\)</span></td>
+<tr>
+<td>$\delta$ $\Delta$</td>
 <td><code>\delta</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\epsilon\)</span> <span class="math inline">\(\Epsilon\)</span></td>
+<tr>
+<td>$\epsilon$ $\Epsilon$</td>
 <td><code>\epsilon</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\varepsilon\)</span></td>
+<tr>
+<td>$\varepsilon$</td>
 <td><code>\varepsilon</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\zeta\)</span> <span class="math inline">\(\Zeta\)</span></td>
+<tr>
+<td>$\zeta$ $\Zeta$</td>
 <td><code>\zeta</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\eta\)</span> <span class="math inline">\(\Eta\)</span></td>
+<tr>
+<td>$\eta$ $\Eta$</td>
 <td><code>\eta</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\theta\)</span> <span class="math inline">\(\Theta\)</span></td>
+<tr>
+<td>$\theta$ $\Theta$</td>
 <td><code>\theta</code></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="math inline">\(\iota\)</span> <span class="math inline">\(\Iota\)</span></td>
+<tr>
+<td>$\iota$ $\Iota$</td>
 <td><code>\iota</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\kappa\)</span> <span class="math inline">\(\Kappa\)</span></td>
+<tr>
+<td>$\kappa$ $\Kappa$</td>
 <td><code>\kappa</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\lambda\)</span> <span class="math inline">\(\Lambda\)</span></td>
+<tr>
+<td>$\lambda$ $\Lambda$</td>
 <td><code>\lambda</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\mu\)</span> <span class="math inline">\(\Mu\)</span></td>
+<tr>
+<td>$\mu$ $\Mu$</td>
 <td><code>\mu</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\nu\)</span> <span class="math inline">\(\Nu\)</span></td>
+<tr>
+<td>$\nu$ $\Nu$</td>
 <td><code>\nu</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\xi\)</span> <span class="math inline">\(\Xi\)</span></td>
+<tr>
+<td>$\xi$ $\Xi$</td>
 <td><code>\xi</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\omicron\)</span> <span class="math inline">\(\Omicron\)</span></td>
+<tr>
+<td>$\omicron$ $\Omicron$</td>
 <td><code>\omicron</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\pi\)</span> <span class="math inline">\(\Pi\)</span></td>
+<tr>
+<td>$\pi$ $\Pi$</td>
 <td><code>\pi</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\rho\)</span> <span class="math inline">\(\Rho\)</span></td>
+<tr>
+<td>$\rho$ $\Rho$</td>
 <td><code>\rho</code></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><span class="math inline">\(\sigma\)</span> <span class="math inline">\(\Sigma\)</span></td>
+<tr>
+<td>$\sigma$ $\Sigma$</td>
 <td><code>\sigma</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\tau\)</span> <span class="math inline">\(\Tau\)</span></td>
+<tr>
+<td>$\tau$ $\Tau$</td>
 <td><code>\tau</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\upsilon\)</span> <span class="math inline">\(\Upsilon\)</span></td>
+<tr>
+<td>$\upsilon$ $\Upsilon$</td>
 <td><code>\upsilon</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\phi\)</span> <span class="math inline">\(\Phi\)</span></td>
+<tr>
+<td>$\phi$ $\Phi$</td>
 <td><code>\phi</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\varphi\)</span></td>
+<tr>
+<td>$\varphi$</td>
 <td><code>\varphi</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\chi\)</span> <span class="math inline">\(\Chi\)</span></td>
+<tr>
+<td>$\chi$ $\Chi$</td>
 <td><code>\chi</code></td>
 </tr>
-<tr class="odd">
-<td><span class="math inline">\(\psi\)</span> <span class="math inline">\(\Psi\)</span></td>
+<tr>
+<td>$\psi$ $\Psi$</td>
 <td><code>\psi</code></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\omega\)</span> <span class="math inline">\(\Omega\)</span></td>
+<tr>
+<td>$\omega$ $\Omega$</td>
 <td><code>\omega</code></td>
 </tr>
 </tbody>
 </table>
-<p>## 数学函数</p>
-</p>
+</div>
+<h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2></p>
       <div class="post-button"><a class="btn" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
@@ -295,62 +292,61 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/06/04/%E7%94%B5%E7%A3%81%E7%9A%84%E5%AF%B9%E6%AF%94/">电磁的对比</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-06-04</span>
-      <p><h1 id="电磁学相似问题的独立总结">电磁学相似问题的独立总结</h1>
-<blockquote>
+      <p><h1 id="电磁学相似问题的独立总结"><a href="#电磁学相似问题的独立总结" class="headerlink" title="电磁学相似问题的独立总结"></a>电磁学相似问题的独立总结</h1><blockquote>
 <p>有不正确的地方会在发现之后立刻修改的。</p>
 </blockquote>
-<h2 id="直接列表">直接列表</h2>
+<h2 id="直接列表"><a href="#直接列表" class="headerlink" title="直接列表"></a>直接列表</h2><div class="table-container">
 <table>
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 45%" />
-<col style="width: 45%" />
-</colgroup>
 <thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">电学</th>
-<th style="text-align: center;">磁学</th>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">电学</th>
+<th style="text-align:center">磁学</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>场强大小</strong></td>
-<td style="text-align: center;">库伦定律(电场)：<span class="math inline">\(E = k_{1}\frac{Q}{r^{2}}\)</span></td>
-<td style="text-align: center;">毕奥-萨法尔定律：<span class="math inline">\(dB=k_{2}\frac{Idl}{r^{2}}\)</span></td>
+<tr>
+<td style="text-align:center"><strong>场强大小</strong></td>
+<td style="text-align:center">库伦定律(电场)：$E = k_{1}\frac{Q}{r^{2}}$</td>
+<td style="text-align:center">毕奥-萨法尔定律：$dB=k_{2}\frac{Idl}{r^{2}}$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><strong>高斯定律</strong></td>
-<td style="text-align: center;">电高斯定律：通过高斯面的电场线条数和面内部的电荷量成正比</td>
-<td style="text-align: center;">磁高斯定律：通过高斯面的磁感线条数为零</td>
+<tr>
+<td style="text-align:center"><strong>高斯定律</strong></td>
+<td style="text-align:center">电高斯定律：通过高斯面的电场线条数和面内部的电荷量成正比</td>
+<td style="text-align:center">磁高斯定律：通过高斯面的磁感线条数为零</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>环路定理</strong></td>
-<td style="text-align: center;"><span class="math inline">\(\int_{l}Eds = 0\)</span>(保守场)</td>
-<td style="text-align: center;"><span class="math inline">\(\int_{l}Bds = \mu I\)</span></td>
+<tr>
+<td style="text-align:center"><strong>环路定理</strong></td>
+<td style="text-align:center">$\int_{l}Eds = 0$(保守场)</td>
+<td style="text-align:center">$\int_{l}Bds = \mu I$</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><strong>力矩相关</strong></td>
-<td style="text-align: center;">电偶极矩<span class="math inline">\(p\)</span></td>
-<td style="text-align: center;">分子磁矩<span class="math inline">\(m\)</span></td>
+<tr>
+<td style="text-align:center"><strong>力矩相关</strong></td>
+<td style="text-align:center">电偶极矩$p$</td>
+<td style="text-align:center">分子磁矩$m$</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>介质极化</strong></td>
-<td style="text-align: center;">电极化强度：<span class="math inline">\(\left |\frac{\sum_{i}p_{i}}{\Delta V}\right | = \sigma\)</span>（单位体积介质表面电荷量）</td>
-<td style="text-align: center;">磁化强度：<span class="math inline">\(\left |\frac{\sum m}{\Delta V}\right |=i\)</span>（单位长度介质表面分子电流）</td>
+<tr>
+<td style="text-align:center"><strong>介质极化</strong></td>
+<td style="text-align:center">电极化强度：$\left</td>
+<td style="text-align:center">\frac{\sum_{i}p_{i}}{\Delta V}\right</td>
+<td>= \sigma$（单位体积介质表面电荷量）</td>
+<td>磁化强度：$\left</td>
+<td>\frac{\sum m}{\Delta V}\right</td>
+<td>=i$（单位长度介质表面分子电流）</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;"><strong>介质场强</strong></td>
-<td style="text-align: center;">介质高斯定律：<span class="math inline">\(\int Dds = q\)</span></td>
-<td style="text-align: center;">介质环路定理：<span class="math inline">\(\int Hdl = I\)</span></td>
+<tr>
+<td style="text-align:center"><strong>介质场强</strong></td>
+<td style="text-align:center">介质高斯定律：$\int Dds = q$</td>
+<td style="text-align:center">介质环路定理：$\int Hdl = I$</td>
 </tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>衍生关系</strong></td>
-<td style="text-align: center;"><span class="math inline">\(D=\sigma E\)</span></td>
-<td style="text-align: center;">$B = H $</td>
+<tr>
+<td style="text-align:center"><strong>衍生关系</strong></td>
+<td style="text-align:center">$D=\sigma E$</td>
+<td style="text-align:center">$B = \mu H $</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>大概先写这么多，其他的介质间场的变化关系可以简单的推导出来，也就不赘述。</p>
 </p>
       <div class="post-button"><a class="btn" href="/2020/06/04/%E7%94%B5%E7%A3%81%E7%9A%84%E5%AF%B9%E6%AF%94/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
@@ -360,35 +356,28 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/">函数项级数</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-05-19</span>
-      <p><h1 id="函数项级数">函数项级数</h1>
-<blockquote>
+      <p><h1 id="函数项级数"><a href="#函数项级数" class="headerlink" title="函数项级数"></a>函数项级数</h1><blockquote>
 <p>一些思考，大多因为不听课。。。</p>
 </blockquote>
-<h2 id="一致收敛">一致收敛</h2>
-<h3 id="q1-一致收敛的判定">Q1: 一致收敛的判定</h3>
-<p>为什么是 <span class="math display">\[
-\lim_{n \rightarrow \infty}\sup_{x \in \boldsymbol{X}}|S_{n}(x)-S(x)|= 0
-\]</span> 这里的上极限，是否可以去掉？</p>
-<h3 id="思考">思考</h3>
-<p>因为上极限的内容是绝对值，此处上极限是零和极限是零无区别，</p>
-<h3 id="思考-1">思考</h3>
-<p>再证明一致收敛的时候，上极限的可用性极大，上极限的放缩：<span class="math inline">\(\sup_{x\in\boldsymbol{X}} f(x)\geq f(x_{0})\)</span>其中<span class="math inline">\(x_{0}\)</span>是任意区间内的数。</p>
+<h2 id="一致收敛"><a href="#一致收敛" class="headerlink" title="一致收敛"></a>一致收敛</h2><h3 id="Q1-一致收敛的判定"><a href="#Q1-一致收敛的判定" class="headerlink" title="Q1: 一致收敛的判定"></a>Q1: 一致收敛的判定</h3><p>为什么是</p>
+<script type="math/tex; mode=display">
+\lim_{n \rightarrow \infty}\sup_{x \in \boldsymbol{X}}|S_{n}(x)-S(x)|= 0</script><p>这里的上极限，是否可以去掉？</p>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>因为上极限的内容是绝对值，此处上极限是零和极限是零无区别，</p>
+<h3 id="思考-1"><a href="#思考-1" class="headerlink" title="思考"></a>思考</h3><p>再证明一致收敛的时候，上极限的可用性极大，上极限的放缩：$\sup_{x\in\boldsymbol{X}} f(x)\geq f(x_{0})$其中$x_{0}$是任意区间内的数。</p>
 <p>简单的就能判断出不符合的情况。</p>
-<h3 id="习题">习题</h3>
-<p><strong>判断</strong> <span class="math display">\[
-\sum_{n = 0}^{+\infty}2^{n}\sin\frac{1}{3^{n}x}, \quad x\in (0,+\infty)
-\]</span> <strong>的一致敛散性。</strong></p>
+<h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><p><strong>判断</strong></p>
+<script type="math/tex; mode=display">
+\sum_{n = 0}^{+\infty}2^{n}\sin\frac{1}{3^{n}x}, \quad x\in (0,+\infty)</script><p><strong>的一致敛散性。</strong></p>
 <p><strong>解：</strong></p>
-<p>取<span class="math inline">\(n\)</span>到正无穷的极限，知道<span class="math inline">\(S(x) = 0\)</span>，那么取上极限分析就行了， <span class="math display">\[
-\lim_{n \rightarrow +\infty} \|S_{n}-S\| = \sup_{x\in [0,1]}|S_{n}(x)|\geq |S_{n}\left (\frac{2^{n}}{3^{n}}\right)
-\]</span> 显然不是零，并不一致收敛。</p>
+<p>取$n$到正无穷的极限，知道$S(x) = 0$，那么取上极限分析就行了，</p>
+<script type="math/tex; mode=display">
+\lim_{n \rightarrow +\infty} \|S_{n}-S\| = \sup_{x\in [0,1]}|S_{n}(x)|\geq |S_{n}\left (\frac{2^{n}}{3^{n}}\right)</script><p>显然不是零，并不一致收敛。</p>
 <blockquote>
-<p>这里若是把左边的零去掉，换成任意<span class="math inline">\(\sigma &gt; 0\)</span>，就可以得到一致收敛的啦。</p>
+<p>这里若是把左边的零去掉，换成任意$\sigma &gt; 0$，就可以得到一致收敛的啦。</p>
 </blockquote>
-<p><strong>判断</strong> <span class="math display">\[
-\sum_{n=0}^{+\infty}\frac{x^2}{(1+nx)^{2}}
-\]</span></p>
-<p>的敛散性。</p>
+<p><strong>判断</strong></p>
+<script type="math/tex; mode=display">
+\sum_{n=0}^{+\infty}\frac{x^2}{(1+nx)^{2}}</script><p>的敛散性。</p>
 </p>
       <div class="post-button"><a class="btn" href="/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
@@ -397,20 +386,16 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/">指针操作相关</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-05-17</span>
-      <p><h1 id="指针操作相关">指针操作相关</h1>
-<blockquote>
+      <p><h1 id="指针操作相关"><a href="#指针操作相关" class="headerlink" title="指针操作相关"></a>指针操作相关</h1><blockquote>
 <p>一下午速成计划</p>
 </blockquote>
-<h2 id="指针定义">指针定义</h2>
-<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针">常量指针</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="指针定义"><a href="#指针定义" class="headerlink" title="指针定义"></a>指针定义</h2><p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
 <p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量">指针常量</h2>
-</p>
+<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2></p>
       <div class="post-button"><a class="btn" href="/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
@@ -418,16 +403,14 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/">数组名与数组地址</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-05-16</span>
-      <p><h1 id="数组名与数组地址的简单记录">数组名与数组地址的简单记录</h1>
-<blockquote>
+      <p><h1 id="数组名与数组地址的简单记录"><a href="#数组名与数组地址的简单记录" class="headerlink" title="数组名与数组地址的简单记录"></a>数组名与数组地址的简单记录</h1><blockquote>
 <p>粗浅认识，请多多指教</p>
 </blockquote>
 <p>想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是<code>&amp;iArray</code>的形式，我一想，这也是地址，为啥不用<code>iArray</code>呢。。。</p>
 <blockquote>
 <p><a href="https://blog.csdn.net/jingzi123456789/article/details/66478310" target="_blank" rel="noopener">本文引用</a></p>
 </blockquote>
-<h2 id="iarray与iarray是省政府和市政府的区别"><code>iArray</code>与<code>&amp;iArray</code>是省政府和市政府的区别</h2>
-<p>这里有一个例子可以清晰看出差别</p>
+<h2 id="iArray与-amp-iArray是省政府和市政府的区别"><a href="#iArray与-amp-iArray是省政府和市政府的区别" class="headerlink" title="iArray与&amp;iArray是省政府和市政府的区别"></a><code>iArray</code>与<code>&amp;iArray</code>是省政府和市政府的区别</h2><p>这里有一个例子可以清晰看出差别</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _size_ (5)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> xiArray[_size_] = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"        xArray = "</span>&lt;&lt;xiArray&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//-64424496976</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"       &amp;xArray = "</span>&lt;&lt; &amp;xiArray&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"    xArray + 1 = "</span>&lt;&lt; xiArray  + <span class="number">1</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&amp;xArray[0] + 1 = "</span>&lt;&lt;&amp;xiArray[<span class="number">0</span>] + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496972</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"   &amp;xArray + 1 = "</span>&lt;&lt; &amp;xiArray + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496956</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>得到的结果：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">        xArray = 0x1000030b0</span><br><span class="line">       &amp;xArray = 0x1000030b0</span><br><span class="line">    xArray + 1 = 0x1000030b4</span><br><span class="line">&amp;xArray[0] + 1 = 0x1000030b4</span><br><span class="line">   &amp;xArray + 1 = 0x1000030c4</span><br></pre></td></tr></table></figure>
@@ -445,9 +428,7 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-05-03</span>
-      <p><h1 id="正则表达式学习记录">正则表达式学习记录</h1>
-<h2 id="section"></h2>
-</p>
+      <p><h1 id="正则表达式学习记录"><a href="#正则表达式学习记录" class="headerlink" title="正则表达式学习记录"></a>正则表达式学习记录</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2></p>
       <div class="post-button"><a class="btn" href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
@@ -455,46 +436,40 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/">广义积分习题记录</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-05-03</span>
-      <p><h1 id="广义积分习题">广义积分习题</h1>
-<blockquote>
+      <p><h1 id="广义积分习题"><a href="#广义积分习题" class="headerlink" title="广义积分习题"></a>广义积分习题</h1><blockquote>
 <p>上课不听讲只能自己看书😭</p>
 </blockquote>
-<h2 id="记一个abel和dirichlet判别法运用的">记一个<span class="math inline">\(Abel\)</span>和<span class="math inline">\(Dirichlet\)</span>判别法运用的🌰</h2>
-<p><strong>==例==：</strong>讨论 <span class="math display">\[
-\int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda &gt; 0)
-\]</span> 的敛散性。</p>
+<h2 id="记一个-Abel-和-Dirichlet-判别法运用的🌰"><a href="#记一个-Abel-和-Dirichlet-判别法运用的🌰" class="headerlink" title="记一个$Abel$和$Dirichlet$判别法运用的🌰"></a>记一个$Abel$和$Dirichlet$判别法运用的🌰</h2><p><strong>==例==：</strong>讨论</p>
+<script type="math/tex; mode=display">
+\int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda > 0)</script><p>的敛散性。</p>
 <p><strong>解：</strong></p>
-<p>==1⃣️ 条件收敛性==</p>
-<p>由<span class="math inline">\(Dirichlet\)</span>判别法知道，<span class="math inline">\(\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx\)</span>是收敛的，另一部分，<span class="math inline">\(\arctan x\)</span>是有界的，根据<span class="math inline">\(Abel\)</span>判别法很简单就得到了整个积分是收敛的。</p>
+<p>==1⃣️ 条件收敛性== </p>
+<p>由$Dirichlet$判别法知道，$\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx$是收敛的，另一部分，$\arctan x$是有界的，根据$Abel$判别法很简单就得到了整个积分是收敛的。</p>
 <p>2⃣️ 绝对收敛性</p>
-<p>放缩一下： <span class="math display">\[
-\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &lt; \left |\frac{\pi}{2}\frac{\sin x}{x^{\lambda}} \right |
-\]</span> 简单分两种情况</p>
-<p>其一：<span class="math inline">\(\lambda &gt; 1\)</span>时</p>
+<p>放缩一下：</p>
+<script type="math/tex; mode=display">
+\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | < \left |\frac{\pi}{2}\frac{\sin x}{x^{\lambda}} \right |</script><p>简单分两种情况</p>
+<p>其一：$\lambda &gt; 1$时</p>
 <p>直接收敛没啥好说的。</p>
-<p>其二： $ 0&lt;$时</p>
-<p>由于是定义在无穷区间上的积分，可以取足够大的<span class="math inline">\(x\)</span>来分析问题，</p>
-<p>必存在一个时刻，<span class="math inline">\(\arctan x &gt; 1\)</span>，并且有 <span class="math inline">\(\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &gt; \left |\frac{\sin x}{x^{\lambda}}\right |\)</span> ，基本操作一下，把绝对值放缩<span class="math inline">\(|\sin x|&gt; \sin ^{2}x\)</span></p>
-<p>这里用一手半角公式，得到<span class="math inline">\(k\frac{1}{x^{2}}\)</span>和另一个可以用<span class="math inline">\(Dirichlet\)</span>判别法得到收敛的函数，于是，发散就得到了。</p>
-<h3 id="记下这个例子大致就能掌握ad判别法了">记下这个例子大致就能掌握AD判别法了</h3>
-<h2 id="记一个有关三角函数的">记一个有关三角函数的🌰</h2>
-<p><strong>例：</strong>判别广义积分 <span class="math display">\[
-\int _{0}^{+\infty}\frac{xdx}{1+x^{4}\sin^2{x}}
-\]</span></p>
-<p>的收敛性。</p>
+<p>其二： $ 0&lt;\lambda \leq 1$时</p>
+<p>由于是定义在无穷区间上的积分，可以取足够大的$x$来分析问题，</p>
+<p>必存在一个时刻，$\arctan x &gt; 1$，并且有 $\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &gt; \left |\frac{\sin x}{x^{\lambda}}\right |$ ，基本操作一下，把绝对值放缩$|\sin x|&gt; \sin ^{2}x$</p>
+<p>这里用一手半角公式，得到$k\frac{1}{x^{2}}$和另一个可以用$Dirichlet$判别法得到收敛的函数，于是，发散就得到了。</p>
+<h3 id="记下这个例子大致就能掌握AD判别法了"><a href="#记下这个例子大致就能掌握AD判别法了" class="headerlink" title="记下这个例子大致就能掌握AD判别法了"></a>记下这个例子大致就能掌握AD判别法了</h3><h2 id="记一个有关三角函数的🌰"><a href="#记一个有关三角函数的🌰" class="headerlink" title="记一个有关三角函数的🌰"></a>记一个有关三角函数的🌰</h2><p><strong>例：</strong>判别广义积分</p>
+<script type="math/tex; mode=display">
+\int _{0}^{+\infty}\frac{xdx}{1+x^{4}\sin^2{x}}</script><p>的收敛性。</p>
 <p><strong>解：</strong>先说结论，发散。</p>
-<p>不妨先考虑一下<span class="math inline">\(\int_{0}^{n\pi}f(x)dx\)</span>的积分。</p>
+<p>不妨先考虑一下$\int_{0}^{n\pi}f(x)dx$的积分。</p>
 <p>可以转化成一个级数的问题了，</p>
-<p>即 <span class="math display">\[
-\int_{0}^{n \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}=\sum_{k=1}^{n} \int_{(k-1) \pi}^{k \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}
-\]</span> 令右边的各项分别是：<span class="math inline">\(u_{k}=\int _{(k-1)\pi} ^{k\pi}\frac{xdx}{1+x^{4} \sin ^{2} x}\)</span></p>
-<p>把<span class="math inline">\(x\)</span>放缩一下，得到： <span class="math display">\[
-\begin{aligned} u_{k} &amp; \geq(k-1) \pi \int_{(k-1) \pi}^{k \pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &amp;=(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &amp; \geq(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} x^{2}} \\ &amp;=\frac{(k-1) \pi}{(k \pi)^{2}} \int_{0}^{(k \pi)^{2} \pi} \frac{d t}{1+t^{2}} \\ &amp;=\frac{k-1}{\pi k^{2}} \arctan \left(k^{2} \pi^{3}\right) \end{aligned}
-\]</span> 对于足够大的<span class="math inline">\(k\)</span>，后面的反三角可以放缩成1，而之后显然是一个 <span class="math display">\[
-\sum_{k = 1}^{n} \frac{1}{k}
-\]</span> 的求和，显然发散。</p>
-<h3 id="总结一下就是说这种带有三角函数的积分等问题可以将各个循环单独出来放缩这样可以将原本难以放缩的方向简单放出来">总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。</h3>
-</p>
+<p>即</p>
+<script type="math/tex; mode=display">
+\int_{0}^{n \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}=\sum_{k=1}^{n} \int_{(k-1) \pi}^{k \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}</script><p>令右边的各项分别是：$u_{k}=\int _{(k-1)\pi} ^{k\pi}\frac{xdx}{1+x^{4} \sin ^{2} x}$</p>
+<p>把$x$放缩一下，得到：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} u_{k} & \geq(k-1) \pi \int_{(k-1) \pi}^{k \pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &=(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ & \geq(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} x^{2}} \\ &=\frac{(k-1) \pi}{(k \pi)^{2}} \int_{0}^{(k \pi)^{2} \pi} \frac{d t}{1+t^{2}} \\ &=\frac{k-1}{\pi k^{2}} \arctan \left(k^{2} \pi^{3}\right) \end{aligned}</script><p>对于足够大的$k$，后面的反三角可以放缩成1，而之后显然是一个</p>
+<script type="math/tex; mode=display">
+\sum_{k = 1}^{n} \frac{1}{k}</script><p>的求和，显然发散。</p>
+<h3 id="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"><a href="#总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。" class="headerlink" title="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"></a>总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。</h3></p>
       <div class="post-button"><a class="btn" href="/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
   </div>
@@ -502,9 +477,7 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/04/26/Thread-1-signal-SIGABRT/">Thread 1: signal SIGABRT</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-26</span>
-      <p><h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
-<h2 id="c数组中">C++数组中</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <p><h1 id="遇见的Thread-1-signal-SIGABRT问题记录"><a href="#遇见的Thread-1-signal-SIGABRT问题记录" class="headerlink" title="遇见的Thread 1: signal SIGABRT问题记录"></a>遇见的Thread 1: signal SIGABRT问题记录</h1><h2 id="C-数组中"><a href="#C-数组中" class="headerlink" title="C++数组中"></a>C++数组中</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
 <p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
 <blockquote>
@@ -518,9 +491,7 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
     <div>
       <h2 class="title"><a href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">C++输出相关问题</a></h2>
       <span class="lx-post-detail"><i class="fa fa-calendar-o"></i> 2020-04-26</span>
-      <p><h1 id="c基本问题">C++基本问题</h1>
-<h2 id="一些输出函数模版">一些输出函数模版</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      <p><h1 id="C-基本问题"><a href="#C-基本问题" class="headerlink" title="C++基本问题"></a>C++基本问题</h1><h2 id="一些输出函数模版"><a href="#一些输出函数模版" class="headerlink" title="一些输出函数模版"></a>一些输出函数模版</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::showpoint);  <span class="comment">// 设左对齐，以一般实数方式显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">5</span>);       <span class="comment">// 设置除小数点外有五位有效数字 </span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">width</span>(<span class="number">10</span>);          <span class="comment">// 设置显示域宽10 </span></span><br><span class="line">    <span class="built_in">cout</span>.<span class="built_in">fill</span>(<span class="string">'*'</span>);          <span class="comment">// 在显示区域空白处用*填充</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left);  <span class="comment">// 清除状态左对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::right);   <span class="comment">// 设置右对齐</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.456789</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::fixed);    <span class="comment">// 设左对齐，以固定小数位显示</span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);    <span class="comment">// 设置实数显示三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">999.123456</span>&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;resetiosflags(ios::left|ios::fixed);  <span class="comment">//清除状态左对齐和定点格式</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;setiosflags(ios::left|ios::scientific);    <span class="comment">//设置左对齐，以科学技术法显示 </span></span><br><span class="line">    <span class="built_in">cout</span>.precision(<span class="number">3</span>);   <span class="comment">//设置保留三位小数</span></span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="number">123.45678</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </p>
       <div class="post-button"><a class="btn" href="/2020/04/26/C-%E8%BE%93%E5%87%BA%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" rel="noopener"><i class="fa fa-angle-double-right fa-fw"></i>阅读更多</a></div>
     </div>
