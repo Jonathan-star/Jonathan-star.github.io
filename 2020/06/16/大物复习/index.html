@@ -1,281 +1,345 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>大物复习 | weiwei的摸鱼生活</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="weiwei">
-  <meta name="keywords" content="math, swift, C++, python">
-  <meta name="description" content="">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'lx',
-    version: '0.3.9',
-    localsearch:{
-      "enable": true,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'search.xml'
-  };
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="weiwei">
+
+
+    <meta name="subtitle" content="来摸鱼吧">
+
+
+
+    <meta name="keywords" content="math, swift, C++, python">
+
+
+<title>大物复习 | weiwei的摸鱼生活</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-  <link rel="shortcut icon" href="/Fish-tank.svg">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
 
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="jquery.jside.menu.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "green",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+        
+    
+
+
 <meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="single">
-<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
-<div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Search..." spellcheck="false"
-             type="text" id="local-search-input">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
     </div>
-  </div>
-  <div id="local-search-result"></div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
 
-<div id="page">
-<div id="lx-aside" style="background-image: url(/images/IMG_1585.JPG)" data-stellar-background-ratio="0.5">
-  <div class="overlay">
-  <div class="page-title">
-    <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
-    <span>2020-06-16</span>
-    <h2>大物复习</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%A4%A7%E7%89%A9/" rel="tag">大物</a></div>
-    <div class="social-links">
-    <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
-    <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-    <a href="https://twitter.com/weiwei_Jonathan" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-</div></div>
-</div>
-</div>
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
 
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <h1 id="大物复习题记录"><a href="#大物复习题记录" class="headerlink" title="大物复习题记录"></a>大物复习题记录</h1><h2 id="质点力学"><a href="#质点力学" class="headerlink" title="质点力学"></a>质点力学</h2><p><strong>例</strong> 长度为$l$，质量为$m$的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力$F$的函数.</p>
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">大物复习</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">weiwei</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">六月 16, 2020&nbsp;&nbsp;15:36:10</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="大物复习题记录">大物复习题记录</h1>
+<h2 id="质点力学">质点力学</h2>
+<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
 <p><strong>解</strong></p>
 <blockquote>
 <p>利用质心运动定理</p>
 </blockquote>
-<p>先计算质心的坐标</p>
-<script type="math/tex; mode=display">
-z_{c}= \frac{\int zdm}{m}</script><p>令绳子线密度是$\lambda = \frac{m}{l}$，我们将上式中$dm$化成关于$dz$的量，</p>
-<script type="math/tex; mode=display">
-\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}</script><p>对绳子列质心方程：</p>
-<script type="math/tex; mode=display">
-F_{合}= ma_{c}</script><p>因为$a_c=\frac{dv_{c}}{dt}$，$v_c= dz_c /dt$</p>
-<p>其中$dz/dt = v_绳$（自由落体速度），</p>
-<p>一通化简得到</p>
-<script type="math/tex; mode=display">
-a_{c} = \frac{g}{l}(2l-3z)</script><p>此时得到</p>
-<script type="math/tex; mode=display">
-F = 3mg(1-\frac{z}{l})</script><p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为$m$的滑块以速度$v_{0}$，沿切线方向进入屏障，滑块与屏障之间摩擦因数为$\mu_{k}$，计算滑块离开屏障时的动能。    </p>
-<p><strong>解</strong> 牛顿定律分析运动过程：</p>
-<script type="math/tex; mode=display">
--\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}</script><p>两边移项，积分得到：</p>
-<script type="math/tex; mode=display">
-v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}</script><p>发现其中$R$以及$t$是未知的量，我们根据$S=\int vdt$，</p>
-<p>得到</p>
-<script type="math/tex; mode=display">
+<p>先计算质心的坐标 <span class="math display">\[
+z_{c}= \frac{\int zdm}{m} 
+\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
+\]</span> 对绳子列质心方程： <span class="math display">\[
+F_{合}= ma_{c}
+\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
+<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
+<p>一通化简得到 <span class="math display">\[
+a_{c} = \frac{g}{l}(2l-3z)
+\]</span> 此时得到 <span class="math display">\[
+F = 3mg(1-\frac{z}{l})
+\]</span></p>
+<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
+<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
+-\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
+\]</span> 两边移项，积分得到： <span class="math display">\[
+v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
+\]</span></p>
+<p>发现其中<span class="math inline">\(R\)</span>以及<span class="math inline">\(t\)</span>是未知的量，我们根据<span class="math inline">\(S=\int vdt\)</span>，</p>
+<p>得到 <span class="math display">\[
 \pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
 \\
-v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}</script><p>结果显然。</p>
+v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
+\]</span> 结果显然。</p>
 <blockquote>
 <p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
-<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个$\int v^{2}ds$积分，理论可以算出来，有空可以思考。</p>
+</blockquote>
+<blockquote>
+<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个<span class="math inline">\(\int v^{2}ds\)</span>积分，理论可以算出来，有空可以思考。</p>
 </blockquote>
 
-      </div>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>weiwei</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://weiweistar.com/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/">http://weiweistar.com/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%A4%A7%E7%89%A9/"># 大物</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">希腊字母</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© weiwei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="#">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>没有更新的文章</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>希腊字母</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-
-</div>
-
-<footer>
-  <div>
-  Copyright &copy; 2019.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
 </footer>
 
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button> 
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="/images/IMG_1541.jpg" alt="weiwei"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>weiwei</p>
-          <span class="tagline">摸鱼大师</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>页面</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    
-  </ul>
-  </nav>
-</div>
-
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
-<script src="jquery.easing.min.js"></script>
-<script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
-</script>
-<script src="local.search.js"></script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-  TeX: {
-          extensions: ["mhchem.js"]
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>

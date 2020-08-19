@@ -1,305 +1,366 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>电磁的对比 | weiwei的摸鱼生活</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="weiwei">
-  <meta name="keywords" content="math, swift, C++, python">
-  <meta name="description" content="">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'lx',
-    version: '0.3.9',
-    localsearch:{
-      "enable": true,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'search.xml'
-  };
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="weiwei">
+
+
+    <meta name="subtitle" content="来摸鱼吧">
+
+
+
+    <meta name="keywords" content="math, swift, C++, python">
+
+
+<title>电磁的对比 | weiwei的摸鱼生活</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-  <link rel="shortcut icon" href="/Fish-tank.svg">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
 
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="jquery.jside.menu.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "green",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+        
+    
+
+
 <meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="single">
-<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
-<div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Search..." spellcheck="false"
-             type="text" id="local-search-input">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
     </div>
-  </div>
-  <div id="local-search-result"></div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
 
-<div id="page">
-<div id="lx-aside" style="background-image: url(/images/IMG_1585.JPG)" data-stellar-background-ratio="0.5">
-  <div class="overlay">
-  <div class="page-title">
-    <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
-    <span>2020-06-04</span>
-    <h2>电磁的对比</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%A4%A7%E7%89%A9/" rel="tag">大物</a></div>
-    <div class="social-links">
-    <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
-    <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-    <a href="https://twitter.com/weiwei_Jonathan" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-</div></div>
-</div>
-</div>
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
 
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <h1 id="电磁学相似问题的独立总结"><a href="#电磁学相似问题的独立总结" class="headerlink" title="电磁学相似问题的独立总结"></a>电磁学相似问题的独立总结</h1><blockquote>
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">电磁的对比</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">weiwei</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">六月 4, 2020&nbsp;&nbsp;15:07:44</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="电磁学相似问题的独立总结">电磁学相似问题的独立总结</h1>
+<blockquote>
 <p>有不正确的地方会在发现之后立刻修改的。</p>
 </blockquote>
-<h2 id="直接列表"><a href="#直接列表" class="headerlink" title="直接列表"></a>直接列表</h2><div class="table-container">
+<h2 id="直接列表">直接列表</h2>
 <table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 45%" />
+<col style="width: 45%" />
+</colgroup>
 <thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">电学</th>
-<th style="text-align:center">磁学</th>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">电学</th>
+<th style="text-align: center;">磁学</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:center"><strong>场强大小</strong></td>
-<td style="text-align:center">库伦定律(电场)：$E = k_{1}\frac{Q}{r^{2}}$</td>
-<td style="text-align:center">毕奥-萨法尔定律：$dB=k_{2}\frac{Idl}{r^{2}}$</td>
+<tr class="odd">
+<td style="text-align: center;"><strong>场强大小</strong></td>
+<td style="text-align: center;">库伦定律(电场)：<span class="math inline">\(E = k_{1}\frac{Q}{r^{2}}\)</span></td>
+<td style="text-align: center;">毕奥-萨法尔定律：<span class="math inline">\(dB=k_{2}\frac{Idl}{r^{2}}\)</span></td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>高斯定律</strong></td>
-<td style="text-align:center">电高斯定律：通过高斯面的电场线条数和面内部的电荷量成正比</td>
-<td style="text-align:center">磁高斯定律：通过高斯面的磁感线条数为零</td>
+<tr class="even">
+<td style="text-align: center;"><strong>高斯定律</strong></td>
+<td style="text-align: center;">电高斯定律：通过高斯面的电场线条数和面内部的电荷量成正比</td>
+<td style="text-align: center;">磁高斯定律：通过高斯面的磁感线条数为零</td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>环路定理</strong></td>
-<td style="text-align:center">$\int_{l}Eds = 0$(保守场)</td>
-<td style="text-align:center">$\int_{l}Bds = \mu I$</td>
+<tr class="odd">
+<td style="text-align: center;"><strong>环路定理</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\int_{l}Eds = 0\)</span>(保守场)</td>
+<td style="text-align: center;"><span class="math inline">\(\int_{l}Bds = \mu I\)</span></td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>力矩相关</strong></td>
-<td style="text-align:center">电偶极矩$p$</td>
-<td style="text-align:center">分子磁矩$m$</td>
+<tr class="even">
+<td style="text-align: center;"><strong>力矩相关</strong></td>
+<td style="text-align: center;">电偶极矩<span class="math inline">\(p\)</span></td>
+<td style="text-align: center;">分子磁矩<span class="math inline">\(m\)</span></td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>介质极化</strong></td>
-<td style="text-align:center">电极化强度：$\left</td>
-<td style="text-align:center">\frac{\sum_{i}p_{i}}{\Delta V}\right</td>
-<td>= \sigma$（单位体积介质表面电荷量）</td>
-<td>磁化强度：$\left</td>
-<td>\frac{\sum m}{\Delta V}\right</td>
-<td>=i$（单位长度介质表面分子电流）</td>
+<tr class="odd">
+<td style="text-align: center;"><strong>介质极化</strong></td>
+<td style="text-align: center;">电极化强度：<span class="math inline">\(\left |\frac{\sum_{i}p_{i}}{\Delta V}\right | = \sigma\)</span>（单位体积介质表面电荷量）</td>
+<td style="text-align: center;">磁化强度：<span class="math inline">\(\left |\frac{\sum m}{\Delta V}\right |=i\)</span>（单位长度介质表面分子电流）</td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>介质场强</strong></td>
-<td style="text-align:center">介质高斯定律：$\int Dds = q$</td>
-<td style="text-align:center">介质环路定理：$\int Hdl = I$</td>
+<tr class="even">
+<td style="text-align: center;"><strong>介质场强</strong></td>
+<td style="text-align: center;">介质高斯定律：<span class="math inline">\(\int Dds = q\)</span></td>
+<td style="text-align: center;">介质环路定理：<span class="math inline">\(\int Hdl = I\)</span></td>
 </tr>
-<tr>
-<td style="text-align:center"><strong>衍生关系</strong></td>
-<td style="text-align:center">$D=\sigma E$</td>
-<td style="text-align:center">$B = \mu H $</td>
+<tr class="odd">
+<td style="text-align: center;"><strong>衍生关系</strong></td>
+<td style="text-align: center;"><span class="math inline">\(D=\sigma E\)</span></td>
+<td style="text-align: center;">$B = H $</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>大概先写这么多，其他的介质间场的变化关系可以简单的推导出来，也就不赘述。</p>
 
-      </div>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>weiwei</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://weiweistar.com/2020/06/04/%E7%94%B5%E7%A3%81%E7%9A%84%E5%AF%B9%E6%AF%94/">http://weiweistar.com/2020/06/04/%E7%94%B5%E7%A3%81%E7%9A%84%E5%AF%B9%E6%AF%94/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%A4%A7%E7%89%A9/"># 大物</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">希腊字母</a>
+            
+            
+            <a class="next" rel="next" href="/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/">函数项级数</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© weiwei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>希腊字母</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>函数项级数</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-
-</div>
-
-<footer>
-  <div>
-  Copyright &copy; 2019.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
 </footer>
 
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button> 
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="/images/IMG_1541.jpg" alt="weiwei"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>weiwei</p>
-          <span class="tagline">摸鱼大师</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>页面</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    
-  </ul>
-  </nav>
-</div>
-
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
-<script src="jquery.easing.min.js"></script>
-<script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
-</script>
-<script src="local.search.js"></script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-  TeX: {
-          extensions: ["mhchem.js"]
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>

@@ -1,282 +1,348 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content=#58b77a>
-  <title>广义积分习题记录 | weiwei的摸鱼生活</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="weiwei">
-  <meta name="keywords" content="math, swift, C++, python">
-  <meta name="description" content="">
-  <script id="hexo-configurations">
-  var CONFIG = {
-    root: '/',
-    theme: 'lx',
-    version: '0.3.9',
-    localsearch:{
-      "enable": true,
-      "trigger": "auto",
-      "top_n_per_article": 1,
-      "unescape": false,
-      "preload": false
-      },
-    path: 'search.xml'
-  };
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="weiwei">
+
+
+    <meta name="subtitle" content="来摸鱼吧">
+
+
+
+    <meta name="keywords" content="math, swift, C++, python">
+
+
+<title>广义积分习题记录 | weiwei的摸鱼生活</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-  <link rel="shortcut icon" href="/Fish-tank.svg">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/css/main.min.css">
-  <style type="text/css">
-    pre,
-    code {
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      font-family: sans-serif;
-    }
-    body {
-      font-family: sans-serif;
-    }
-    h1, h2, h3, h4, h5, figure {
-      font-family: sans-serif;
-    }
-    .menu-container{
-      font-family: sans-serif;
-    }
-  </style>
 
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-  <script src="jquery.jside.menu.js"></script>
-	<script>
-	$(document).ready(function(){
-	$(".menu-container").jSideMenu({
-	    jSidePosition: "position-right",
-	    jSideSticky: true,
-	    jSideSkin: "green",
-	     });
-	}); 
-	</script>
-  
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+        
+    
+
+
 <meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 <body>
-<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="single">
-<a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i></a>
-<div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Search..." spellcheck="false"
-             type="text" id="local-search-input">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Bentham&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Bentham&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
     </div>
-  </div>
-  <div id="local-search-result"></div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
 
-<div id="page">
-<div id="lx-aside" style="background-image: url(/images/IMG_1585.JPG)" data-stellar-background-ratio="0.5">
-  <div class="overlay">
-  <div class="page-title">
-    <div class="avatar"><a href="/"><img src="/images/IMG_1541.jpg"></a></div>
-    <span>2020-05-03</span>
-    <h2>广义积分习题记录</h2>
-    <div class="tags"><i class="fa fa-tag"></i><a class="tag-link" href="/tags/%E5%88%86%E6%9E%90/" rel="tag">分析</a></div>
-    <div class="social-links">
-    <a href="https://github.com/Jonathan-star" target="_blank"><i class="fa fa-github fa-fw"></i></a>
-    <a href="mailto:3019233072@tju.edu.cn" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
-    <a href="https://twitter.com/weiwei_Jonathan" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-</div></div>
-</div>
-</div>
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
 
-<div id="lx-main-content">
-  <div class="lx-post">
-    <div class="lx-entry padding">
-      <div>
-        <h1 id="广义积分习题"><a href="#广义积分习题" class="headerlink" title="广义积分习题"></a>广义积分习题</h1><blockquote>
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">广义积分习题记录</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">weiwei</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">五月 3, 2020&nbsp;&nbsp;14:40:37</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="广义积分习题">广义积分习题</h1>
+<blockquote>
 <p>上课不听讲只能自己看书😭</p>
 </blockquote>
-<h2 id="记一个-Abel-和-Dirichlet-判别法运用的🌰"><a href="#记一个-Abel-和-Dirichlet-判别法运用的🌰" class="headerlink" title="记一个$Abel$和$Dirichlet$判别法运用的🌰"></a>记一个$Abel$和$Dirichlet$判别法运用的🌰</h2><p><strong>==例==：</strong>讨论</p>
-<script type="math/tex; mode=display">
-\int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda > 0)</script><p>的敛散性。</p>
+<h2 id="记一个abel和dirichlet判别法运用的">记一个<span class="math inline">\(Abel\)</span>和<span class="math inline">\(Dirichlet\)</span>判别法运用的🌰</h2>
+<p><strong>==例==：</strong>讨论 <span class="math display">\[
+\int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda &gt; 0)
+\]</span> 的敛散性。</p>
 <p><strong>解：</strong></p>
-<p>==1⃣️ 条件收敛性== </p>
-<p>由$Dirichlet$判别法知道，$\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx$是收敛的，另一部分，$\arctan x$是有界的，根据$Abel$判别法很简单就得到了整个积分是收敛的。</p>
+<p>==1⃣️ 条件收敛性==</p>
+<p>由<span class="math inline">\(Dirichlet\)</span>判别法知道，<span class="math inline">\(\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx\)</span>是收敛的，另一部分，<span class="math inline">\(\arctan x\)</span>是有界的，根据<span class="math inline">\(Abel\)</span>判别法很简单就得到了整个积分是收敛的。</p>
 <p>2⃣️ 绝对收敛性</p>
-<p>放缩一下：</p>
-<script type="math/tex; mode=display">
-\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | < \left |\frac{\pi}{2}\frac{\sin x}{x^{\lambda}} \right |</script><p>简单分两种情况</p>
-<p>其一：$\lambda &gt; 1$时</p>
+<p>放缩一下： <span class="math display">\[
+\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &lt; \left |\frac{\pi}{2}\frac{\sin x}{x^{\lambda}} \right |
+\]</span> 简单分两种情况</p>
+<p>其一：<span class="math inline">\(\lambda &gt; 1\)</span>时</p>
 <p>直接收敛没啥好说的。</p>
-<p>其二： $ 0&lt;\lambda \leq 1$时</p>
-<p>由于是定义在无穷区间上的积分，可以取足够大的$x$来分析问题，</p>
-<p>必存在一个时刻，$\arctan x &gt; 1$，并且有 $\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &gt; \left |\frac{\sin x}{x^{\lambda}}\right |$ ，基本操作一下，把绝对值放缩$|\sin x|&gt; \sin ^{2}x$</p>
-<p>这里用一手半角公式，得到$k\frac{1}{x^{2}}$和另一个可以用$Dirichlet$判别法得到收敛的函数，于是，发散就得到了。</p>
-<h3 id="记下这个例子大致就能掌握AD判别法了"><a href="#记下这个例子大致就能掌握AD判别法了" class="headerlink" title="记下这个例子大致就能掌握AD判别法了"></a>记下这个例子大致就能掌握AD判别法了</h3><h2 id="记一个有关三角函数的🌰"><a href="#记一个有关三角函数的🌰" class="headerlink" title="记一个有关三角函数的🌰"></a>记一个有关三角函数的🌰</h2><p><strong>例：</strong>判别广义积分</p>
-<script type="math/tex; mode=display">
-\int _{0}^{+\infty}\frac{xdx}{1+x^{4}\sin^2{x}}</script><p>的收敛性。</p>
+<p>其二： $ 0&lt;$时</p>
+<p>由于是定义在无穷区间上的积分，可以取足够大的<span class="math inline">\(x\)</span>来分析问题，</p>
+<p>必存在一个时刻，<span class="math inline">\(\arctan x &gt; 1\)</span>，并且有 <span class="math inline">\(\left |\frac{\sin x\arctan x}{x^{\lambda}}\right | &gt; \left |\frac{\sin x}{x^{\lambda}}\right |\)</span> ，基本操作一下，把绝对值放缩<span class="math inline">\(|\sin x|&gt; \sin ^{2}x\)</span></p>
+<p>这里用一手半角公式，得到<span class="math inline">\(k\frac{1}{x^{2}}\)</span>和另一个可以用<span class="math inline">\(Dirichlet\)</span>判别法得到收敛的函数，于是，发散就得到了。</p>
+<h3 id="记下这个例子大致就能掌握ad判别法了">记下这个例子大致就能掌握AD判别法了</h3>
+<h2 id="记一个有关三角函数的">记一个有关三角函数的🌰</h2>
+<p><strong>例：</strong>判别广义积分 <span class="math display">\[
+\int _{0}^{+\infty}\frac{xdx}{1+x^{4}\sin^2{x}}
+\]</span></p>
+<p>的收敛性。</p>
 <p><strong>解：</strong>先说结论，发散。</p>
-<p>不妨先考虑一下$\int_{0}^{n\pi}f(x)dx$的积分。</p>
+<p>不妨先考虑一下<span class="math inline">\(\int_{0}^{n\pi}f(x)dx\)</span>的积分。</p>
 <p>可以转化成一个级数的问题了，</p>
-<p>即</p>
-<script type="math/tex; mode=display">
-\int_{0}^{n \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}=\sum_{k=1}^{n} \int_{(k-1) \pi}^{k \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}</script><p>令右边的各项分别是：$u_{k}=\int _{(k-1)\pi} ^{k\pi}\frac{xdx}{1+x^{4} \sin ^{2} x}$</p>
-<p>把$x$放缩一下，得到：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} u_{k} & \geq(k-1) \pi \int_{(k-1) \pi}^{k \pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &=(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ & \geq(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} x^{2}} \\ &=\frac{(k-1) \pi}{(k \pi)^{2}} \int_{0}^{(k \pi)^{2} \pi} \frac{d t}{1+t^{2}} \\ &=\frac{k-1}{\pi k^{2}} \arctan \left(k^{2} \pi^{3}\right) \end{aligned}</script><p>对于足够大的$k$，后面的反三角可以放缩成1，而之后显然是一个</p>
-<script type="math/tex; mode=display">
-\sum_{k = 1}^{n} \frac{1}{k}</script><p>的求和，显然发散。</p>
-<h3 id="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"><a href="#总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。" class="headerlink" title="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"></a>总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。</h3>
-      </div>
+<p>即 <span class="math display">\[
+\int_{0}^{n \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}=\sum_{k=1}^{n} \int_{(k-1) \pi}^{k \pi} \frac{x d x}{1+x^{4} \sin ^{2} x}
+\]</span> 令右边的各项分别是：<span class="math inline">\(u_{k}=\int _{(k-1)\pi} ^{k\pi}\frac{xdx}{1+x^{4} \sin ^{2} x}\)</span></p>
+<p>把<span class="math inline">\(x\)</span>放缩一下，得到： <span class="math display">\[
+\begin{aligned} u_{k} &amp; \geq(k-1) \pi \int_{(k-1) \pi}^{k \pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &amp;=(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} \sin ^{2} x} \\ &amp; \geq(k-1) \pi \int_{0}^{\pi} \frac{d x}{1+(k \pi)^{4} x^{2}} \\ &amp;=\frac{(k-1) \pi}{(k \pi)^{2}} \int_{0}^{(k \pi)^{2} \pi} \frac{d t}{1+t^{2}} \\ &amp;=\frac{k-1}{\pi k^{2}} \arctan \left(k^{2} \pi^{3}\right) \end{aligned}
+\]</span> 对于足够大的<span class="math inline">\(k\)</span>，后面的反三角可以放缩成1，而之后显然是一个 <span class="math display">\[
+\sum_{k = 1}^{n} \frac{1}{k}
+\]</span> 的求和，显然发散。</p>
+<h3 id="总结一下就是说这种带有三角函数的积分等问题可以将各个循环单独出来放缩这样可以将原本难以放缩的方向简单放出来">总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。</h3>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>weiwei</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://weiweistar.com/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/">http://weiweistar.com/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/%E5%88%86%E6%9E%90/"># 分析</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
+            
+            
+            <a class="next" rel="next" href="/2020/04/26/Thread-1-signal-SIGABRT/">Thread 1: signal SIGABRT</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© weiwei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
-  </div>
-</div>
-<div class="lx-navigation">
-	<div class="lx-cover prev lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-l.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Next</span>
-						<h3>正则表达式</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-        <div class="lx-cover next lx-cover-sm" style="background-image: url(//cdn.jsdelivr.net/npm/theme-lx@0.3.9/source/images/footer-r.jpeg)">
-		<div class="overlay"></div>
-		<a class="copy" href="/2020/04/26/Thread-1-signal-SIGABRT/">
-			<div class="display-t">
-				<div class="display-tc">
-					<div>
-						<span>Prev</span>
-						<h3>Thread ...</h3>
-					</div>
-				</div>
-			</div>
-		</a>
-	</div>
-</div>
-
-</div>
-
-<footer>
-  <div>
-  Copyright &copy; 2019.<a href="/">weiwei的摸鱼生活</a><br>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme <a href="https://lx.js.org" target="_blank">Lx</a><br>
-  </div>
 </footer>
 
-</div>
-
-<button class="hamburger hamburger--arrow-r" type="button">
-    <div class="hamburger-box">
-      <div class="hamburger-inner"></div>
-    </div>
-</button> 
-<div class="menu visibility">
-  <div class="menu-head">
-    <span class="layer">
-      <div class="col">
-        <div class="row for-pic">
-          <div class="profile-pic">
-            <a href="/"><img src="/images/IMG_1541.jpg" alt="weiwei"/></a>
-          </div>
-        </div>
-        <div class="row for-name">
-          <p>weiwei</p>
-          <span class="tagline">摸鱼大师</span>
-        </div>
-      </div>
-    </span>
-  </div>
-  <nav class="menu-container">
-  <ul class="menu-items">
-    <li><a href="/"><i class="fa fa-home fa-fw"></i>首页</a></li>
-    <li><a href="/archives/"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-    
-    <li class="has-sub"><span class="dropdown-heading">
-      <i class="fa fa-bookmark fa-fw"></i>页面</span>
-        <ul>
-          <li><a href="/guestbook/">Guestbook</a></li>
-        <li><a href="/about/">About</a></li>
-        </ul>
-    </li>
-    
-  </ul>
-  </nav>
-</div>
-
-<div class="gototop js-top">
-  <a href="#" class="js-gotop"><i class="fa fa-arrow-up"></i></a>
-</div>
-<script src="jquery.easing.min.js"></script>
-<script>
-(function () {
-	"use strict";
-	var goToTop = function() {
-		$(".js-gotop").on("click", function(event){
-			event.preventDefault();
-			$("html, body").animate({
-				scrollTop: $("html").offset().top
-			}, 500, "easeInOutExpo");
-			return false;
-		});
-		$(window).scroll(function(){
-			var $win = $(window);
-			if ($win.scrollTop() > 200) {
-				$(".js-top").addClass("active");
-			} else {
-				$(".js-top").removeClass("active");
-			}
-		});
-	};
-	$(function(){
-		goToTop();
-	});
-}());
-</script>
-<script src="local.search.js"></script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-  TeX: {
-          extensions: ["mhchem.js"]
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src=""></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
