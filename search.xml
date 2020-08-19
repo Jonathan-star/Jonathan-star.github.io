@@ -49,68 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title>大物复习</title>
-    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="大物复习题记录">大物复习题记录</h1>
-<h2 id="质点力学">质点力学</h2>
-<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
-<p><strong>解</strong></p>
-<blockquote>
-<p>利用质心运动定理</p>
-</blockquote>
-<p>先计算质心的坐标 <span class="math display">\[
-z_{c}= \frac{\int zdm}{m} 
-\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
-\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
-\]</span> 对绳子列质心方程： <span class="math display">\[
-F_{合}= ma_{c}
-\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
-<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
-<p>一通化简得到 <span class="math display">\[
-a_{c} = \frac{g}{l}(2l-3z)
-\]</span> 此时得到 <span class="math display">\[
-F = 3mg(1-\frac{z}{l})
-\]</span></p>
-<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
-<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
--\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
-\]</span> 两边移项，积分得到： <span class="math display">\[
-v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
-\]</span></p>
-<p>发现其中<span class="math inline">\(R\)</span>以及<span class="math inline">\(t\)</span>是未知的量，我们根据<span class="math inline">\(S=\int vdt\)</span>，</p>
-<p>得到 <span class="math display">\[
-\pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
-\\
-v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
-\]</span> 结果显然。</p>
-<blockquote>
-<p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
-</blockquote>
-<blockquote>
-<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个<span class="math inline">\(\int v^{2}ds\)</span>积分，理论可以算出来，有空可以思考。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Thread 1: signal SIGABRT</title>
-    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
-<h2 id="c数组中">C++数组中</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
-<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
-<blockquote>
-<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>希腊字母</title>
     <url>/2020/06/08/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D/</url>
     <content><![CDATA[<h1 id="不太好记的latex符号表达">不太好记的LaTeX符号表达</h1>
@@ -253,6 +191,68 @@ v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
 ]]></content>
       <tags>
         <tag>LaTeX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thread 1: signal SIGABRT</title>
+    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
+<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+<blockquote>
+<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大物复习</title>
+    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="大物复习题记录">大物复习题记录</h1>
+<h2 id="质点力学">质点力学</h2>
+<p><strong>例</strong> 长度为<span class="math inline">\(l\)</span>，质量为<span class="math inline">\(m\)</span>的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力<span class="math inline">\(F\)</span>的函数.</p>
+<p><strong>解</strong></p>
+<blockquote>
+<p>利用质心运动定理</p>
+</blockquote>
+<p>先计算质心的坐标 <span class="math display">\[
+z_{c}= \frac{\int zdm}{m} 
+\]</span> 令绳子线密度是<span class="math inline">\(\lambda = \frac{m}{l}\)</span>，我们将上式中<span class="math inline">\(dm\)</span>化成关于<span class="math inline">\(dz\)</span>的量， <span class="math display">\[
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}
+\]</span> 对绳子列质心方程： <span class="math display">\[
+F_{合}= ma_{c}
+\]</span> 因为<span class="math inline">\(a_c=\frac{dv_{c}}{dt}\)</span>，<span class="math inline">\(v_c= dz_c /dt\)</span></p>
+<p>其中<span class="math inline">\(dz/dt = v_绳\)</span>（自由落体速度），</p>
+<p>一通化简得到 <span class="math display">\[
+a_{c} = \frac{g}{l}(2l-3z)
+\]</span> 此时得到 <span class="math display">\[
+F = 3mg(1-\frac{z}{l})
+\]</span></p>
+<p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为<span class="math inline">\(m\)</span>的滑块以速度<span class="math inline">\(v_{0}\)</span>，沿切线方向进入屏障，滑块与屏障之间摩擦因数为<span class="math inline">\(\mu_{k}\)</span>，计算滑块离开屏障时的动能。</p>
+<p><strong>解</strong> 牛顿定律分析运动过程： <span class="math display">\[
+-\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}
+\]</span> 两边移项，积分得到： <span class="math display">\[
+v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}
+\]</span></p>
+<p>发现其中<span class="math inline">\(R\)</span>以及<span class="math inline">\(t\)</span>是未知的量，我们根据<span class="math inline">\(S=\int vdt\)</span>，</p>
+<p>得到 <span class="math display">\[
+\pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
+\\
+v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}
+\]</span> 结果显然。</p>
+<blockquote>
+<p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
+</blockquote>
+<blockquote>
+<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个<span class="math inline">\(\int v^{2}ds\)</span>积分，理论可以算出来，有空可以思考。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>大物</tag>
       </tags>
   </entry>
   <entry>
@@ -455,16 +455,6 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
       </tags>
   </entry>
   <entry>
-    <title>正则表达式</title>
-    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
-<h2 id="section"></h2>
-]]></content>
-      <tags>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数组名与数组地址</title>
     <url>/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<h1 id="数组名与数组地址的简单记录">数组名与数组地址的简单记录</h1>
@@ -489,6 +479,16 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 ]]></content>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
+<h2 id="section"></h2>
+]]></content>
+      <tags>
+        <tag>开发</tag>
       </tags>
   </entry>
   <entry>
