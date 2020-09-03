@@ -10,60 +10,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Thread 1: signal SIGABRT</title>
-    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的Thread-1-signal-SIGABRT问题记录"><a href="#遇见的Thread-1-signal-SIGABRT问题记录" class="headerlink" title="遇见的Thread 1: signal SIGABRT问题记录"></a>遇见的Thread 1: signal SIGABRT问题记录</h1><h2 id="C-数组中"><a href="#C-数组中" class="headerlink" title="C++数组中"></a>C++数组中</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
-<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
-<blockquote>
-<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大物复习</title>
-    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="大物复习题记录"><a href="#大物复习题记录" class="headerlink" title="大物复习题记录"></a>大物复习题记录</h1><h2 id="质点力学"><a href="#质点力学" class="headerlink" title="质点力学"></a>质点力学</h2><p><strong>例</strong> 长度为$l$，质量为$m$的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力$F$的函数.</p>
-<p><strong>解</strong></p>
-<blockquote>
-<p>利用质心运动定理</p>
-</blockquote>
-<p>先计算质心的坐标</p>
-<script type="math/tex; mode=display">
-z_{c}= \frac{\int zdm}{m}</script><p>令绳子线密度是$\lambda = \frac{m}{l}$，我们将上式中$dm$化成关于$dz$的量，</p>
-<script type="math/tex; mode=display">
-\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}</script><p>对绳子列质心方程：</p>
-<script type="math/tex; mode=display">
-F_{合}= ma_{c}</script><p>因为$a_c=\frac{dv_{c}}{dt}$，$v_c= dz_c /dt$</p>
-<p>其中$dz/dt = v_绳$（自由落体速度），</p>
-<p>一通化简得到</p>
-<script type="math/tex; mode=display">
-a_{c} = \frac{g}{l}(2l-3z)</script><p>此时得到</p>
-<script type="math/tex; mode=display">
-F = 3mg(1-\frac{z}{l})</script><p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为$m$的滑块以速度$v_{0}$，沿切线方向进入屏障，滑块与屏障之间摩擦因数为$\mu_{k}$，计算滑块离开屏障时的动能。    </p>
-<p><strong>解</strong> 牛顿定律分析运动过程：</p>
-<script type="math/tex; mode=display">
--\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}</script><p>两边移项，积分得到：</p>
-<script type="math/tex; mode=display">
-v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}</script><p>发现其中$R$以及$t$是未知的量，我们根据$S=\int vdt$，</p>
-<p>得到</p>
-<script type="math/tex; mode=display">
-\pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
-\\
-v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}</script><p>结果显然。</p>
-<blockquote>
-<p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
-<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个$\int v^{2}ds$积分，理论可以算出来，有空可以思考。</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>函数项级数</title>
     <url>/2020/05/19/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/</url>
     <content><![CDATA[<h1 id="函数项级数"><a href="#函数项级数" class="headerlink" title="函数项级数"></a>函数项级数</h1><blockquote>
@@ -159,6 +105,89 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 \int_{A_{1}}^{A_{2}}f(x)g(x)dx，（其中A_{1},A_{2}在积分区域内）是无穷小量。</script><p>由上述积分中值定理，</p>
 <script type="math/tex; mode=display">
 \int_{A_{1}}^{A_{2}}f(x)g(x)dx=g(A_{1})\int_{A_{1}}^{\xi}f(x)dx+g(A_{2})\int_{\xi}^{A_{2}}f(x)dx</script><p>其中，$Abel$判别法$g(x)$有界，$Dirichlet$判别法$F(x)=\int_{a}^{x}f(t)dt$有界，令之都为$M$，对应的另一因函数都是无穷小量，可以简单的放缩得到$[A_{1},A_{2}]$上的积分是无穷小量，两者得证。</p>
+]]></content>
+      <tags>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大物复习</title>
+    <url>/2020/06/16/%E5%A4%A7%E7%89%A9%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="大物复习题记录"><a href="#大物复习题记录" class="headerlink" title="大物复习题记录"></a>大物复习题记录</h1><h2 id="质点力学"><a href="#质点力学" class="headerlink" title="质点力学"></a>质点力学</h2><p><strong>例</strong> 长度为$l$，质量为$m$的软绳，开始时竖直悬挂，下端刚好触地，现在使软绳自由下落，求地面对绳的力$F$的函数.</p>
+<p><strong>解</strong></p>
+<blockquote>
+<p>利用质心运动定理</p>
+</blockquote>
+<p>先计算质心的坐标</p>
+<script type="math/tex; mode=display">
+z_{c}= \frac{\int zdm}{m}</script><p>令绳子线密度是$\lambda = \frac{m}{l}$，我们将上式中$dm$化成关于$dz$的量，</p>
+<script type="math/tex; mode=display">
+\int_{0}^{z}\lambda zdz \Rightarrow z_{c}=\frac{z^{2}}{2l}</script><p>对绳子列质心方程：</p>
+<script type="math/tex; mode=display">
+F_{合}= ma_{c}</script><p>因为$a_c=\frac{dv_{c}}{dt}$，$v_c= dz_c /dt$</p>
+<p>其中$dz/dt = v_绳$（自由落体速度），</p>
+<p>一通化简得到</p>
+<script type="math/tex; mode=display">
+a_{c} = \frac{g}{l}(2l-3z)</script><p>此时得到</p>
+<script type="math/tex; mode=display">
+F = 3mg(1-\frac{z}{l})</script><p><strong>例</strong> 在光滑水平面上，有一固定半圆形屏障，质量为$m$的滑块以速度$v_{0}$，沿切线方向进入屏障，滑块与屏障之间摩擦因数为$\mu_{k}$，计算滑块离开屏障时的动能。    </p>
+<p><strong>解</strong> 牛顿定律分析运动过程：</p>
+<script type="math/tex; mode=display">
+-\mu_{k}\frac{mv^{2}}{R} = m \frac{dv}{dt}</script><p>两边移项，积分得到：</p>
+<script type="math/tex; mode=display">
+v= \frac{v_{0}R}{R+v_{0}\mu_{k}t}</script><p>发现其中$R$以及$t$是未知的量，我们根据$S=\int vdt$，</p>
+<p>得到</p>
+<script type="math/tex; mode=display">
+\pi R = \int_{0}^{T}\frac{v_{0}R}{R+v_{0}\mu_{k}t}dt
+\\
+v_{T} = \frac{v_{0}}{e^{\pi \mu _{k}}}</script><p>结果显然。</p>
+<blockquote>
+<p>使用牛顿定律可得任意时刻的速度关系，配合速度路程关系，这就两个方程了。</p>
+<p>必须明确，这题中，速度值时刻变化，如果直接从能量来看，存在一个$\int v^{2}ds$积分，理论可以算出来，有空可以思考。</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>大物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thread 1: signal SIGABRT</title>
+    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
+    <content><![CDATA[<h1 id="遇见的Thread-1-signal-SIGABRT问题记录"><a href="#遇见的Thread-1-signal-SIGABRT问题记录" class="headerlink" title="遇见的Thread 1: signal SIGABRT问题记录"></a>遇见的Thread 1: signal SIGABRT问题记录</h1><h2 id="C-数组中"><a href="#C-数组中" class="headerlink" title="C++数组中"></a>C++数组中</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
+<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+<blockquote>
+<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>广义积分 其二</title>
+    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
+    <content><![CDATA[<h1 id="广义积分基本定理"><a href="#广义积分基本定理" class="headerlink" title="广义积分基本定理"></a>广义积分基本定理</h1><blockquote>
+<p>关于无界函数的广义积分</p>
+<p>定义略</p>
+</blockquote>
+<h5 id="可以把这种积分看成前一篇的积分的反函数呀！"><a href="#可以把这种积分看成前一篇的积分的反函数呀！" class="headerlink" title="可以把这种积分看成前一篇的积分的反函数呀！"></a>可以把这种积分看成前一篇的积分的反函数呀！</h5><h2 id="敛散性"><a href="#敛散性" class="headerlink" title="敛散性"></a>敛散性</h2><h3 id="其一：-Cauchy-收敛原理"><a href="#其一：-Cauchy-收敛原理" class="headerlink" title="其一：$Cauchy$收敛原理"></a>其一：$Cauchy$收敛原理</h3><p><strong>定理：</strong>若$a$是函数$f(x)$的奇点，那么$\int_{a}^{b}f(x)dx$收敛的条件是，对任意的正数$\eta, \eta^{\prime}$积分$\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx$是无穷小量。</p>
+<blockquote>
+<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
+<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
+</blockquote>
+<h3 id="不知道第几：-Cauchy-积分主值"><a href="#不知道第几：-Cauchy-积分主值" class="headerlink" title="不知道第几：$Cauchy$积分主值"></a>不知道第几：$Cauchy$积分主值</h3><p><strong>定义：</strong>对于区间$[a,b]$其中有奇点$c$，积分$\int_{a}^{c}f(x)dx$与积分$\int_{c}^{b}f(x)dx$并不单独存在，但是：</p>
+<script type="math/tex; mode=display">
+\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><p>却存在（收敛），称之为函数$f(x)$的$Cauchy$主值，可以用下式表示：</p>
+<script type="math/tex; mode=display">
+P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><blockquote>
+<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
+<p>可以这样理解：</p>
+<p>将数轴正负无穷连起来，如此便可以的到$\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx$</p>
+<p>当然这是不合适的，但是$Cauchy$主值可以这样看。</p>
+<p>这里就是$+\frac{1}{0}\&amp;-\frac{1}{0}$的一个体现？</p>
+<p>（粗浅认识，不足挂齿）</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>分析</tag>
@@ -313,16 +342,24 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
       </tags>
   </entry>
   <entry>
+    <title>正则表达式</title>
+    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式学习记录"><a href="#正则表达式学习记录" class="headerlink" title="正则表达式学习记录"></a>正则表达式学习记录</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+      <tags>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>广义积分习题记录</title>
     <url>/2020/05/03/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B9%A0%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<h1 id="广义积分习题"><a href="#广义积分习题" class="headerlink" title="广义积分习题"></a>广义积分习题</h1><blockquote>
 <p>上课不听讲只能自己看书😭</p>
 </blockquote>
-<h2 id="记一个-Abel-和-Dirichlet-判别法运用的🌰"><a href="#记一个-Abel-和-Dirichlet-判别法运用的🌰" class="headerlink" title="记一个$Abel$和$Dirichlet$判别法运用的🌰"></a>记一个$Abel$和$Dirichlet$判别法运用的🌰</h2><p><strong>==例==：</strong>讨论</p>
+<h2 id="记一个-Abel-和-Dirichlet-判别法运用的🌰"><a href="#记一个-Abel-和-Dirichlet-判别法运用的🌰" class="headerlink" title="记一个$Abel$和$Dirichlet$判别法运用的🌰"></a>记一个$Abel$和$Dirichlet$判别法运用的🌰</h2><p><strong>例：</strong>讨论</p>
 <script type="math/tex; mode=display">
 \int_{1}^{+\infty}\frac{\sin x\arctan x}{x^{\lambda}}dx\  (\lambda > 0)</script><p>的敛散性。</p>
 <p><strong>解：</strong></p>
-<p>==1⃣️ 条件收敛性== </p>
+<p>1⃣️ 条件收敛性</p>
 <p>由$Dirichlet$判别法知道，$\int_{1}^{+\infty} \frac{\sin x}{x^{\lambda}}dx$是收敛的，另一部分，$\arctan x$是有界的，根据$Abel$判别法很简单就得到了整个积分是收敛的。</p>
 <p>2⃣️ 绝对收敛性</p>
 <p>放缩一下：</p>
@@ -351,115 +388,6 @@ m\left (g(x_{i})+\sum_{i=1}^{n-1}[g(x_{i+1})-g(x_{i})]\right)\leq \sigma \leq M\
 <h3 id="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"><a href="#总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。" class="headerlink" title="总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。"></a>总结一下，就是说，这种带有三角函数的积分等问题可以将各个循环单独出来放缩，这样可以将原本难以放缩的方向简单放出来。</h3>]]></content>
       <tags>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>广义积分 其二</title>
-    <url>/2020/04/23/%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86-%E5%85%B6%E4%BA%8C/</url>
-    <content><![CDATA[<h1 id="广义积分基本定理"><a href="#广义积分基本定理" class="headerlink" title="广义积分基本定理"></a>广义积分基本定理</h1><blockquote>
-<p>关于无界函数的广义积分</p>
-<p>定义略</p>
-</blockquote>
-<h5 id="可以把这种积分看成前一篇的积分的反函数呀！"><a href="#可以把这种积分看成前一篇的积分的反函数呀！" class="headerlink" title="可以把这种积分看成前一篇的积分的反函数呀！"></a>可以把这种积分看成前一篇的积分的反函数呀！</h5><h2 id="敛散性"><a href="#敛散性" class="headerlink" title="敛散性"></a>敛散性</h2><h3 id="其一：-Cauchy-收敛原理"><a href="#其一：-Cauchy-收敛原理" class="headerlink" title="其一：$Cauchy$收敛原理"></a>其一：$Cauchy$收敛原理</h3><p><strong>定理：</strong>若$a$是函数$f(x)$的奇点，那么$\int_{a}^{b}f(x)dx$收敛的条件是，对任意的正数$\eta, \eta^{\prime}$积分$\int_{a+\eta}^{a+{\eta}^{\prime}}f(x)dx$是无穷小量。</p>
-<blockquote>
-<p><del>后面的和前面的好像啊。。。</del>直接跳一点也没问题对吧😊</p>
-<p>可以使用换元，将奇点变成无穷，转化为无限区间的积分。</p>
-</blockquote>
-<h3 id="不知道第几：-Cauchy-积分主值"><a href="#不知道第几：-Cauchy-积分主值" class="headerlink" title="不知道第几：$Cauchy$积分主值"></a>不知道第几：$Cauchy$积分主值</h3><p><strong>定义：</strong>对于区间$[a,b]$其中有奇点$c$，积分$\int_{a}^{c}f(x)dx$与积分$\int_{c}^{b}f(x)dx$并不单独存在，但是：</p>
-<script type="math/tex; mode=display">
-\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><p>却存在（收敛），称之为函数$f(x)$的$Cauchy$主值，可以用下式表示：</p>
-<script type="math/tex; mode=display">
-P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\int_{c+\eta}^{b}f(x)dx \right ]</script><blockquote>
-<p>无界函数的积分与无限区间函数积分区别大概在于是否包含无穷的值？</p>
-<p>可以这样理解：</p>
-<p>将数轴正负无穷连起来，如此便可以的到$\int_{a}^{+\infty}f(x)dx+\int_{-\infty}^{-a}f(x)dx=\int_{a}^{b}f(x)dx$</p>
-<p>当然这是不合适的，但是$Cauchy$主值可以这样看。</p>
-<p>这里就是$+\frac{1}{0}\&amp;-\frac{1}{0}$的一个体现？</p>
-<p>（粗浅认识，不足挂齿）</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针操作相关</title>
-    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="指针操作相关"><a href="#指针操作相关" class="headerlink" title="指针操作相关"></a>指针操作相关</h1><blockquote>
-<p>一下午速成计划</p>
-</blockquote>
-<h2 id="指针定义"><a href="#指针定义" class="headerlink" title="指针定义"></a>指针定义</h2><p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
-<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2>]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>矩阵标准形小记</title>
-    <url>/2020/08/30/%E7%9F%A9%E9%98%B5%E6%A0%87%E5%87%86%E5%BD%A2%E5%B0%8F%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="标准形"><a href="#标准形" class="headerlink" title="标准形"></a>标准形</h1><blockquote>
-<p>简单记录一点，就当复习。</p>
-</blockquote>
-<h2 id="Frobenius标准形"><a href="#Frobenius标准形" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h2><h3 id="Frobenius块"><a href="#Frobenius块" class="headerlink" title="Frobenius块"></a>Frobenius块</h3><p>给出一个m次多项式，$d(\lambda) = \lambda^{m}+ c_{m-1}\lambda^{m-1} +\cdots +c_{0}$，我们就可以得到m阶方阵</p>
-<script type="math/tex; mode=display">
-\boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}0 & & & -c_{0} \\ 1 & \ddots & & -c_{1} \\ & \ddots & 0 & \vdots \\ & & 1 & -c_{m-1}\end{array}\right]</script><p>这就是$d(\lambda)$对应的Frobenius块，</p>
-<p>由若干Frobenius块组成的方阵就是Frobenius矩阵。</p>
-<p>我们对任意一个Frobenius块求其不变因子组，</p>
-<script type="math/tex; mode=display">
-\lambda \boldsymbol {I} - \boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}\lambda & & & c_{0} \\ 1 & \ddots & & c_{1} \\ & \ddots & \lambda & \vdots \\ & & 1 & \lambda +c_{m-1}\end{array}\right]</script><p>简单的行变换（$\boldsymbol r_{i-1} + \lambda\boldsymbol r_{i}$）之后，逐层向上消去λ，再行变化得到对角线全部都是1（最后一项为$d(\lambda )$）的</p>
-<p>对角矩阵。这一Frobenius块的特征多项式就是其对应的$d(\lambda)$。</p>
-<h3 id="Frobenius标准形-1"><a href="#Frobenius标准形-1" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h3><p>对一个矩阵$\lambda \boldsymbol {I}_{n}-\boldsymbol{A}$，写出其不变因子组，$\{1,1,1,\cdots, d_{i}(\lambda),d_{i+1}(\lambda),\cdots ,d_{n}(\lambda)\}$，于是，我们根据各个不变因子的次数(n)，配上(n-1)个1，就可以写出来每一个不变因子的Frobenius块，将其看作一个个分块，就可以得到</p>
-<script type="math/tex; mode=display">
-\boldsymbol{A} \sim \boldsymbol{F}=\operatorname{diag}\left(\boldsymbol{F}_{d_{i}(\lambda)}, \cdots, \boldsymbol{F}_{d_{n}(\lambda)}\right)</script><p>这里可以补充一个小证明加深理解Frobenius标准形。</p>
-<p><strong>例</strong> 若n阶方阵的迹为零，求证该方阵相似于某一对角元全为零的n阶方阵。</p>
-<p><strong>证明</strong> 当 n=1，结论显然；</p>
-<p>​         当 n=k-1，令其成立；</p>
-<p>​         当 n=k，同样分类讨论，</p>
-<p>如果1是该方阵的不变因子，根据矩阵的行列数以及剩余特征行列式的次数的关系（没有留给二次以上特征行列式补齐Frobenius块应该有方阵的阶数的1，于是，只能保留一次项。再根据不变因子组因子之间的关系（前一项必须是后一项的因式，于是：）</p>
-<p>于是直接写出Frobenius标准形，</p>
-<script type="math/tex; mode=display">
-\boldsymbol{A} \sim \operatorname{diag}\left(\boldsymbol{F}_{\lambda-a}, \boldsymbol{F}_{\lambda-a}, \cdots, \boldsymbol{F}_{\lambda-a}\right)</script><p>之后直接用相抵矩阵迹相等的关系，得到右边的就是所求的对角元全为零的矩阵。</p>
-<h2 id="Jacobson标准形"><a href="#Jacobson标准形" class="headerlink" title="Jacobson标准形"></a>Jacobson标准形</h2><h2 id="通用标准形"><a href="#通用标准形" class="headerlink" title="通用标准形"></a>通用标准形</h2><h2 id="Jordan标准形"><a href="#Jordan标准形" class="headerlink" title="Jordan标准形"></a>Jordan标准形</h2>]]></content>
-      <tags>
-        <tag>代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录"><a href="#正则表达式学习记录" class="headerlink" title="正则表达式学习记录"></a>正则表达式学习记录</h1><h2 id=""><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
-      <tags>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数组名与数组地址</title>
-    <url>/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<h1 id="数组名与数组地址的简单记录"><a href="#数组名与数组地址的简单记录" class="headerlink" title="数组名与数组地址的简单记录"></a>数组名与数组地址的简单记录</h1><blockquote>
-<p>粗浅认识，请多多指教</p>
-</blockquote>
-<p>想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是<code>&amp;iArray</code>的形式，我一想，这也是地址，为啥不用<code>iArray</code>呢。。。</p>
-<blockquote>
-<p><a href="https://blog.csdn.net/jingzi123456789/article/details/66478310" target="_blank" rel="noopener">本文引用</a></p>
-</blockquote>
-<h2 id="iArray与-amp-iArray是省政府和市政府的区别"><a href="#iArray与-amp-iArray是省政府和市政府的区别" class="headerlink" title="iArray与&amp;iArray是省政府和市政府的区别"></a><code>iArray</code>与<code>&amp;iArray</code>是省政府和市政府的区别</h2><p>这里有一个例子可以清晰看出差别</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _size_ (5)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> xiArray[_size_] = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"        xArray = "</span>&lt;&lt;xiArray&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//-64424496976</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"       &amp;xArray = "</span>&lt;&lt; &amp;xiArray&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"    xArray + 1 = "</span>&lt;&lt; xiArray  + <span class="number">1</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&amp;xArray[0] + 1 = "</span>&lt;&lt;&amp;xiArray[<span class="number">0</span>] + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496972</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"   &amp;xArray + 1 = "</span>&lt;&lt; &amp;xiArray + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496956</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>得到的结果：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">        xArray = 0x1000030b0</span><br><span class="line">       &amp;xArray = 0x1000030b0</span><br><span class="line">    xArray + 1 = 0x1000030b4</span><br><span class="line">&amp;xArray[0] + 1 = 0x1000030b4</span><br><span class="line">   &amp;xArray + 1 = 0x1000030c4</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>地址是16进制数，上面的注释是转化的10进制数</p>
-</blockquote>
-<p>这里看到，<code>&amp;xArray</code>的增量单位是数组大小<code>sizeof(_size_ * sizeof(int))</code>，而<code>xArray</code>的增量是元素类型大小<code>sizeof(int) == 4</code></p>
-<p>就像省政府的增量就是下一个省政府，市政府的增量就是下一个市政府。</p>
-<p>这里用指针的理论来说，<code>xArray</code>等价于<code>&amp;xArray[0]</code>，<code>&amp;xArray</code>就是本身的意思。这样就好理解了：指针的增量<code>++</code>的单位是指针类型的大小。</p>
-]]></content>
-      <tags>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -507,6 +435,86 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 ]]></content>
       <tags>
         <tag>大物</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩阵标准形小记</title>
+    <url>/2020/08/30/%E7%9F%A9%E9%98%B5%E6%A0%87%E5%87%86%E5%BD%A2%E5%B0%8F%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="标准形"><a href="#标准形" class="headerlink" title="标准形"></a>标准形</h1><blockquote>
+<p>简单记录一点，就当复习。</p>
+</blockquote>
+<h2 id="Frobenius标准形"><a href="#Frobenius标准形" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h2><h3 id="Frobenius块"><a href="#Frobenius块" class="headerlink" title="Frobenius块"></a>Frobenius块</h3><p>给出一个m次多项式，$d(\lambda) = \lambda^{m}+ c_{m-1}\lambda^{m-1} +\cdots +c_{0}$，我们就可以得到m阶方阵</p>
+<script type="math/tex; mode=display">
+\boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}0 & & & -c_{0} \\ 1 & \ddots & & -c_{1} \\ & \ddots & 0 & \vdots \\ & & 1 & -c_{m-1}\end{array}\right]</script><p>这就是$d(\lambda)$对应的Frobenius块，</p>
+<p>由若干Frobenius块组成的方阵就是Frobenius矩阵。</p>
+<p>我们对任意一个Frobenius块求其不变因子组，</p>
+<script type="math/tex; mode=display">
+\lambda \boldsymbol {I} - \boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}\lambda & & & c_{0} \\ 1 & \ddots & & c_{1} \\ & \ddots & \lambda & \vdots \\ & & 1 & \lambda +c_{m-1}\end{array}\right]</script><p>简单的行变换（$\boldsymbol r_{i-1} + \lambda\boldsymbol r_{i}$）之后，逐层向上消去λ，再行变化得到对角线全部都是1（最后一项为$d(\lambda )$）的</p>
+<p>对角矩阵。这一Frobenius块的特征多项式就是其对应的$d(\lambda)$。</p>
+<h3 id="Frobenius标准形-1"><a href="#Frobenius标准形-1" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h3><p>对一个矩阵$\lambda \boldsymbol {I}_{n}-\boldsymbol{A}$，写出其不变因子组，$\{1,1,1,\cdots, d_{i}(\lambda),d_{i+1}(\lambda),\cdots ,d_{n}(\lambda)\}$，于是，我们根据各个不变因子的次数(n)，配上(n-1)个1，就可以写出来每一个不变因子的Frobenius块，将其看作一个个分块，就可以得到</p>
+<script type="math/tex; mode=display">
+\boldsymbol{A} \sim \boldsymbol{F}=\operatorname{diag}\left(\boldsymbol{F}_{d_{i}(\lambda)}, \cdots, \boldsymbol{F}_{d_{n}(\lambda)}\right)</script><p>这里可以补充一个小证明加深理解Frobenius标准形。</p>
+<p><strong>例</strong> 若n阶方阵的迹为零，求证该方阵相似于某一对角元全为零的n阶方阵。</p>
+<p><strong>证明</strong> 当 n=1，结论显然；</p>
+<p>​         当 n=k-1，令其成立；</p>
+<p>​         当 n=k，同样分类讨论，</p>
+<p>如果1是该方阵的不变因子，根据矩阵的行列数以及剩余特征行列式的次数的关系（没有留给二次以上特征行列式补齐Frobenius块应该有方阵的阶数的1，于是，只能保留一次项。再根据不变因子组因子之间的关系（前一项必须是后一项的因式，于是：）</p>
+<p>于是直接写出Frobenius标准形，</p>
+<script type="math/tex; mode=display">
+\boldsymbol{A} \sim \operatorname{diag}\left(\boldsymbol{F}_{\lambda-a}, \boldsymbol{F}_{\lambda-a}, \cdots, \boldsymbol{F}_{\lambda-a}\right)</script><p>之后直接用相抵矩阵迹相等的关系，得到右边的就是所求的对角元全为零的矩阵。</p>
+<h2 id="Jacobson标准形"><a href="#Jacobson标准形" class="headerlink" title="Jacobson标准形"></a>Jacobson标准形</h2><h2 id="通用标准形"><a href="#通用标准形" class="headerlink" title="通用标准形"></a>通用标准形</h2><h2 id="Jordan标准形"><a href="#Jordan标准形" class="headerlink" title="Jordan标准形"></a>Jordan标准形</h2>]]></content>
+      <tags>
+        <tag>代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数组名与数组地址</title>
+    <url>/2020/05/16/%E6%95%B0%E7%BB%84%E5%90%8D%E4%B8%8E%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<h1 id="数组名与数组地址的简单记录"><a href="#数组名与数组地址的简单记录" class="headerlink" title="数组名与数组地址的简单记录"></a>数组名与数组地址的简单记录</h1><blockquote>
+<p>粗浅认识，请多多指教</p>
+</blockquote>
+<p>想写这个相关的问题，是因为在看到二维数组降维的时候，使用的是<code>&amp;iArray</code>的形式，我一想，这也是地址，为啥不用<code>iArray</code>呢。。。</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/jingzi123456789/article/details/66478310" target="_blank" rel="noopener">本文引用</a></p>
+</blockquote>
+<h2 id="iArray与-amp-iArray是省政府和市政府的区别"><a href="#iArray与-amp-iArray是省政府和市政府的区别" class="headerlink" title="iArray与&amp;iArray是省政府和市政府的区别"></a><code>iArray</code>与<code>&amp;iArray</code>是省政府和市政府的区别</h2><p>这里有一个例子可以清晰看出差别</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _size_ (5)</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> xiArray[_size_] = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"        xArray = "</span>&lt;&lt;xiArray&lt;&lt; <span class="built_in">endl</span>; <span class="comment">//-64424496976</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"       &amp;xArray = "</span>&lt;&lt; &amp;xiArray&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"    xArray + 1 = "</span>&lt;&lt; xiArray  + <span class="number">1</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"&amp;xArray[0] + 1 = "</span>&lt;&lt;&amp;xiArray[<span class="number">0</span>] + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496972</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"   &amp;xArray + 1 = "</span>&lt;&lt; &amp;xiArray + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//-64424496956</span></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>得到的结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">        xArray = 0x1000030b0</span><br><span class="line">       &amp;xArray = 0x1000030b0</span><br><span class="line">    xArray + 1 = 0x1000030b4</span><br><span class="line">&amp;xArray[0] + 1 = 0x1000030b4</span><br><span class="line">   &amp;xArray + 1 = 0x1000030c4</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>地址是16进制数，上面的注释是转化的10进制数</p>
+</blockquote>
+<p>这里看到，<code>&amp;xArray</code>的增量单位是数组大小<code>sizeof(_size_ * sizeof(int))</code>，而<code>xArray</code>的增量是元素类型大小<code>sizeof(int) == 4</code></p>
+<p>就像省政府的增量就是下一个省政府，市政府的增量就是下一个市政府。</p>
+<p>这里用指针的理论来说，<code>xArray</code>等价于<code>&amp;xArray[0]</code>，<code>&amp;xArray</code>就是本身的意思。这样就好理解了：指针的增量<code>++</code>的单位是指针类型的大小。</p>
+]]></content>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指针操作相关</title>
+    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="指针操作相关"><a href="#指针操作相关" class="headerlink" title="指针操作相关"></a>指针操作相关</h1><blockquote>
+<p>一下午速成计划</p>
+</blockquote>
+<h2 id="指针定义"><a href="#指针定义" class="headerlink" title="指针定义"></a>指针定义</h2><p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
+<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
+<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2>]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>需要解决的问题</title>
+    <url>/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><h2 id="数分"><a href="#数分" class="headerlink" title="数分"></a>数分</h2><h3 id="1⃣️-广义积分"><a href="#1⃣️-广义积分" class="headerlink" title="1⃣️ 广义积分"></a>1⃣️ 广义积分</h3><h3 id="2⃣️-条件收敛级数相关"><a href="#2⃣️-条件收敛级数相关" class="headerlink" title="2⃣️ 条件收敛级数相关"></a>2⃣️ 条件收敛级数相关</h3><h2 id="高代"><a href="#高代" class="headerlink" title="高代"></a>高代</h2><h3 id="1⃣️-线性空间相关"><a href="#1⃣️-线性空间相关" class="headerlink" title="1⃣️ 线性空间相关"></a>1⃣️ 线性空间相关</h3><h2 id="大物"><a href="#大物" class="headerlink" title="大物"></a>大物</h2><h3 id="1⃣️-玻尔兹曼分布律"><a href="#1⃣️-玻尔兹曼分布律" class="headerlink" title="1⃣️ 玻尔兹曼分布律"></a>1⃣️ 玻尔兹曼分布律</h3><h3 id="2⃣️-摩尔热容相关"><a href="#2⃣️-摩尔热容相关" class="headerlink" title="2⃣️ 摩尔热容相关"></a>2⃣️ 摩尔热容相关</h3><h3 id="3⃣️-克劳修斯熵公式"><a href="#3⃣️-克劳修斯熵公式" class="headerlink" title="3⃣️ 克劳修斯熵公式"></a>3⃣️ 克劳修斯熵公式</h3><h2 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2>]]></content>
+      <tags>
+        <tag>本周问题</tag>
       </tags>
   </entry>
   <entry>
@@ -571,14 +579,6 @@ P.V.\int_{a}^{b}f(x)dx=\lim_{\eta \rightarrow 0}\left [\int_{a}^{c-\eta}f(x)dx+\
 ]]></content>
       <tags>
         <tag>大物</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>需要解决的问题</title>
-    <url>/2020/04/18/%E9%9C%80%E8%A6%81%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h1><h2 id="数分"><a href="#数分" class="headerlink" title="数分"></a>数分</h2><h3 id="1⃣️-广义积分"><a href="#1⃣️-广义积分" class="headerlink" title="1⃣️ 广义积分"></a>1⃣️ 广义积分</h3><h3 id="2⃣️-条件收敛级数相关"><a href="#2⃣️-条件收敛级数相关" class="headerlink" title="2⃣️ 条件收敛级数相关"></a>2⃣️ 条件收敛级数相关</h3><h2 id="高代"><a href="#高代" class="headerlink" title="高代"></a>高代</h2><h3 id="1⃣️-线性空间相关"><a href="#1⃣️-线性空间相关" class="headerlink" title="1⃣️ 线性空间相关"></a>1⃣️ 线性空间相关</h3><h2 id="大物"><a href="#大物" class="headerlink" title="大物"></a>大物</h2><h3 id="1⃣️-玻尔兹曼分布律"><a href="#1⃣️-玻尔兹曼分布律" class="headerlink" title="1⃣️ 玻尔兹曼分布律"></a>1⃣️ 玻尔兹曼分布律</h3><h3 id="2⃣️-摩尔热容相关"><a href="#2⃣️-摩尔热容相关" class="headerlink" title="2⃣️ 摩尔热容相关"></a>2⃣️ 摩尔热容相关</h3><h3 id="3⃣️-克劳修斯熵公式"><a href="#3⃣️-克劳修斯熵公式" class="headerlink" title="3⃣️ 克劳修斯熵公式"></a>3⃣️ 克劳修斯熵公式</h3><h2 id="swift"><a href="#swift" class="headerlink" title="swift"></a>swift</h2><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2>]]></content>
-      <tags>
-        <tag>本周问题</tag>
       </tags>
   </entry>
 </search>
