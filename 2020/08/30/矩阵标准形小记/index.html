@@ -220,29 +220,37 @@
         </header>
 
         <div class="post-content">
-            <h1 id="标准形"><a href="#标准形" class="headerlink" title="标准形"></a>标准形</h1><blockquote>
+            <h1 id="标准形">标准形</h1>
+<blockquote>
 <p>简单记录一点，就当复习。</p>
 </blockquote>
-<h2 id="Frobenius标准形"><a href="#Frobenius标准形" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h2><h3 id="Frobenius块"><a href="#Frobenius块" class="headerlink" title="Frobenius块"></a>Frobenius块</h3><p>给出一个m次多项式，$d(\lambda) = \lambda^{m}+ c_{m-1}\lambda^{m-1} +\cdots +c_{0}$，我们就可以得到m阶方阵</p>
-<script type="math/tex; mode=display">
-\boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}0 & & & -c_{0} \\ 1 & \ddots & & -c_{1} \\ & \ddots & 0 & \vdots \\ & & 1 & -c_{m-1}\end{array}\right]</script><p>这就是$d(\lambda)$对应的Frobenius块，</p>
+<h2 id="frobenius标准形">Frobenius标准形</h2>
+<h3 id="frobenius块">Frobenius块</h3>
+<p>给出一个m次多项式，<span class="math inline">\(d(\lambda) = \lambda^{m}+ c_{m-1}\lambda^{m-1} +\cdots +c_{0}\)</span>，我们就可以得到m阶方阵 <span class="math display">\[
+\boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}0 &amp; &amp; &amp; -c_{0} \\ 1 &amp; \ddots &amp; &amp; -c_{1} \\ &amp; \ddots &amp; 0 &amp; \vdots \\ &amp; &amp; 1 &amp; -c_{m-1}\end{array}\right]
+\]</span> 这就是<span class="math inline">\(d(\lambda)\)</span>对应的Frobenius块，</p>
 <p>由若干Frobenius块组成的方阵就是Frobenius矩阵。</p>
-<p>我们对任意一个Frobenius块求其不变因子组，</p>
-<script type="math/tex; mode=display">
-\lambda \boldsymbol {I} - \boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}\lambda & & & c_{0} \\ 1 & \ddots & & c_{1} \\ & \ddots & \lambda & \vdots \\ & & 1 & \lambda +c_{m-1}\end{array}\right]</script><p>简单的行变换（$\boldsymbol r_{i-1} + \lambda\boldsymbol r_{i}$）之后，逐层向上消去λ，再行变化得到对角线全部都是1（最后一项为$d(\lambda )$）的</p>
-<p>对角矩阵。这一Frobenius块的特征多项式就是其对应的$d(\lambda)$。</p>
-<h3 id="Frobenius标准形-1"><a href="#Frobenius标准形-1" class="headerlink" title="Frobenius标准形"></a>Frobenius标准形</h3><p>对一个矩阵$\lambda \boldsymbol {I}_{n}-\boldsymbol{A}$，写出其不变因子组，$\{1,1,1,\cdots, d_{i}(\lambda),d_{i+1}(\lambda),\cdots ,d_{n}(\lambda)\}$，于是，我们根据各个不变因子的次数(n)，配上(n-1)个1，就可以写出来每一个不变因子的Frobenius块，将其看作一个个分块，就可以得到</p>
-<script type="math/tex; mode=display">
-\boldsymbol{A} \sim \boldsymbol{F}=\operatorname{diag}\left(\boldsymbol{F}_{d_{i}(\lambda)}, \cdots, \boldsymbol{F}_{d_{n}(\lambda)}\right)</script><p>这里可以补充一个小证明加深理解Frobenius标准形。</p>
+<p>我们对任意一个Frobenius块求其不变因子组， <span class="math display">\[
+\lambda \boldsymbol {I} - \boldsymbol{F}_{d(\lambda)}=\left[\begin{array}{cccc}\lambda &amp; &amp; &amp; c_{0} \\ 1 &amp; \ddots &amp; &amp; c_{1} \\ &amp; \ddots &amp; \lambda &amp; \vdots \\ &amp; &amp; 1 &amp; \lambda +c_{m-1}\end{array}\right]
+\]</span> 简单的行变换（<span class="math inline">\(\boldsymbol r_{i-1} + \lambda\boldsymbol r_{i}\)</span>）之后，逐层向上消去λ，再行变化得到对角线全部都是1（最后一项为<span class="math inline">\(d(\lambda )\)</span>）的</p>
+<p>对角矩阵。这一Frobenius块的特征多项式就是其对应的<span class="math inline">\(d(\lambda)\)</span>。</p>
+<h3 id="frobenius标准形-1">Frobenius标准形</h3>
+<p>对一个矩阵<span class="math inline">\(\lambda \boldsymbol {I}_{n}-\boldsymbol{A}\)</span>，写出其不变因子组，<span class="math inline">\(\{1,1,1,\cdots, d_{i}(\lambda),d_{i+1}(\lambda),\cdots ,d_{n}(\lambda)\}\)</span>，于是，我们根据各个不变因子的次数(n)，配上(n-1)个1，就可以写出来每一个不变因子的Frobenius块，将其看作一个个分块，就可以得到 <span class="math display">\[
+\boldsymbol{A} \sim \boldsymbol{F}=\operatorname{diag}\left(\boldsymbol{F}_{d_{i}(\lambda)}, \cdots, \boldsymbol{F}_{d_{n}(\lambda)}\right)
+\]</span></p>
+<p>这里可以补充一个小证明加深理解Frobenius标准形。</p>
 <p><strong>例</strong> 若n阶方阵的迹为零，求证该方阵相似于某一对角元全为零的n阶方阵。</p>
 <p><strong>证明</strong> 当 n=1，结论显然；</p>
-<p>​         当 n=k-1，令其成立；</p>
-<p>​         当 n=k，同样分类讨论，</p>
+<p>​ 当 n=k-1，令其成立；</p>
+<p>​ 当 n=k，同样分类讨论，</p>
 <p>如果1是该方阵的不变因子，根据矩阵的行列数以及剩余特征行列式的次数的关系（没有留给二次以上特征行列式补齐Frobenius块应该有方阵的阶数的1，于是，只能保留一次项。再根据不变因子组因子之间的关系（前一项必须是后一项的因式，于是：）</p>
-<p>于是直接写出Frobenius标准形，</p>
-<script type="math/tex; mode=display">
-\boldsymbol{A} \sim \operatorname{diag}\left(\boldsymbol{F}_{\lambda-a}, \boldsymbol{F}_{\lambda-a}, \cdots, \boldsymbol{F}_{\lambda-a}\right)</script><p>之后直接用相抵矩阵迹相等的关系，得到右边的就是所求的对角元全为零的矩阵。</p>
-<h2 id="Jacobson标准形"><a href="#Jacobson标准形" class="headerlink" title="Jacobson标准形"></a>Jacobson标准形</h2><h2 id="通用标准形"><a href="#通用标准形" class="headerlink" title="通用标准形"></a>通用标准形</h2><h2 id="Jordan标准形"><a href="#Jordan标准形" class="headerlink" title="Jordan标准形"></a>Jordan标准形</h2>
+<p>于是直接写出Frobenius标准形， <span class="math display">\[
+\boldsymbol{A} \sim \operatorname{diag}\left(\boldsymbol{F}_{\lambda-a}, \boldsymbol{F}_{\lambda-a}, \cdots, \boldsymbol{F}_{\lambda-a}\right)
+\]</span> 之后直接用相抵矩阵迹相等的关系，得到右边的就是所求的对角元全为零的矩阵。</p>
+<h2 id="jacobson标准形">Jacobson标准形</h2>
+<h2 id="通用标准形">通用标准形</h2>
+<h2 id="jordan标准形">Jordan标准形</h2>
+
         </div>
 
         
