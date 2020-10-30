@@ -1,42 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Abstruct algebra</title>
-    <url>/2020/10/16/Abstruct-algebra/</url>
-    <content><![CDATA[<h1 id="Basics-in-Algebra"><a href="#Basics-in-Algebra" class="headerlink" title="Basics in Algebra"></a>Basics in Algebra</h1><blockquote>
-<p>Too much to learn</p>
+    <title>A Proof and a Way to Get PI</title>
+    <url>/2020/10/30/A-Proof-and-a-Way-to-Get-PI/</url>
+    <content><![CDATA[<h1 id="Euler-Poisson-Intergal-and-Wallis-Formula"><a href="#Euler-Poisson-Intergal-and-Wallis-Formula" class="headerlink" title="Euler-Poisson Intergal and Wallis Formula"></a>Euler-Poisson Intergal and Wallis Formula</h1><blockquote>
+<p>This passage  comes from Euler-Poisson Integral:</p>
 </blockquote>
-<h2 id="Quotient"><a href="#Quotient" class="headerlink" title="Quotient"></a>Quotient</h2><p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
-<p>The quotient needs to define a relation just like $R$, to simplify the argument, I use group to discuss.</p>
-<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as  $\bar a, \bar b \dots$ </p>
-<p>$\bar a$ Represent each elements that equal to $a$ under the relationship ${R}$</p>
-<p>the simplest example is the set $\mathbb{Z}$ under the calculate <code>+</code>, and $\mathbb{Z}/m\mathbb{Z}$, the quotient group of it.</p>
-<p>the elements in $\mathbb{Z}/m\mathbb{Z} $, just like $\bar 1, \bar 2, \cdots, \overline{m-1}$, in the <code>+</code>, the equation is presented as $ \text{if } a - b = i$, so $a \&amp; b $ is in the set $\overline{i}$, in the $\times$ is the $ab^{-1} \in \overline{i}$.</p>
+<script type="math/tex; mode=display">
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}</script><h2 id="An-analysis-question"><a href="#An-analysis-question" class="headerlink" title="An analysis question"></a>An analysis question</h2><p>Let</p>
+<p> $f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x$, and $g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}$, and $f+g=\frac{\pi}{4}$,(with derivation we can find $f+g$ is a constant function), we can proof the Euler-Poisson Integral.</p>
+<p>And this is the first meet between me and E-P Integral.</p>
+<h2 id="Solve-the-Integral-Directly"><a href="#Solve-the-Integral-Directly" class="headerlink" title="Solve the Integral Directly?"></a>Solve the Integral Directly?</h2><p>From the book of Demidovich, I saw a question below:</p>
+<script type="math/tex; mode=display">
+\text{Use the Transposition of integral and limit operations to solve it}</script><script type="math/tex; mode=display">
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x</script><p>So we can have a try:</p>
+<p>Easy to judge that the function under the limit operation is continuous and uniform convergence, so we can safely exchange the order of two operations.</p>
+<p>That comes a big problem, <strong>HOW TO CALCULATE THE INGERAL INSIDE</strong>?</p>
+<p>That is why I write.</p>
+<p>We write it outside of the limit. What I need to deal with is:</p>
+<script type="math/tex; mode=display">
+\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}</script><p>Use $t$ to replace $x$, $t=\frac{x}{\sqrt{n}}$, the integral comes to:</p>
+<script type="math/tex; mode=display">
+\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}</script><p>Then we create a function sequence $I_{n}$, and let the $(5) = \sqrt{n}I_{n}$.</p>
+<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} \&amp; I_{n-1}   $.</p>
+<p>Luckily,</p>
+<script type="math/tex; mode=display">
+I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x</script><p>We find the former is equal to 0, and the latter can be written as $2(n-1)I_{n-1}-2(n-1)I_{n}$</p>
+<script type="math/tex; mode=display">
+I_{n} = \frac{2n-3}{2n-2}I_{n-1}</script><p>Just to calculate $I_{1}$ and everything is solved.</p>
+<script type="math/tex; mode=display">
+I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}</script><p>While after we bring back the $I_{n}$ to the Integral, </p>
+<script type="math/tex; mode=display">
+\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}</script><p>something strange happened, maybe we have to do something with $\frac{\pi}{2}$?</p>
+<h2 id="Wallis-Formula"><a href="#Wallis-Formula" class="headerlink" title="Wallis Formula"></a>Wallis Formula</h2><blockquote>
+<p>The Wallis Formula is here, the as</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}</script><p>It comes from the integral </p>
+<script type="math/tex; mode=display">
+S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x</script><p>Yes, this can use the same way to solve, we can get a relation between $S_{n} \&amp; S_{n-2} $, </p>
+<script type="math/tex; mode=display">
+I_{n}=\frac{n-1}{n} I_{n-2}</script><p>With the monotonicity of $\sin^{n}x$, we have a unequal relationship:</p>
+<script type="math/tex; mode=display">
+\frac{2 k ! !}{(2 k+1) ! !}<\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}<\frac{(2 k-2) ! !}{(2 k-1) ! !}</script><p>Let $n \to \infty$ so the Wallis Formula is proofed.</p>
+<p>Until now, the question of Euler-Possion Integral is finish.</p>
 ]]></content>
       <tags>
-        <tag>Algebra</tag>
+        <tag>Analysis</tag>
       </tags>
   </entry>
   <entry>
     <title>MATLAB Notes</title>
     <url>/2020/10/10/MATLAB-Notes/</url>
-    <content><![CDATA[<h1 id="MATLAB-Notes"><a href="#MATLAB-Notes" class="headerlink" title="MATLAB Notes"></a>MATLAB Notes</h1><blockquote>
-<p>Noob </p>
+    <content><![CDATA[<h1 id="matlab-notes">MATLAB Notes</h1>
+<blockquote>
+<p>Noob</p>
 </blockquote>
-<h2 id="Syntax-Difference"><a href="#Syntax-Difference" class="headerlink" title="Syntax Difference"></a>Syntax Difference</h2><h3 id="if-else-in-MATLAB"><a href="#if-else-in-MATLAB" class="headerlink" title="if-else in MATLAB"></a>if-else in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
-<p> and list if else in other language:</p>
+<h2 id="syntax-difference">Syntax Difference</h2>
+<h3 id="if-else-in-matlab">if-else in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
+<p>and list if else in other language:</p>
 <figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> We don’t need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code>  at the end of the line.</p>
-<h3 id="switch-in-MATLAB"><a href="#switch-in-MATLAB" class="headerlink" title="switch in MATLAB"></a>switch in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>the expression <code>end</code> just like the close braces, </p>
-<h2 id="Math-caculation"><a href="#Math-caculation" class="headerlink" title="Math caculation"></a>Math caculation</h2><h3 id="Matrix-devision"><a href="#Matrix-devision" class="headerlink" title="Matrix devision"></a>Matrix devision</h3><blockquote>
+<p>We don't need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code> at the end of the line.</p>
+<h3 id="switch-in-matlab">switch in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>the expression <code>end</code> just like the close braces,</p>
+<h2 id="math-caculation">Math caculation</h2>
+<h3 id="matrix-devision">Matrix devision</h3>
+<blockquote>
 <p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
 </blockquote>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\text {原式可转化成}
-
-e</script><p>Solve</p>
+<p>$$ </p>
+<p>e $$</p>
+<p>Solve</p>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <p>Jacobian</p>
 <figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
@@ -46,157 +83,229 @@ e</script><p>Solve</p>
       </tags>
   </entry>
   <entry>
+    <title>Quotients</title>
+    <url>/2020/10/16/Abstruct-algebra/</url>
+    <content><![CDATA[<h1 id="quotient">Quotient</h1>
+<blockquote>
+<p>Too much to learn</p>
+</blockquote>
+<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
+<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
+<p>### Quotient Group</p>
+<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
+<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
+<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
+<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
+<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
+]]></content>
+      <tags>
+        <tag>Abstruct Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX Expressions</title>
     <url>/2020/06/08/LaTeXExpressions/</url>
-    <content><![CDATA[<h1 id="不太好记的LaTeX符号表达"><a href="#不太好记的LaTeX符号表达" class="headerlink" title="不太好记的LaTeX符号表达"></a>不太好记的LaTeX符号表达</h1><h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><div class="table-container">
+    <content><![CDATA[<h1 id="不太好记的latex符号表达">不太好记的LaTeX符号表达</h1>
+<h2 id="希腊字母">希腊字母</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\alpha$ $\Alpha$</td>
+<tr class="odd">
+<td><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Alpha\)</span></td>
 <td><code>\alpha</code></td>
 </tr>
-<tr>
-<td>$\beta$ $\Beta$</td>
+<tr class="even">
+<td><span class="math inline">\(\beta\)</span> <span class="math inline">\(\Beta\)</span></td>
 <td><code>\beta</code></td>
 </tr>
-<tr>
-<td>$\gamma$ $\Gamma$</td>
+<tr class="odd">
+<td><span class="math inline">\(\gamma\)</span> <span class="math inline">\(\Gamma\)</span></td>
 <td><code>\gamma</code></td>
 </tr>
-<tr>
-<td>$\delta$ $\Delta$</td>
+<tr class="even">
+<td><span class="math inline">\(\delta\)</span> <span class="math inline">\(\Delta\)</span></td>
 <td><code>\delta</code></td>
 </tr>
-<tr>
-<td>$\epsilon$ $\Epsilon$</td>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon\)</span> <span class="math inline">\(\Epsilon\)</span></td>
 <td><code>\epsilon</code></td>
 </tr>
-<tr>
-<td>$\varepsilon$</td>
+<tr class="even">
+<td><span class="math inline">\(\varepsilon\)</span></td>
 <td><code>\varepsilon</code></td>
 </tr>
-<tr>
-<td>$\zeta$ $\Zeta$</td>
+<tr class="odd">
+<td><span class="math inline">\(\zeta\)</span> <span class="math inline">\(\Zeta\)</span></td>
 <td><code>\zeta</code></td>
 </tr>
-<tr>
-<td>$\eta$ $\Eta$</td>
+<tr class="even">
+<td><span class="math inline">\(\eta\)</span> <span class="math inline">\(\Eta\)</span></td>
 <td><code>\eta</code></td>
 </tr>
-<tr>
-<td>$\theta$ $\Theta$</td>
+<tr class="odd">
+<td><span class="math inline">\(\theta\)</span> <span class="math inline">\(\Theta\)</span></td>
 <td><code>\theta</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="table-container">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\iota$ $\Iota$</td>
+<tr class="odd">
+<td><span class="math inline">\(\iota\)</span> <span class="math inline">\(\Iota\)</span></td>
 <td><code>\iota</code></td>
 </tr>
-<tr>
-<td>$\kappa$ $\Kappa$</td>
+<tr class="even">
+<td><span class="math inline">\(\kappa\)</span> <span class="math inline">\(\Kappa\)</span></td>
 <td><code>\kappa</code></td>
 </tr>
-<tr>
-<td>$\lambda$ $\Lambda$</td>
+<tr class="odd">
+<td><span class="math inline">\(\lambda\)</span> <span class="math inline">\(\Lambda\)</span></td>
 <td><code>\lambda</code></td>
 </tr>
-<tr>
-<td>$\mu$ $\Mu$</td>
+<tr class="even">
+<td><span class="math inline">\(\mu\)</span> <span class="math inline">\(\Mu\)</span></td>
 <td><code>\mu</code></td>
 </tr>
-<tr>
-<td>$\nu$ $\Nu$</td>
+<tr class="odd">
+<td><span class="math inline">\(\nu\)</span> <span class="math inline">\(\Nu\)</span></td>
 <td><code>\nu</code></td>
 </tr>
-<tr>
-<td>$\xi$ $\Xi$</td>
+<tr class="even">
+<td><span class="math inline">\(\xi\)</span> <span class="math inline">\(\Xi\)</span></td>
 <td><code>\xi</code></td>
 </tr>
-<tr>
-<td>$\omicron$ $\Omicron$</td>
+<tr class="odd">
+<td><span class="math inline">\(\omicron\)</span> <span class="math inline">\(\Omicron\)</span></td>
 <td><code>\omicron</code></td>
 </tr>
-<tr>
-<td>$\pi$ $\Pi$</td>
+<tr class="even">
+<td><span class="math inline">\(\pi\)</span> <span class="math inline">\(\Pi\)</span></td>
 <td><code>\pi</code></td>
 </tr>
-<tr>
-<td>$\rho$ $\Rho$</td>
+<tr class="odd">
+<td><span class="math inline">\(\rho\)</span> <span class="math inline">\(\Rho\)</span></td>
 <td><code>\rho</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="table-container">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\sigma$ $\Sigma$</td>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span> <span class="math inline">\(\Sigma\)</span></td>
 <td><code>\sigma</code></td>
 </tr>
-<tr>
-<td>$\tau$ $\Tau$</td>
+<tr class="even">
+<td><span class="math inline">\(\tau\)</span> <span class="math inline">\(\Tau\)</span></td>
 <td><code>\tau</code></td>
 </tr>
-<tr>
-<td>$\upsilon$ $\Upsilon$</td>
+<tr class="odd">
+<td><span class="math inline">\(\upsilon\)</span> <span class="math inline">\(\Upsilon\)</span></td>
 <td><code>\upsilon</code></td>
 </tr>
-<tr>
-<td>$\phi$ $\Phi$</td>
+<tr class="even">
+<td><span class="math inline">\(\phi\)</span> <span class="math inline">\(\Phi\)</span></td>
 <td><code>\phi</code></td>
 </tr>
-<tr>
-<td>$\varphi$</td>
+<tr class="odd">
+<td><span class="math inline">\(\varphi\)</span></td>
 <td><code>\varphi</code></td>
 </tr>
-<tr>
-<td>$\chi$ $\Chi$</td>
+<tr class="even">
+<td><span class="math inline">\(\chi\)</span> <span class="math inline">\(\Chi\)</span></td>
 <td><code>\chi</code></td>
 </tr>
-<tr>
-<td>$\psi$ $\Psi$</td>
+<tr class="odd">
+<td><span class="math inline">\(\psi\)</span> <span class="math inline">\(\Psi\)</span></td>
 <td><code>\psi</code></td>
 </tr>
-<tr>
-<td>$\omega$ $\Omega$</td>
+<tr class="even">
+<td><span class="math inline">\(\omega\)</span> <span class="math inline">\(\Omega\)</span></td>
 <td><code>\omega</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2>]]></content>
+<p>## 数学函数</p>
+]]></content>
       <tags>
         <tag>LaTeX</tag>
       </tags>
   </entry>
   <entry>
+    <title>Sylow Theorems</title>
+    <url>/2020/10/24/sylow-theorems/</url>
+    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
+<blockquote>
+<p>Too much to learn</p>
+</blockquote>
+<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
+<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
+<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
+<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
+<ol type="1">
+<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
+<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
+<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
+</ol>
+<p><strong>proof</strong></p>
+]]></content>
+      <tags>
+        <tag>Abstruct Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指针操作相关</title>
+    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
+<blockquote>
+<p>一下午速成计划</p>
+</blockquote>
+<h2 id="指针定义">指针定义</h2>
+<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针">常量指针</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
+<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
+<h2 id="指针常量">指针常量</h2>
+]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
+<h2 id="section"></h2>
+]]></content>
+      <tags>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Thread 1: signal SIGABRT</title>
     <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的Thread-1-signal-SIGABRT问题记录"><a href="#遇见的Thread-1-signal-SIGABRT问题记录" class="headerlink" title="遇见的Thread 1: signal SIGABRT问题记录"></a>遇见的Thread 1: signal SIGABRT问题记录</h1><h2 id="C-数组中"><a href="#C-数组中" class="headerlink" title="C++数组中"></a>C++数组中</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
 <p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
 <blockquote>
@@ -205,31 +314,6 @@ e</script><p>Solve</p>
 ]]></content>
       <tags>
         <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针操作相关</title>
-    <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="指针操作相关"><a href="#指针操作相关" class="headerlink" title="指针操作相关"></a>指针操作相关</h1><blockquote>
-<p>一下午速成计划</p>
-</blockquote>
-<h2 id="指针定义"><a href="#指针定义" class="headerlink" title="指针定义"></a>指针定义</h2><p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
-<p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2>]]></content>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录"><a href="#正则表达式学习记录" class="headerlink" title="正则表达式学习记录"></a>正则表达式学习记录</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1>]]></content>
-      <tags>
-        <tag>开发</tag>
       </tags>
   </entry>
 </search>

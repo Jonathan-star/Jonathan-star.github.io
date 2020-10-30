@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="default">
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport"
@@ -13,7 +13,7 @@
 
 
 
-    <meta name="keywords" content="math, swift, C++, python">
+    <meta name="keywords" content="math, swift, C++, python, matlab">
 
 
 <title>MATLAB Notes | weiwei的摸鱼生活</title>
@@ -211,7 +211,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">十月 10, 2020&nbsp;&nbsp;15:48:36</a>
+                        Date: <a href="#">October 10, 2020&nbsp;&nbsp;15:48:36</a>
                         </span>
                     
                     
@@ -220,23 +220,28 @@
         </header>
 
         <div class="post-content">
-            <h1 id="MATLAB-Notes"><a href="#MATLAB-Notes" class="headerlink" title="MATLAB Notes"></a>MATLAB Notes</h1><blockquote>
-<p>Noob </p>
+            <h1 id="matlab-notes">MATLAB Notes</h1>
+<blockquote>
+<p>Noob</p>
 </blockquote>
-<h2 id="Syntax-Difference"><a href="#Syntax-Difference" class="headerlink" title="Syntax Difference"></a>Syntax Difference</h2><h3 id="if-else-in-MATLAB"><a href="#if-else-in-MATLAB" class="headerlink" title="if-else in MATLAB"></a>if-else in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
-<p> and list if else in other language:</p>
+<h2 id="syntax-difference">Syntax Difference</h2>
+<h3 id="if-else-in-matlab">if-else in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
+<p>and list if else in other language:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> We don’t need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code>  at the end of the line.</p>
-<h3 id="switch-in-MATLAB"><a href="#switch-in-MATLAB" class="headerlink" title="switch in MATLAB"></a>switch in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>the expression <code>end</code> just like the close braces, </p>
-<h2 id="Math-caculation"><a href="#Math-caculation" class="headerlink" title="Math caculation"></a>Math caculation</h2><h3 id="Matrix-devision"><a href="#Matrix-devision" class="headerlink" title="Matrix devision"></a>Matrix devision</h3><blockquote>
+<p>We don't need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code> at the end of the line.</p>
+<h3 id="switch-in-matlab">switch in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>the expression <code>end</code> just like the close braces,</p>
+<h2 id="math-caculation">Math caculation</h2>
+<h3 id="matrix-devision">Matrix devision</h3>
+<blockquote>
 <p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
 </blockquote>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\text {原式可转化成}
-
-e</script><p>Solve</p>
+<p>$$ </p>
+<p>e $$</p>
+<p>Solve</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <p>Jacobian</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
@@ -281,7 +286,7 @@ e</script><p>Solve</p>
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/10/16/Abstruct-algebra/">Abstruct algebra</a>
+                <a class="prev" rel="prev" href="/2020/10/16/Abstruct-algebra/">Quotients</a>
             
             
             <a class="next" rel="next" href="/2020/06/08/LaTeXExpressions/">LaTeX Expressions</a>
