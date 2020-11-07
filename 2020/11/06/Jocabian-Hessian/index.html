@@ -226,81 +226,65 @@
         </header>
 
         <div class="post-content">
-            <h1 id="usage-and-meaning-of-jocabian-hessian">Usage and Meaning of Jocabian &amp; Hessian</h1>
-<blockquote>
-<p>Some quoit may fail to load, so here to type: "https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/" &amp; "http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/"</p>
+            <h1 id="Usage-and-Meaning-of-Jocabian-amp-Hessian"><a href="#Usage-and-Meaning-of-Jocabian-amp-Hessian" class="headerlink" title="Usage and Meaning of Jocabian &amp; Hessian"></a>Usage and Meaning of Jocabian &amp; Hessian</h1><blockquote>
+<p>Some quoit may fail to load, so here to type: “<a href="https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/" target="_blank" rel="noopener">https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/</a>“ &amp; “<a href="http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/" target="_blank" rel="noopener">http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/</a>“</p>
 </blockquote>
-<h2 id="in-the-derivation-of-implicit-function">In the Derivation of Implicit Function</h2>
-<p>Introduced by the Implicit Function, we have the concept of Jocabian, given a system of equations, just like <span class="math display">\[
-\left\{\begin{array}{l}y_{1}=f_{1}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ y_{2}=f_{2}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ \cdots \\ y_{n}=f_{n}\left(x_{1}, x_{2}, \ldots, x_{n}\right)\end{array}\right.\nonumber
-\]</span></p>
-<p>And we have the partial derivate of each <span class="math inline">\(f_{i}\)</span> by each <span class="math inline">\(x_{i}\)</span> at the point <span class="math inline">\(\mathbf{P}\)</span>,</p>
-<p>we write them in a matrix: <span class="math display">\[
-A=\left[\begin{array}{cccc}\frac{\partial f_{1}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{1}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{1}}{\partial x_{n}}(\mathbf{p}) \\ \frac{\partial f_{2}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{2}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{2}}{\partial x_{n}}(\mathbf{p}) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{m}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{m}}{\partial x_{n}}(\mathbf{p})\end{array}\right]\nonumber
-\]</span></p>
-<p>In this situation, in my text book at first, it just used as a symbol to simplify the result of implicit function partial derivation, by Cramer's Rule.</p>
-<h2 id="in-the-double-integral">In the Double Integral</h2>
-<p>Like integral with only one variable, we can have some variable transform while calculating. In the one variable integral, we use this skill to simplify the function, while in the Double even Triple integral, we prefer to use it to change the area where we are integrating.</p>
+<h2 id="In-the-Derivation-of-Implicit-Function"><a href="#In-the-Derivation-of-Implicit-Function" class="headerlink" title="In the Derivation of Implicit Function"></a>In the Derivation of Implicit Function</h2><p>Introduced by the Implicit Function, we have the concept of Jocabian,  given a system of equations, just like</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}y_{1}=f_{1}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ y_{2}=f_{2}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ \cdots \\ y_{n}=f_{n}\left(x_{1}, x_{2}, \ldots, x_{n}\right)\end{array}\right.\nonumber</script><p>And we have the partial derivate of each $f_{i}$ by each $x_{i}$ at the point $\mathbf{P}$,</p>
+<p>we write them in a matrix:</p>
+<script type="math/tex; mode=display">
+A=\left[\begin{array}{cccc}\frac{\partial f_{1}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{1}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{1}}{\partial x_{n}}(\mathbf{p}) \\ \frac{\partial f_{2}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{2}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{2}}{\partial x_{n}}(\mathbf{p}) \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{m}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{m}}{\partial x_{n}}(\mathbf{p})\end{array}\right]\nonumber</script><p>In this situation, in my text book at first, it just used as a symbol to simplify the result of implicit function partial derivation, by Cramer’s Rule.</p>
+<h2 id="In-the-Double-Integral"><a href="#In-the-Double-Integral" class="headerlink" title="In the Double Integral"></a>In the Double Integral</h2><p>Like integral with only one variable, we can have some variable transform while calculating. In the one variable integral, we use this skill to simplify the function, while in the Double even Triple integral, we prefer to use it to change the area where we are integrating. </p>
 <p>In the normal integral, the change of variable follows the rules like:</p>
-<p><span class="math display">\[
-\int_{a}^{b}f(x)\mathrm{d}x\nonumber
-\]</span></p>
-<p>Let <span class="math inline">\(x = \varphi(t),a= \varphi(\alpha), b=\varphi(\beta)\)</span> , the integral can be turned into: <span class="math display">\[
-\int_{\alpha}^{\beta}f(\varphi(t))\varphi^{\prime}(t)\mathrm{d}x\nonumber
-\]</span> Considering the area change <span class="math inline">\((a,b) \to (\alpha, \beta)\)</span>, we can learn that in each small interval, we have <span class="math display">\[
+<script type="math/tex; mode=display">
+\int_{a}^{b}f(x)\mathrm{d}x\nonumber</script><p>Let $x = \varphi(t),a= \varphi(\alpha), b=\varphi(\beta)$ , the integral can be turned into:</p>
+<script type="math/tex; mode=display">
+\int_{\alpha}^{\beta}f(\varphi(t))\varphi^{\prime}(t)\mathrm{d}x\nonumber</script><p>Considering the area change $(a,b) \to (\alpha, \beta)$, we can learn that in each small interval, we have</p>
+<script type="math/tex; mode=display">
 \begin{align}
-\delta a-\delta b &amp;= \varphi^{\prime}(\alpha)(\delta \alpha-\delta \beta), \forall \alpha_{0} \in (\delta \alpha,\delta \beta)\nonumber \\ 
-\Delta x &amp;= \varphi^{\prime}(\alpha)\Delta t \nonumber
-\end{align}\tag{*}
-\]</span></p>
-<p>At this time, the derivation plays the role who controls the transform.</p>
-<p>While in the mutipul function, we also have the transform, the function with two variable <span class="math inline">\(F: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}\)</span> <span class="math display">\[
-F :\left\{\begin{array}{l}x=X\left(u, v\right) \\ y=Y\left(u, v\right) \end{array}\right.\nonumber
-\]</span> In the <span class="math inline">\((u,v)\)</span> system, we can cut a small rectangle, with four points: <span class="math inline">\((u_{0},v_{0})(u_{0}+h,v_{0})(u_{0},v_{0}+k)(u_{0}+h,v_{0}+k)\)</span>, <span class="math inline">\(h,k \to 0\)</span>.</p>
-<p>Like the relationship in <span class="math inline">\(*\)</span>,</p>
-<p>let the area in $(x,y) $ equals to <span class="math inline">\(S_{\star}\)</span>, the area in <span class="math inline">\((u,v)\)</span> equals to <span class="math inline">\(S\)</span> <span class="math display">\[
-S_{\star} = \frac{\partial(X,Y)}{\partial(u,v)} S \nonumber
-\]</span> Here is a proof:</p>
-<p><span class="math display">\[
-\text{some proof} \nonumber
-\]</span></p>
-<p>so the Jocabian can be seen as <strong>the derivation of vector valued function.</strong></p>
-<h2 id="jocabian">Jocabian</h2>
-<p>In the single variable function, we can use a straight line to approximately express any complex function at the area near the point <span class="math inline">\(P\)</span>. The Jocabian can solve the problem in the vector valued function.</p>
-<p><span class="math display">\[
-T(\mathbf{x})=A \mathbf{x}+\mathbf{b}
-\]</span> That <span class="math inline">\(A\)</span> is the Jocabian at the point of function <span class="math inline">\(F: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\)</span>.</p>
-<p>It is natural that at the point <span class="math inline">\(P\)</span>, <span class="math inline">\(T(P)= F(P)\)</span>, at other points, we wish that <span class="math display">\[
-T(\mathbf{x})=A(\mathbf{x}-\mathbf{p})+F(\mathbf{p})
-\]</span> Further more, <span class="math display">\[
-\lim _{\mathbf{x} \rightarrow \mathbf{p}} \frac{F(\mathbf{x})-F(\mathbf{p})-A(\mathbf{x}-\mathbf{p})}{\|\mathbf{x}-\mathbf{p}\|}=\mathbf{0} \nonumber
-\]</span> We can see, the Jocabian is the matrix who shows the linear relationship while we linearize the nonlinear function.</p>
+\delta a-\delta b &= \varphi^{\prime}(\alpha)(\delta \alpha-\delta \beta), \forall \alpha_{0} \in (\delta \alpha,\delta \beta)\nonumber \\ 
+\Delta x &= \varphi^{\prime}(\alpha)\Delta t \nonumber
+\end{align}\tag{*}</script><p>At this time, the derivation plays the role who controls the transform.</p>
+<p>While in the mutipul function, we also have the transform, the function with two variable $F: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$</p>
+<script type="math/tex; mode=display">
+F :\left\{\begin{array}{l}x=X\left(u, v\right) \\ y=Y\left(u, v\right) \end{array}\right.\nonumber</script><p>In the $(u,v)$ system, we can cut a small rectangle, with four points: $(u_{0},v_{0})(u_{0}+h,v_{0})(u_{0},v_{0}+k)(u_{0}+h,v_{0}+k)$, $h,k \to 0$.</p>
+<p>Like the relationship in $*$,  </p>
+<p>let the area in $(x,y) $ equals to $S_{\star}$, the area in $(u,v)$ equals to $S$</p>
+<script type="math/tex; mode=display">
+S_{\star} = \frac{\partial(X,Y)}{\partial(u,v)} S \nonumber</script><p>Here is a proof:</p>
+<script type="math/tex; mode=display">
+\text{some proof} \nonumber</script><p>so the Jocabian can be seen as <strong>the derivation of vector valued function.</strong></p>
+<h2 id="Jocabian"><a href="#Jocabian" class="headerlink" title="Jocabian"></a>Jocabian</h2><p>In the single variable function, we can use a straight line to approximately express any complex function at the area near the point $P$. The Jocabian can solve the problem in the vector valued function.</p>
+<script type="math/tex; mode=display">
+T(\mathbf{x})=A \mathbf{x}+\mathbf{b}</script><p>That $A$ is the Jocabian at the point of function $F: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$.</p>
+<p>It is natural that at the point $P$,  $T(P)= F(P)$, at other points, we wish that</p>
+<script type="math/tex; mode=display">
+T(\mathbf{x})=A(\mathbf{x}-\mathbf{p})+F(\mathbf{p})</script><p>Further more,</p>
+<script type="math/tex; mode=display">
+\lim _{\mathbf{x} \rightarrow \mathbf{p}} \frac{F(\mathbf{x})-F(\mathbf{p})-A(\mathbf{x}-\mathbf{p})}{\|\mathbf{x}-\mathbf{p}\|}=\mathbf{0} \nonumber</script><p>We can see, the Jocabian is the matrix who shows the linear relationship while we linearize the nonlinear function.</p>
 <p>The rigorous proof can be find in the blog :</p>
-<h2 id="hessian">Hessian</h2>
-<p>During the study of multiple function's extremum, the Hessian is introduced. The form of Jocanian and Hessian is so similar, let's find the relation between them.</p>
-<p>Here is the Hessian: <span class="math display">\[
-\left[\begin{array}{cccc}\frac{\partial^{2} f}{\partial x_{1}^{2}} &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{n}} \\ \frac{\partial^{2} f}{\partial x_{2} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{2}^{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{2} \partial x_{n}} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial^{2} f}{\partial x_{n} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{n} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{n}^{2}}\end{array}\right] \nonumber
-\]</span> We can find that, in the Hessian, the function <span class="math inline">\(f\)</span> is no longer a vector valued function, it is just a simple multiple function <span class="math inline">\(\mathbb{F}^{n}\to \mathbb{F}\)</span>. And <span class="math inline">\(f\)</span> is able to derivate twice in the area.</p>
-<p>The gradient of <span class="math inline">\(f\)</span> about <span class="math inline">\(\mathbf{x}\)</span> can be writen as: <span class="math display">\[
-\nabla f(\mathbf{x})=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}} \\ \frac{\partial f}{\partial x_{2}} \\ \vdots \\ \frac{\partial f}{\partial x_{n}}\end{array}\right] \nonumber
-\]</span> Here we get a vector valued function <span class="math inline">\(\nabla f(\mathbf{x})\)</span>. And it's Jocabian is the Hessian of <span class="math inline">\(f\)</span>.</p>
-<p>To understanding the Hessian, Jocabian, and <span class="math inline">\(\nabla f(\mathbf{x})\)</span>, here is an example.</p>
+<h2 id="Hessian"><a href="#Hessian" class="headerlink" title="Hessian"></a>Hessian</h2><p>During the study of multiple function’s extremum, the Hessian is introduced. The form of Jocanian and Hessian is so similar, let’s find the relation between them.</p>
+<p>Here is the Hessian:</p>
+<script type="math/tex; mode=display">
+\left[\begin{array}{cccc}\frac{\partial^{2} f}{\partial x_{1}^{2}} & \frac{\partial^{2} f}{\partial x_{1} \partial x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{1} \partial x_{n}} \\ \frac{\partial^{2} f}{\partial x_{2} \partial x_{1}} & \frac{\partial^{2} f}{\partial x_{2}^{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{2} \partial x_{n}} \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial^{2} f}{\partial x_{n} \partial x_{1}} & \frac{\partial^{2} f}{\partial x_{n} \partial x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{n}^{2}}\end{array}\right] \nonumber</script><p>We can find that, in the Hessian, the function $f$ is no longer a vector valued function, it is just a simple multiple function $\mathbb{F}^{n}\to \mathbb{F}$. And $f$ is able to derivate twice in the area.</p>
+<p>The gradient of $f$ about $\mathbf{x}$ can be writen as:</p>
+<script type="math/tex; mode=display">
+\nabla f(\mathbf{x})=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}} \\ \frac{\partial f}{\partial x_{2}} \\ \vdots \\ \frac{\partial f}{\partial x_{n}}\end{array}\right] \nonumber</script><p>Here we get a vector valued function $\nabla f(\mathbf{x})$. And it’s Jocabian is the Hessian of $f$.</p>
+<p>To understanding the Hessian, Jocabian, and $\nabla f(\mathbf{x})$, here is an example.</p>
 <blockquote>
-<p>we consider a house with coordinate System, each point' temperature is given by a function <span class="math inline">\(T(x,y,z)\)</span>, the gradient <span class="math inline">\(\nabla T\)</span> shows which direction the temperature changing fastest, and the changing rate.</p>
-<p>Also, you know the Jocabian is also shows the changing rate of a function, so the Hessian is the 'acceleration' of temperature.</p>
+<p>we consider a house with coordinate System, each point’ temperature is given by a function $T(x,y,z)$, the gradient $\nabla T$ shows which direction the temperature changing fastest, and the changing rate.</p>
+<p>Also, you know the  Jocabian is also shows the changing rate of a function,  so the Hessian is the ‘acceleration’ of temperature. </p>
 </blockquote>
-<h2 id="application">Application</h2>
-<h3 id="solve-a-equation">Solve a equation</h3>
-<p>When the equation is hard to solve with normal skills, iteration is a good way.</p>
-<p>In the single value function, with Taylor Formula <span class="math display">\[
-f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonumber
-\]</span> <img src="/Users/yulongyi/myBlog/screenshot/Screen%20Shot%202020-11-07%20at%2017.13.05.png" style="zoom:25%;" /></p>
-<p>Find the solution of the liner equation: <span class="math inline">\(f(x)= 0\)</span>, let the answer be the <span class="math inline">\(x_{1}\)</span></p>
-<p>we can do this so many times, until the answer <span class="math inline">\(x_{n}\)</span> to satisfy the restrictions.</p>
-<p>In vector valued function, the iteration is in the form of: <span class="math display">\[
-x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber
-\]</span></p>
-
+<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><h3 id="Solve-a-equation"><a href="#Solve-a-equation" class="headerlink" title="Solve a equation"></a>Solve a equation</h3><p>When the equation is hard to solve with normal  skills, iteration is a good way.</p>
+<p>In the single value function, with Taylor Formula</p>
+<script type="math/tex; mode=display">
+f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonumber</script><p><img src="/Users/yulongyi/myBlog/screenshot/Screen%20Shot%202020-11-07%20at%2017.13.05.png" style="zoom:25%;" /></p>
+<p>Find the solution of the liner equation: $f(x)= 0$, let the answer be the $x_{1}$</p>
+<p>we can do this so many times, until the answer $x_{n}$ to satisfy the restrictions.</p>
+<p>In vector valued function, the iteration is in the form of:</p>
+<script type="math/tex; mode=display">
+x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber</script>
         </div>
 
         
