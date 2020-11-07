@@ -5,7 +5,7 @@
     <url>/2020/11/06/Jocabian-Hessian/</url>
     <content><![CDATA[<h1 id="usage-and-meaning-of-jocabian-hessian">Usage and Meaning of Jocabian &amp; Hessian</h1>
 <blockquote>
-
+<p>Some quoit may fail to load, so here to type: "https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/" &amp; "http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/"</p>
 </blockquote>
 <h2 id="in-the-derivation-of-implicit-function">In the Derivation of Implicit Function</h2>
 <p>Introduced by the Implicit Function, we have the concept of Jocabian, given a system of equations, just like <span class="math display">\[
@@ -77,10 +77,75 @@ f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonu
 <p>In vector valued function, the iteration is in the form of: <span class="math display">\[
 x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber
 \]</span></p>
-<p>Thanks to:</p>
+<blockquote>
+<p>Because of my foolish,</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>A Proof and a Way to Get PI</title>
+    <url>/2020/10/30/A-Proof-and-a-Way-to-Get-PI/</url>
+    <content><![CDATA[<h1 id="euler-poisson-intergal-and-wallis-formula">Euler-Poisson Intergal and Wallis Formula</h1>
+<blockquote>
+<p>This passage comes from Euler-Poisson Integral:</p>
+</blockquote>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}
+\]</span></p>
+<h2 id="an-analysis-question">An analysis question</h2>
+<p>Let</p>
+<p><span class="math inline">\(f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x\)</span>, and <span class="math inline">\(g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}\)</span>, and <span class="math inline">\(f+g=\frac{\pi}{4}\)</span>,(with derivation we can find <span class="math inline">\(f+g\)</span> is a constant function), we can proof the Euler-Poisson Integral.</p>
+<p>And this is the first meet between me and E-P Integral.</p>
+<h2 id="solve-the-integral-directly">Solve the Integral Directly?</h2>
+<p>From the book of Demidovich, I saw a question below: <span class="math display">\[
+\text{Use the Transposition of integral and limit operations to solve it}
+\]</span></p>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x
+\]</span></p>
+<p>So we can have a try:</p>
+<p>Easy to judge that the function under the limit operation is continuous and uniform convergence, so we can safely exchange the order of two operations.</p>
+<p>That comes a big problem, <strong>HOW TO CALCULATE THE INGERAL INSIDE</strong>?</p>
+<p>That is why I write.</p>
+<p>We write it outside of the limit. What I need to deal with is: <span class="math display">\[
+\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}
+\]</span> Use <span class="math inline">\(t\)</span> to replace <span class="math inline">\(x\)</span>, <span class="math inline">\(t=\frac{x}{\sqrt{n}}\)</span>, the integral comes to: <span class="math display">\[
+\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}
+\]</span></p>
+<p>Then we create a function sequence <span class="math inline">\(I_{n}\)</span>, and let the $ I_{n} = _{0}^{+}$.</p>
+<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} &amp; I_{n-1} $.</p>
+<p>Luckily, <span class="math display">\[
+I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x 
+\]</span> We find the former is equal to 0, and the latter can be written as <span class="math inline">\(2(n-1)I_{n-1}-2(n-1)I_{n}\)</span> <span class="math display">\[
+I_{n} = \frac{2n-3}{2n-2}I_{n-1}
+\]</span></p>
+<p>Just to calculate <span class="math inline">\(I_{1}\)</span> and everything is solved. <span class="math display">\[
+I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}
+\]</span> While after we bring back the <span class="math inline">\(I_{n}\)</span> to the Integral, <span class="math display">\[
+\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}
+\]</span> something strange happened, maybe we have to do something with <span class="math inline">\(\frac{\pi}{2}\)</span>?</p>
+<h2 id="wallis-formula">Wallis Formula</h2>
+<blockquote>
+<p>The Wallis Formula is here:</p>
+</blockquote>
+<p><span class="math display">\[
+\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}
+\]</span></p>
+<p>It comes from the integral <span class="math display">\[
+S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x
+\]</span></p>
+<p>Yes, this can use the same way to solve, we can get a relation between $S_{n} &amp; S_{n-2} $, <span class="math display">\[
+I_{n}=\frac{n-1}{n} I_{n-2}
+\]</span> With the monotonicity of <span class="math inline">\(\sin^{n}x\)</span>, we have a unequal relationship: <span class="math display">\[
+\frac{2 k ! !}{(2 k+1) ! !}&lt;\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}&lt;\frac{(2 k-2) ! !}{(2 k-1) ! !}
+\]</span> Let <span class="math inline">\(n \to \infty\)</span> so the Wallis Formula is proofed.</p>
+<p>Until now, the question of Euler-Possion Integral is finish.</p>
+]]></content>
+      <tags>
+        <tag>Analysis</tag>
       </tags>
   </entry>
   <entry>
@@ -229,66 +294,23 @@ x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right)
       </tags>
   </entry>
   <entry>
-    <title>A Proof and a Way to Get PI</title>
-    <url>/2020/10/30/A-Proof-and-a-Way-to-Get-PI/</url>
-    <content><![CDATA[<h1 id="euler-poisson-intergal-and-wallis-formula">Euler-Poisson Intergal and Wallis Formula</h1>
+    <title>Quotients</title>
+    <url>/2020/10/16/Abstruct-algebra/</url>
+    <content><![CDATA[<h1 id="quotient">Quotient</h1>
 <blockquote>
-<p>This passage comes from Euler-Poisson Integral:</p>
+<p>Too much to learn</p>
 </blockquote>
-<p><span class="math display">\[
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}
-\]</span></p>
-<h2 id="an-analysis-question">An analysis question</h2>
-<p>Let</p>
-<p><span class="math inline">\(f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x\)</span>, and <span class="math inline">\(g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}\)</span>, and <span class="math inline">\(f+g=\frac{\pi}{4}\)</span>,(with derivation we can find <span class="math inline">\(f+g\)</span> is a constant function), we can proof the Euler-Poisson Integral.</p>
-<p>And this is the first meet between me and E-P Integral.</p>
-<h2 id="solve-the-integral-directly">Solve the Integral Directly?</h2>
-<p>From the book of Demidovich, I saw a question below: <span class="math display">\[
-\text{Use the Transposition of integral and limit operations to solve it}
-\]</span></p>
-<p><span class="math display">\[
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x
-\]</span></p>
-<p>So we can have a try:</p>
-<p>Easy to judge that the function under the limit operation is continuous and uniform convergence, so we can safely exchange the order of two operations.</p>
-<p>That comes a big problem, <strong>HOW TO CALCULATE THE INGERAL INSIDE</strong>?</p>
-<p>That is why I write.</p>
-<p>We write it outside of the limit. What I need to deal with is: <span class="math display">\[
-\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}
-\]</span> Use <span class="math inline">\(t\)</span> to replace <span class="math inline">\(x\)</span>, <span class="math inline">\(t=\frac{x}{\sqrt{n}}\)</span>, the integral comes to: <span class="math display">\[
-\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}
-\]</span></p>
-<p>Then we create a function sequence <span class="math inline">\(I_{n}\)</span>, and let the $ I_{n} = _{0}^{+}$.</p>
-<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} &amp; I_{n-1} $.</p>
-<p>Luckily, <span class="math display">\[
-I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x 
-\]</span> We find the former is equal to 0, and the latter can be written as <span class="math inline">\(2(n-1)I_{n-1}-2(n-1)I_{n}\)</span> <span class="math display">\[
-I_{n} = \frac{2n-3}{2n-2}I_{n-1}
-\]</span></p>
-<p>Just to calculate <span class="math inline">\(I_{1}\)</span> and everything is solved. <span class="math display">\[
-I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}
-\]</span> While after we bring back the <span class="math inline">\(I_{n}\)</span> to the Integral, <span class="math display">\[
-\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}
-\]</span> something strange happened, maybe we have to do something with <span class="math inline">\(\frac{\pi}{2}\)</span>?</p>
-<h2 id="wallis-formula">Wallis Formula</h2>
-<blockquote>
-<p>The Wallis Formula is here:</p>
-</blockquote>
-<p><span class="math display">\[
-\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}
-\]</span></p>
-<p>It comes from the integral <span class="math display">\[
-S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x
-\]</span></p>
-<p>Yes, this can use the same way to solve, we can get a relation between $S_{n} &amp; S_{n-2} $, <span class="math display">\[
-I_{n}=\frac{n-1}{n} I_{n-2}
-\]</span> With the monotonicity of <span class="math inline">\(\sin^{n}x\)</span>, we have a unequal relationship: <span class="math display">\[
-\frac{2 k ! !}{(2 k+1) ! !}&lt;\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}&lt;\frac{(2 k-2) ! !}{(2 k-1) ! !}
-\]</span> Let <span class="math inline">\(n \to \infty\)</span> so the Wallis Formula is proofed.</p>
-<p>Until now, the question of Euler-Possion Integral is finish.</p>
+<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
+<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
+<p>### Quotient Group</p>
+<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
+<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
+<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
+<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
+<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
 ]]></content>
       <tags>
-        <tag>Analysis</tag>
+        <tag>Abstruct Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -341,36 +363,6 @@ I_{n}=\frac{n-1}{n} I_{n-2}
       </tags>
   </entry>
   <entry>
-    <title>正则表达式</title>
-    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
-<h2 id="section"></h2>
-]]></content>
-      <tags>
-        <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Quotients</title>
-    <url>/2020/10/16/Abstruct-algebra/</url>
-    <content><![CDATA[<h1 id="quotient">Quotient</h1>
-<blockquote>
-<p>Too much to learn</p>
-</blockquote>
-<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
-<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
-<p>### Quotient Group</p>
-<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
-<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
-<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
-<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
-<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
-]]></content>
-      <tags>
-        <tag>Abstruct Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Sylow Theorems</title>
     <url>/2020/10/24/sylow-theorems/</url>
     <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
@@ -411,6 +403,16 @@ I_{n}=\frac{n-1}{n} I_{n-2}
 ]]></content>
       <tags>
         <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
+<h2 id="section"></h2>
+]]></content>
+      <tags>
+        <tag>开发</tag>
       </tags>
   </entry>
 </search>
