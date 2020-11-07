@@ -77,9 +77,6 @@ f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonu
 <p>In vector valued function, the iteration is in the form of: <span class="math display">\[
 x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber
 \]</span></p>
-<blockquote>
-<p>Because of my foolish,</p>
-</blockquote>
 ]]></content>
       <tags>
         <tag>Algebra</tag>
@@ -146,6 +143,59 @@ I_{n}=\frac{n-1}{n} I_{n-2}
 ]]></content>
       <tags>
         <tag>Analysis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Quotients</title>
+    <url>/2020/10/16/Abstruct-algebra/</url>
+    <content><![CDATA[<h1 id="quotient">Quotient</h1>
+<blockquote>
+<p>Too much to learn</p>
+</blockquote>
+<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
+<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
+<p>### Quotient Group</p>
+<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
+<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
+<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
+<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
+<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
+]]></content>
+      <tags>
+        <tag>Abstruct Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB Notes</title>
+    <url>/2020/10/10/MATLAB-Notes/</url>
+    <content><![CDATA[<h1 id="matlab-notes">MATLAB Notes</h1>
+<blockquote>
+<p>Noob</p>
+</blockquote>
+<h2 id="syntax-difference">Syntax Difference</h2>
+<h3 id="if-else-in-matlab">if-else in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
+<p>and list if else in other language:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We don't need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code> at the end of the line.</p>
+<h3 id="switch-in-matlab">switch in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>the expression <code>end</code> just like the close braces,</p>
+<h2 id="math-caculation">Math caculation</h2>
+<h3 id="matrix-devision">Matrix devision</h3>
+<blockquote>
+<p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
+<p>$$ </p>
+<p>e $$</p>
+<p>Solve</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>Jacobian</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>MATLAB</tag>
       </tags>
   </entry>
   <entry>
@@ -294,59 +344,6 @@ I_{n}=\frac{n-1}{n} I_{n-2}
       </tags>
   </entry>
   <entry>
-    <title>Quotients</title>
-    <url>/2020/10/16/Abstruct-algebra/</url>
-    <content><![CDATA[<h1 id="quotient">Quotient</h1>
-<blockquote>
-<p>Too much to learn</p>
-</blockquote>
-<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
-<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
-<p>### Quotient Group</p>
-<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
-<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
-<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
-<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
-<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
-]]></content>
-      <tags>
-        <tag>Abstruct Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MATLAB Notes</title>
-    <url>/2020/10/10/MATLAB-Notes/</url>
-    <content><![CDATA[<h1 id="matlab-notes">MATLAB Notes</h1>
-<blockquote>
-<p>Noob</p>
-</blockquote>
-<h2 id="syntax-difference">Syntax Difference</h2>
-<h3 id="if-else-in-matlab">if-else in MATLAB</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
-<p>and list if else in other language:</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We don't need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code> at the end of the line.</p>
-<h3 id="switch-in-matlab">switch in MATLAB</h3>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>the expression <code>end</code> just like the close braces,</p>
-<h2 id="math-caculation">Math caculation</h2>
-<h3 id="matrix-devision">Matrix devision</h3>
-<blockquote>
-<p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
-</blockquote>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
-<p>$$ </p>
-<p>e $$</p>
-<p>Solve</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>Jacobian</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Thread 1: signal SIGABRT</title>
     <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
     <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
@@ -360,28 +357,6 @@ I_{n}=\frac{n-1}{n} I_{n-2}
 ]]></content>
       <tags>
         <tag>Xcode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sylow Theorems</title>
-    <url>/2020/10/24/sylow-theorems/</url>
-    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
-<blockquote>
-<p>Too much to learn</p>
-</blockquote>
-<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
-<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
-<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
-<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
-<ol type="1">
-<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
-<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
-<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
-</ol>
-<p><strong>proof</strong></p>
-]]></content>
-      <tags>
-        <tag>Abstruct Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -413,6 +388,28 @@ I_{n}=\frac{n-1}{n} I_{n-2}
 ]]></content>
       <tags>
         <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sylow Theorems</title>
+    <url>/2020/10/24/sylow-theorems/</url>
+    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
+<blockquote>
+<p>Too much to learn</p>
+</blockquote>
+<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
+<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
+<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
+<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
+<ol type="1">
+<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
+<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
+<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
+</ol>
+<p><strong>proof</strong></p>
+]]></content>
+      <tags>
+        <tag>Abstruct Algebra</tag>
       </tags>
   </entry>
 </search>
