@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="default">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="weiwei">
+
+
+    <meta name="subtitle" content="来摸鱼吧">
+
+
+
+    <meta name="keywords" content="math, swift, C++, python, matlab">
+
+
+<title>Jocabian &amp; Hessian | weiwei的摸鱼生活</title>
+
+
+
+    <link rel="icon" href="/fish-tank.svg">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+    
+
+
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">WeiWei&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">WeiWei&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Jocabian &amp; Hessian</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">weiwei</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 6, 2020&nbsp;&nbsp;21:15:02</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="usage-and-meaning-of-jocabian-hessian">Usage and Meaning of Jocabian &amp; Hessian</h1>
+<blockquote>
+
+</blockquote>
+<h2 id="in-the-derivation-of-implicit-function">In the Derivation of Implicit Function</h2>
+<p>Introduced by the Implicit Function, we have the concept of Jocabian, given a system of equations, just like <span class="math display">\[
+\left\{\begin{array}{l}y_{1}=f_{1}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ y_{2}=f_{2}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ \cdots \\ y_{n}=f_{n}\left(x_{1}, x_{2}, \ldots, x_{n}\right)\end{array}\right.\nonumber
+\]</span></p>
+<p>And we have the partial derivate of each <span class="math inline">\(f_{i}\)</span> by each <span class="math inline">\(x_{i}\)</span> at the point <span class="math inline">\(\mathbf{P}\)</span>,</p>
+<p>we write them in a matrix: <span class="math display">\[
+A=\left[\begin{array}{cccc}\frac{\partial f_{1}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{1}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{1}}{\partial x_{n}}(\mathbf{p}) \\ \frac{\partial f_{2}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{2}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{2}}{\partial x_{n}}(\mathbf{p}) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{m}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{m}}{\partial x_{n}}(\mathbf{p})\end{array}\right]\nonumber
+\]</span></p>
+<p>In this situation, in my text book at first, it just used as a symbol to simplify the result of implicit function partial derivation, by Cramer's Rule.</p>
+<h2 id="in-the-double-integral">In the Double Integral</h2>
+<p>Like integral with only one variable, we can have some variable transform while calculating. In the one variable integral, we use this skill to simplify the function, while in the Double even Triple integral, we prefer to use it to change the area where we are integrating.</p>
+<p>In the normal integral, the change of variable follows the rules like:</p>
+<p><span class="math display">\[
+\int_{a}^{b}f(x)\mathrm{d}x\nonumber
+\]</span></p>
+<p>Let <span class="math inline">\(x = \varphi(t),a= \varphi(\alpha), b=\varphi(\beta)\)</span> , the integral can be turned into: <span class="math display">\[
+\int_{\alpha}^{\beta}f(\varphi(t))\varphi^{\prime}(t)\mathrm{d}x\nonumber
+\]</span> Considering the area change <span class="math inline">\((a,b) \to (\alpha, \beta)\)</span>, we can learn that in each small interval, we have <span class="math display">\[
+\begin{align}
+\delta a-\delta b &amp;= \varphi^{\prime}(\alpha)(\delta \alpha-\delta \beta), \forall \alpha_{0} \in (\delta \alpha,\delta \beta)\nonumber \\ 
+\Delta x &amp;= \varphi^{\prime}(\alpha)\Delta t \nonumber
+\end{align}\tag{*}
+\]</span></p>
+<p>At this time, the derivation plays the role who controls the transform.</p>
+<p>While in the mutipul function, we also have the transform, the function with two variable <span class="math inline">\(F: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}\)</span> <span class="math display">\[
+F :\left\{\begin{array}{l}x=X\left(u, v\right) \\ y=Y\left(u, v\right) \end{array}\right.\nonumber
+\]</span> In the <span class="math inline">\((u,v)\)</span> system, we can cut a small rectangle, with four points: <span class="math inline">\((u_{0},v_{0})(u_{0}+h,v_{0})(u_{0},v_{0}+k)(u_{0}+h,v_{0}+k)\)</span>, <span class="math inline">\(h,k \to 0\)</span>.</p>
+<p>Like the relationship in <span class="math inline">\(*\)</span>,</p>
+<p>let the area in $(x,y) $ equals to <span class="math inline">\(S_{\star}\)</span>, the area in <span class="math inline">\((u,v)\)</span> equals to <span class="math inline">\(S\)</span> <span class="math display">\[
+S_{\star} = \frac{\partial(X,Y)}{\partial(u,v)} S \nonumber
+\]</span> Here is a proof:</p>
+<p><span class="math display">\[
+\text{some proof} \nonumber
+\]</span></p>
+<p>so the Jocabian can be seen as <strong>the derivation of vector valued function.</strong></p>
+<h2 id="jocabian">Jocabian</h2>
+<p>In the single variable function, we can use a straight line to approximately express any complex function at the area near the point <span class="math inline">\(P\)</span>. The Jocabian can solve the problem in the vector valued function.</p>
+<p><span class="math display">\[
+T(\mathbf{x})=A \mathbf{x}+\mathbf{b}
+\]</span> That <span class="math inline">\(A\)</span> is the Jocabian at the point of function <span class="math inline">\(F: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\)</span>.</p>
+<p>It is natural that at the point <span class="math inline">\(P\)</span>, <span class="math inline">\(T(P)= F(P)\)</span>, at other points, we wish that <span class="math display">\[
+T(\mathbf{x})=A(\mathbf{x}-\mathbf{p})+F(\mathbf{p})
+\]</span> Further more, <span class="math display">\[
+\lim _{\mathbf{x} \rightarrow \mathbf{p}} \frac{F(\mathbf{x})-F(\mathbf{p})-A(\mathbf{x}-\mathbf{p})}{\|\mathbf{x}-\mathbf{p}\|}=\mathbf{0} \nonumber
+\]</span> We can see, the Jocabian is the matrix who shows the linear relationship while we linearize the nonlinear function.</p>
+<p>The rigorous proof can be find in the blog :</p>
+<h2 id="hessian">Hessian</h2>
+<p>During the study of multiple function's extremum, the Hessian is introduced. The form of Jocanian and Hessian is so similar, let's find the relation between them.</p>
+<p>Here is the Hessian: <span class="math display">\[
+\left[\begin{array}{cccc}\frac{\partial^{2} f}{\partial x_{1}^{2}} &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{n}} \\ \frac{\partial^{2} f}{\partial x_{2} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{2}^{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{2} \partial x_{n}} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial^{2} f}{\partial x_{n} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{n} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{n}^{2}}\end{array}\right] \nonumber
+\]</span> We can find that, in the Hessian, the function <span class="math inline">\(f\)</span> is no longer a vector valued function, it is just a simple multiple function <span class="math inline">\(\mathbb{F}^{n}\to \mathbb{F}\)</span>. And <span class="math inline">\(f\)</span> is able to derivate twice in the area.</p>
+<p>The gradient of <span class="math inline">\(f\)</span> about <span class="math inline">\(\mathbf{x}\)</span> can be writen as: <span class="math display">\[
+\nabla f(\mathbf{x})=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}} \\ \frac{\partial f}{\partial x_{2}} \\ \vdots \\ \frac{\partial f}{\partial x_{n}}\end{array}\right] \nonumber
+\]</span> Here we get a vector valued function <span class="math inline">\(\nabla f(\mathbf{x})\)</span>. And it's Jocabian is the Hessian of <span class="math inline">\(f\)</span>.</p>
+<p>To understanding the Hessian, Jocabian, and <span class="math inline">\(\nabla f(\mathbf{x})\)</span>, here is an example.</p>
+<blockquote>
+<p>we consider a house with coordinate System, each point' temperature is given by a function <span class="math inline">\(T(x,y,z)\)</span>, the gradient <span class="math inline">\(\nabla T\)</span> shows which direction the temperature changing fastest, and the changing rate.</p>
+<p>Also, you know the Jocabian is also shows the changing rate of a function, so the Hessian is the 'acceleration' of temperature.</p>
+</blockquote>
+<h2 id="application">Application</h2>
+<h3 id="solve-a-equation">Solve a equation</h3>
+<p>When the equation is hard to solve with normal skills, iteration is a good way.</p>
+<p>In the single value function, with Taylor Formula <span class="math display">\[
+f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonumber
+\]</span> <img src="/Users/yulongyi/myBlog/screenshot/Screen%20Shot%202020-11-07%20at%2017.13.05.png" style="zoom:25%;" /></p>
+<p>Find the solution of the liner equation: <span class="math inline">\(f(x)= 0\)</span>, let the answer be the <span class="math inline">\(x_{1}\)</span></p>
+<p>we can do this so many times, until the answer <span class="math inline">\(x_{n}\)</span> to satisfy the restrictions.</p>
+<p>In vector valued function, the iteration is in the form of: <span class="math display">\[
+x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber
+\]</span></p>
+<p>Thanks to:</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>weiwei</span>
+                    </p>
+                
+                
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span><strong>Keep your dreams.</strong></span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/Algebra/"># Algebra</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/10/30/A-Proof-and-a-Way-to-Get-PI/">A Proof and a Way to Get PI</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© weiwei | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
