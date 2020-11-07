@@ -344,19 +344,25 @@ I_{n}=\frac{n-1}{n} I_{n-2}
       </tags>
   </entry>
   <entry>
-    <title>Thread 1: signal SIGABRT</title>
-    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
-<h2 id="c数组中">C++数组中</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
-<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+    <title>Sylow Theorems</title>
+    <url>/2020/10/24/sylow-theorems/</url>
+    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
 <blockquote>
-<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+<p>Too much to learn</p>
 </blockquote>
+<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
+<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
+<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
+<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
+<ol type="1">
+<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
+<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
+<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
+</ol>
+<p><strong>proof</strong></p>
 ]]></content>
       <tags>
-        <tag>Xcode</tag>
+        <tag>Abstruct Algebra</tag>
       </tags>
   </entry>
   <entry>
@@ -381,6 +387,22 @@ I_{n}=\frac{n-1}{n} I_{n-2}
       </tags>
   </entry>
   <entry>
+    <title>Thread 1: signal SIGABRT</title>
+    <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
+<p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
+<blockquote>
+<p>这里猜测，在数组循环的时候，使用的存储位置是可以连续的，简单的说，在越界时，数据存到了对应数组指针的下一位，运算时用的是指针而不是数组的坐标？</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Xcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>正则表达式</title>
     <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
@@ -388,28 +410,6 @@ I_{n}=\frac{n-1}{n} I_{n-2}
 ]]></content>
       <tags>
         <tag>开发</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sylow Theorems</title>
-    <url>/2020/10/24/sylow-theorems/</url>
-    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
-<blockquote>
-<p>Too much to learn</p>
-</blockquote>
-<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
-<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
-<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
-<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
-<ol type="1">
-<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
-<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
-<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
-</ol>
-<p><strong>proof</strong></p>
-]]></content>
-      <tags>
-        <tag>Abstruct Algebra</tag>
       </tags>
   </entry>
 </search>
