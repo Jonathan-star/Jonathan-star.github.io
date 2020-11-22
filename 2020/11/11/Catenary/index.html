@@ -16,7 +16,7 @@
     <meta name="keywords" content="math, swift, C++, python, matlab">
 
 
-<title>Quotients | weiwei的摸鱼生活</title>
+<title>Catenary | weiwei的摸鱼生活</title>
 
 
 
@@ -208,7 +208,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Quotients</h1>
+            <h1 class="post-title">Catenary</h1>
             
                 <div class="post-meta">
                     
@@ -217,7 +217,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">October 16, 2020&nbsp;&nbsp;21:34:13</a>
+                        Date: <a href="#">November 11, 2020&nbsp;&nbsp;19:07:02</a>
                         </span>
                     
                     
@@ -226,18 +226,63 @@
         </header>
 
         <div class="post-content">
-            <h1 id="quotient">Quotient</h1>
+            <h1 id="catenary-equation">Catenary Equation</h1>
 <blockquote>
-<p>Too much to learn</p>
+<p>算是高中未解决问题的回应吧。</p>
 </blockquote>
-<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
-<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
-<p>### Quotient Group</p>
-<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
-<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
-<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
-<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
-<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
+<h2 id="question">Question</h2>
+<p>空间中，固定两个点，在这两个点之间连接一根质量分布均匀，长度为<span class="math inline">\(L\)</span>的绳子，记单位长度的质量，即线密度为<span class="math inline">\(\lambda\)</span>，考虑其自然状态下，绳子所成曲线的方程 <span class="math inline">\(y = y(x)\)</span>。</p>
+<figure>
+<img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/image-20201111203934406.png" alt="" /><figcaption>image-20201111203934406</figcaption>
+</figure>
+<p>略去固定点<span class="math inline">\(z_{1}(x_{1},y_{1}),z_{2}(x_{2},y_{2})\)</span>，仅考虑悬链线的部分即上图所示。同时作出一小段<span class="math inline">\(\overset{\frown}{AB}\)</span>其端点的切线。</p>
+<h2 id="solution">Solution</h2>
+<p>对这一小段作出受力分析，即在<span class="math inline">\(A，B\)</span>点受到的绳内拉力，以及这一段绳自身的重力。</p>
+<p>设<span class="math inline">\(A,B\)</span>点受力分别是<span class="math inline">\((H(x_{1}),V(x_{1})),(H(x_{2}),V(x_{2}))\)</span>，力的两个分量分别是水平，垂直方向的力。</p>
+<p>不妨取极小的一段绳子，即<span class="math inline">\(x_{2}=x_{1}+\Delta x\)</span>，</p>
+<h3 id="horizontal">Horizontal</h3>
+<p>由于取点的任意性，即对所有小段，<span class="math inline">\(\forall x, H(x)=H(x+\Delta x)\)</span>，<strong>可知<span class="math inline">\(H(x)\)</span>是常数函数</strong>。</p>
+<h3 id="vertical">Vertical</h3>
+<p>自然，取<span class="math inline">\(y\)</span>轴向上为正方向，可以列出垂直方向方程 <span class="math display">\[
+V(x_{1}+\Delta x)= V(x_{1})+\lambda \Delta s g \nonumber
+\]</span> 其中，<span class="math inline">\(\Delta s\)</span>为这一小段绳子的绳长。</p>
+<p>移项化简并取极限可以得到： <span class="math display">\[
+V^{\prime}(x) = \lambda \frac{\mathrm{d}s}{\mathrm{d}x} \nonumber
+\]</span> 运用弧长公式，上式右边就可以转化成 <span class="math display">\[
+V^{\prime}(x) = \lambda \sqrt{1+ [y^{\prime}(x)]^2}\nonumber
+\]</span></p>
+<p>因为端点受力方向沿着这点切线，有如下关系式： <span class="math display">\[
+\frac{V(x)}{H(x)} = y^{\prime}(x) \nonumber
+\]</span></p>
+<p>这样，考虑水平和垂直方向力的关系，将两个方程整合起来，就有 <span class="math display">\[
+\begin{align}
+V^{\prime}(x) &amp;= H_{0}y^{\prime \prime}{(x)}  \nonumber\\
+H_{0}y^{\prime \prime}{(x)} &amp;=  \lambda \sqrt{1+ [y^{\prime}(x)]^2}\tag{🤖️}
+\end{align} \nonumber
+\]</span> 这样，接下来的工作就是处理这个二阶微分方程🤖️。</p>
+<h3 id="second-order-differential-equation">Second Order Differential Equation</h3>
+<p>换元，令<span class="math inline">\(z = y^\prime\)</span>，移项，🤖️变为 <span class="math display">\[
+\frac{\mathrm{d}z}{\sqrt{1+ z^2}} = \frac{\lambda}{H_{0}}\mathrm{d}x \tag{👽}
+\]</span></p>
+<p>这里，用刚刚学会的<strong>双曲函数</strong>换元，</p>
+<blockquote>
+<p><span class="math display">\[
+\cosh ^{2} x-\sinh ^{2} x=1 \nonumber
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{l}(\sinh x)^{\prime}=\cosh x \\ (\cosh x)^{\prime}=\sinh x\end{array} \nonumber
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{l}\int \sinh x d x=\cosh x+C \\ \int \cosh x d x=\sinh x+C \\ \int \tanh x d x=\ln (\cosh x)+C \\ \int \operatorname{coth} x d x=\ln (\sinh x)+C \\ \int \operatorname{sech} x d x=\arctan (\sinh x)+C \\ \int \operatorname{csch} x d x=\ln \left|\tanh \frac{x}{2}\right|+C\end{array} \nonumber
+\]</span></p>
+</blockquote>
+<p>这样就很简单了，令<span class="math inline">\(z = \sinh \theta\)</span>一通操作之后，就可以求出通解： <span class="math display">\[
+z= \sinh \frac{\lambda}{H_{0}}(x+C_{1}) \nonumber
+\]</span> 再进行积分，就可以得到初步的答案： <span class="math display">\[
+y= \frac{H_{0}}{\lambda}\cosh(x+C_{1}) +C_{2}\nonumber
+\]</span> 带入固定的两点坐标，就可以确定其中的<span class="math inline">\(C_{1},C_{2}\)</span>两个参数。</p>
+<p>再需要出绳子内部的水平力<span class="math inline">\(H_{0}\)</span>，目前看到的解法是使用曲线弧长积分，运用双曲函数的和差化积消去函数内部的<span class="math inline">\(C_{1}\)</span>。</p>
+<p>个人觉得，从纯物理角度来看，整体分析悬挂点所受的力也是一种解出水平内力<span class="math inline">\(H_{0}\)</span>的一种方案。但是这种计算的时候需要一定解方程组的技巧。</p>
 
         </div>
 
@@ -266,7 +311,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Abstruct-Algebra/"># Abstruct Algebra</a>
+                        <a href="/tags/Analysis-Equation/"># Analysis & Equation</a>
                     
                         
                 </span>
@@ -279,10 +324,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2020/10/24/sylow-theorems/">Sylow Theorems</a>
+                <a class="prev" rel="prev" href="/2020/11/14/Cartan%E2%80%93Brauer%E2%80%93Hua-theorem/">Cartan–Brauer–Hua Theorem</a>
             
             
-            <a class="next" rel="next" href="/2020/10/10/MATLAB-Notes/">MATLAB Notes</a>
+            <a class="next" rel="next" href="/2020/11/06/Jocabian-Hessian/">Jocabian & Hessian</a>
             
         </section>
 

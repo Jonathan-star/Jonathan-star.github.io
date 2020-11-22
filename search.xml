@@ -1,83 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Jocabian &amp; Hessian</title>
-    <url>/2020/11/06/Jocabian-Hessian/</url>
-    <content><![CDATA[<h1 id="Usage-and-Meaning-of-Jocabian-amp-Hessian"><a href="#Usage-and-Meaning-of-Jocabian-amp-Hessian" class="headerlink" title="Usage and Meaning of Jocabian &amp; Hessian"></a>Usage and Meaning of Jocabian &amp; Hessian</h1><blockquote>
-<p>Some quoit may fail to load, so here to type: “<a href="https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/" target="_blank" rel="noopener">https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/</a>“ &amp; “<a href="http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/" target="_blank" rel="noopener">http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/</a>“</p>
-</blockquote>
-<h2 id="In-the-Derivation-of-Implicit-Function"><a href="#In-the-Derivation-of-Implicit-Function" class="headerlink" title="In the Derivation of Implicit Function"></a>In the Derivation of Implicit Function</h2><p>Introduced by the Implicit Function, we have the concept of Jocabian,  given a system of equations, just like</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}y_{1}=f_{1}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ y_{2}=f_{2}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ \cdots \\ y_{n}=f_{n}\left(x_{1}, x_{2}, \ldots, x_{n}\right)\end{array}\right.\nonumber</script><p>And we have the partial derivate of each $f_{i}$ by each $x_{i}$ at the point $\mathbf{P}$,</p>
-<p>we write them in a matrix:</p>
-<script type="math/tex; mode=display">
-A=\left[\begin{array}{cccc}\frac{\partial f_{1}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{1}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{1}}{\partial x_{n}}(\mathbf{p}) \\ \frac{\partial f_{2}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{2}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{2}}{\partial x_{n}}(\mathbf{p}) \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}(\mathbf{p}) & \frac{\partial f_{m}}{\partial x_{2}}(\mathbf{p}) & \cdots & \frac{\partial f_{m}}{\partial x_{n}}(\mathbf{p})\end{array}\right]\nonumber</script><p>In this situation, in my text book at first, it just used as a symbol to simplify the result of implicit function partial derivation, by Cramer’s Rule.</p>
-<h2 id="In-the-Double-Integral"><a href="#In-the-Double-Integral" class="headerlink" title="In the Double Integral"></a>In the Double Integral</h2><p>Like integral with only one variable, we can have some variable transform while calculating. In the one variable integral, we use this skill to simplify the function, while in the Double even Triple integral, we prefer to use it to change the area where we are integrating. </p>
-<p>In the normal integral, the change of variable follows the rules like:</p>
-<script type="math/tex; mode=display">
-\int_{a}^{b}f(x)\mathrm{d}x\nonumber</script><p>Let $x = \varphi(t),a= \varphi(\alpha), b=\varphi(\beta)$ , the integral can be turned into:</p>
-<script type="math/tex; mode=display">
-\int_{\alpha}^{\beta}f(\varphi(t))\varphi^{\prime}(t)\mathrm{d}x\nonumber</script><p>Considering the area change $(a,b) \to (\alpha, \beta)$, we can learn that in each small interval, we have</p>
-<script type="math/tex; mode=display">
-\begin{align}
-\delta a-\delta b &= \varphi^{\prime}(\alpha)(\delta \alpha-\delta \beta), \forall \alpha_{0} \in (\delta \alpha,\delta \beta)\nonumber \\ 
-\Delta x &= \varphi^{\prime}(\alpha)\Delta t \nonumber
-\end{align}\tag{*}</script><p>At this time, the derivation plays the role who controls the transform.</p>
-<p>While in the mutipul function, we also have the transform, the function with two variable $F: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}$</p>
-<script type="math/tex; mode=display">
-F :\left\{\begin{array}{l}x=X\left(u, v\right) \\ y=Y\left(u, v\right) \end{array}\right.\nonumber</script><p>In the $(u,v)$ system, we can cut a small rectangle, with four points: $(u_{0},v_{0})(u_{0}+h,v_{0})(u_{0},v_{0}+k)(u_{0}+h,v_{0}+k)$, $h,k \to 0$.</p>
-<p>Like the relationship in $*$,  </p>
-<p>let the area in $(x,y) $ equals to $S_{\star}$, the area in $(u,v)$ equals to $S$</p>
-<script type="math/tex; mode=display">
-S_{\star} = \frac{\partial(X,Y)}{\partial(u,v)} S \nonumber</script><p>Here is a proof:</p>
-<script type="math/tex; mode=display">
-\text{some proof} \nonumber</script><p>so the Jocabian can be seen as <strong>the derivation of vector valued function.</strong></p>
-<h2 id="Jocabian"><a href="#Jocabian" class="headerlink" title="Jocabian"></a>Jocabian</h2><p>In the single variable function, we can use a straight line to approximately express any complex function at the area near the point $P$. The Jocabian can solve the problem in the vector valued function.</p>
-<script type="math/tex; mode=display">
-T(\mathbf{x})=A \mathbf{x}+\mathbf{b}</script><p>That $A$ is the Jocabian at the point of function $F: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}$.</p>
-<p>It is natural that at the point $P$,  $T(P)= F(P)$, at other points, we wish that</p>
-<script type="math/tex; mode=display">
-T(\mathbf{x})=A(\mathbf{x}-\mathbf{p})+F(\mathbf{p})</script><p>Further more,</p>
-<script type="math/tex; mode=display">
-\lim _{\mathbf{x} \rightarrow \mathbf{p}} \frac{F(\mathbf{x})-F(\mathbf{p})-A(\mathbf{x}-\mathbf{p})}{\|\mathbf{x}-\mathbf{p}\|}=\mathbf{0} \nonumber</script><p>We can see, the Jocabian is the matrix who shows the linear relationship while we linearize the nonlinear function.</p>
-<p>The rigorous proof can be find in the blog :</p>
-<h2 id="Hessian"><a href="#Hessian" class="headerlink" title="Hessian"></a>Hessian</h2><p>During the study of multiple function’s extremum, the Hessian is introduced. The form of Jocanian and Hessian is so similar, let’s find the relation between them.</p>
-<p>Here is the Hessian:</p>
-<script type="math/tex; mode=display">
-\left[\begin{array}{cccc}\frac{\partial^{2} f}{\partial x_{1}^{2}} & \frac{\partial^{2} f}{\partial x_{1} \partial x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{1} \partial x_{n}} \\ \frac{\partial^{2} f}{\partial x_{2} \partial x_{1}} & \frac{\partial^{2} f}{\partial x_{2}^{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{2} \partial x_{n}} \\ \vdots & \vdots & \ddots & \vdots \\ \frac{\partial^{2} f}{\partial x_{n} \partial x_{1}} & \frac{\partial^{2} f}{\partial x_{n} \partial x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{n}^{2}}\end{array}\right] \nonumber</script><p>We can find that, in the Hessian, the function $f$ is no longer a vector valued function, it is just a simple multiple function $\mathbb{F}^{n}\to \mathbb{F}$. And $f$ is able to derivate twice in the area.</p>
-<p>The gradient of $f$ about $\mathbf{x}$ can be writen as:</p>
-<script type="math/tex; mode=display">
-\nabla f(\mathbf{x})=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}} \\ \frac{\partial f}{\partial x_{2}} \\ \vdots \\ \frac{\partial f}{\partial x_{n}}\end{array}\right] \nonumber</script><p>Here we get a vector valued function $\nabla f(\mathbf{x})$. And it’s Jocabian is the Hessian of $f$.</p>
-<p>To understanding the Hessian, Jocabian, and $\nabla f(\mathbf{x})$, here is an example.</p>
-<blockquote>
-<p>we consider a house with coordinate System, each point’ temperature is given by a function $T(x,y,z)$, the gradient $\nabla T$ shows which direction the temperature changing fastest, and the changing rate.</p>
-<p>Also, you know the  Jocabian is also shows the changing rate of a function,  so the Hessian is the ‘acceleration’ of temperature. </p>
-</blockquote>
-<h2 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h2><h3 id="Solve-a-equation"><a href="#Solve-a-equation" class="headerlink" title="Solve a equation"></a>Solve a equation</h3><p>When the equation is hard to solve with normal  skills, iteration is a good way.</p>
-<p>In the single value function, with Taylor Formula</p>
-<script type="math/tex; mode=display">
-f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonumber</script><p><img src="/Users/yulongyi/myBlog/screenshot/Screen%20Shot%202020-11-07%20at%2017.13.05.png" style="zoom:25%;" /></p>
-<p>Find the solution of the liner equation: $f(x)= 0$, let the answer be the $x_{1}$</p>
-<p>we can do this so many times, until the answer $x_{n}$ to satisfy the restrictions.</p>
-<p>In vector valued function, the iteration is in the form of:</p>
-<script type="math/tex; mode=display">
-x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber</script>]]></content>
-      <tags>
-        <tag>Algebra</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Quotients</title>
-    <url>/2020/10/16/Abstruct-algebra/</url>
-    <content><![CDATA[<h1 id="Quotient"><a href="#Quotient" class="headerlink" title="Quotient"></a>Quotient</h1><blockquote>
-<p>Too much to learn</p>
-</blockquote>
-<h2 id="Quotient-Define-amp-Examples"><a href="#Quotient-Define-amp-Examples" class="headerlink" title="Quotient Define &amp; Examples"></a>Quotient Define &amp; Examples</h2><p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
-<h3 id="Quotient-Group"><a href="#Quotient-Group" class="headerlink" title="Quotient Group"></a>Quotient Group</h3><p>The quotient needs to define a relation just like $R$, to simplify the argument, I use group to discuss.</p>
-<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as  $\bar a, \bar b \dots$ </p>
-<p>$\bar a$ Represent each elements that equal to $a$ under the relationship ${R}$</p>
-<p>the simplest example is the set $\mathbb{Z}$ under the calculate <code>+</code>, and $\mathbb{Z}/m\mathbb{Z}$, the quotient group of it.</p>
-<p>the elements in $\mathbb{Z}/m\mathbb{Z} $, just like $\bar 1, \bar 2, \cdots, \overline{m-1}$, in the <code>+</code>, the equation is presented as $ \text{if } a - b = i$, so $a \&amp; b $ is in the set $\overline{i}$, in the $\times$ is the $ab^{-1} \in \overline{i}$.</p>
+    <title>Cartan–Brauer–Hua Theorem</title>
+    <url>/2020/11/14/Cartan%E2%80%93Brauer%E2%80%93Hua-theorem/</url>
+    <content><![CDATA[<h1 id="cartanbrauerhua-theorem-huas-identity">Cartan–Brauer–Hua Theorem &amp; Hua's Identity</h1>
+<h2 id="theroem">Theroem</h2>
 ]]></content>
       <tags>
         <tag>Abstruct Algebra</tag>
@@ -86,196 +13,419 @@ x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right)
   <entry>
     <title>A Proof and a Way to Get PI</title>
     <url>/2020/10/30/A-Proof-and-a-Way-to-Get-PI/</url>
-    <content><![CDATA[<h1 id="Euler-Poisson-Intergal-and-Wallis-Formula"><a href="#Euler-Poisson-Intergal-and-Wallis-Formula" class="headerlink" title="Euler-Poisson Intergal and Wallis Formula"></a>Euler-Poisson Intergal and Wallis Formula</h1><blockquote>
-<p>This passage  comes from Euler-Poisson Integral:</p>
+    <content><![CDATA[<h1 id="euler-poisson-intergal-and-wallis-formula">Euler-Poisson Intergal and Wallis Formula</h1>
+<blockquote>
+<p>This passage comes from Euler-Poisson Integral:</p>
 </blockquote>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}</script><h2 id="An-analysis-question"><a href="#An-analysis-question" class="headerlink" title="An analysis question"></a>An analysis question</h2><p>Let</p>
-<p> $f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x$, and $g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}$, and $f+g=\frac{\pi}{4}$,(with derivation we can find $f+g$ is a constant function), we can proof the Euler-Poisson Integral.</p>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}\nonumber
+\]</span></p>
+<h2 id="an-analysis-question">An analysis question</h2>
+<p>Let</p>
+<p><span class="math inline">\(f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x\)</span>, and <span class="math inline">\(g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}\)</span>, and <span class="math inline">\(f+g=\frac{\pi}{4}\)</span>,(with derivation we can find <span class="math inline">\(f+g\)</span> is a constant function), we can proof the Euler-Poisson Integral.</p>
 <p>And this is the first meet between me and E-P Integral.</p>
-<h2 id="Solve-the-Integral-Directly"><a href="#Solve-the-Integral-Directly" class="headerlink" title="Solve the Integral Directly?"></a>Solve the Integral Directly?</h2><p>From the book of Demidovich, I saw a question below:</p>
-<script type="math/tex; mode=display">
-\text{Use the Transposition of integral and limit operations to solve it}</script><script type="math/tex; mode=display">
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x</script><p>So we can have a try:</p>
+<h2 id="solve-the-integral-directly">Solve the Integral Directly?</h2>
+<p>From the book of Demidovich, I saw a question below: <span class="math display">\[
+\text{Use the Transposition of integral and limit operations to solve it}\nonumber
+\]</span></p>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x\nonumber
+\]</span></p>
+<p>So we can have a try:</p>
 <p>Easy to judge that the function under the limit operation is continuous and uniform convergence, so we can safely exchange the order of two operations.</p>
 <p>That comes a big problem, <strong>HOW TO CALCULATE THE INGERAL INSIDE</strong>?</p>
 <p>That is why I write.</p>
-<p>We write it outside of the limit. What I need to deal with is:</p>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}</script><p>Use $t$ to replace $x$, $t=\frac{x}{\sqrt{n}}$, the integral comes to:</p>
-<script type="math/tex; mode=display">
-\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}</script><p>Then we create a function sequence $I_{n}$, and let the $ \sqrt{n}I_{n} = \sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}$.</p>
-<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} \&amp; I_{n-1}   $.</p>
-<p>Luckily,</p>
-<script type="math/tex; mode=display">
-I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x</script><p>We find the former is equal to 0, and the latter can be written as $2(n-1)I_{n-1}-2(n-1)I_{n}$</p>
-<script type="math/tex; mode=display">
-I_{n} = \frac{2n-3}{2n-2}I_{n-1}</script><p>Just to calculate $I_{1}$ and everything is solved.</p>
-<script type="math/tex; mode=display">
-I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}</script><p>While after we bring back the $I_{n}$ to the Integral, </p>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}</script><p>something strange happened, maybe we have to do something with $\frac{\pi}{2}$?</p>
-<h2 id="Wallis-Formula"><a href="#Wallis-Formula" class="headerlink" title="Wallis Formula"></a>Wallis Formula</h2><blockquote>
+<p>We write it outside of the limit. What I need to deal with is: <span class="math display">\[
+\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}\nonumber
+\]</span> Use <span class="math inline">\(t\)</span> to replace <span class="math inline">\(x\)</span>, <span class="math inline">\(t=\frac{x}{\sqrt{n}}\)</span>, the integral comes to: <span class="math display">\[
+\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}\nonumber
+\]</span></p>
+<p>Then we create a function sequence <span class="math inline">\(I_{n}\)</span>, and let the $ I_{n} = _{0}^{+}$.</p>
+<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} &amp; I_{n-1} $.</p>
+<p>Luckily, <span class="math display">\[
+I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x\nonumber
+\]</span> We find the former is equal to 0, and the latter can be written as <span class="math inline">\(2(n-1)I_{n-1}-2(n-1)I_{n}\)</span> <span class="math display">\[
+I_{n} = \frac{2n-3}{2n-2}I_{n-1}\nonumber
+\]</span></p>
+<p>Just to calculate <span class="math inline">\(I_{1}\)</span> and everything is solved. <span class="math display">\[
+I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}\nonumber
+\]</span> While after we bring back the <span class="math inline">\(I_{n}\)</span> to the Integral, <span class="math display">\[
+\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}\nonumber
+\]</span> something strange happened, maybe we have to do something with <span class="math inline">\(\frac{\pi}{2}\)</span>?</p>
+<h2 id="wallis-formula">Wallis Formula</h2>
+<blockquote>
 <p>The Wallis Formula is here:</p>
 </blockquote>
-<script type="math/tex; mode=display">
-\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}</script><p>It comes from the integral </p>
-<script type="math/tex; mode=display">
-S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x</script><p>Yes, this can use the same way to solve, we can get a relation between $S_{n} \&amp; S_{n-2} $, </p>
-<script type="math/tex; mode=display">
-I_{n}=\frac{n-1}{n} I_{n-2}</script><p>With the monotonicity of $\sin^{n}x$, we have a unequal relationship:</p>
-<script type="math/tex; mode=display">
-\frac{2 k ! !}{(2 k+1) ! !}<\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}<\frac{(2 k-2) ! !}{(2 k-1) ! !}</script><p>Let $n \to \infty$ so the Wallis Formula is proofed.</p>
+<p><span class="math display">\[
+\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}\nonumber
+\]</span></p>
+<p>It comes from the integral <span class="math display">\[
+S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x\nonumber
+\]</span></p>
+<p>Yes, this can use the same way to solve, we can get a relation between $S_{n} &amp; S_{n-2} $, <span class="math display">\[
+I_{n}=\frac{n-1}{n} I_{n-2}\nonumber
+\]</span> With the monotonicity of <span class="math inline">\(\sin^{n}x\)</span>, we have a unequal relationship: <span class="math display">\[
+\frac{2 k ! !}{(2 k+1) ! !}&lt;\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}&lt;\frac{(2 k-2) ! !}{(2 k-1) ! !}\nonumber
+\]</span> Let <span class="math inline">\(n \to \infty\)</span> so the Wallis Formula is proofed.</p>
 <p>Until now, the question of Euler-Possion Integral is finish.</p>
+<h2 id="with-double-integral">With Double Integral</h2>
+<p>Here is a double integral's way to solve the problem,</p>
+<p>For <span class="math inline">\(\forall R&gt; 0\)</span>, let area <span class="math inline">\(D(R) = [-R,R]\times[-R,R]\)</span>, and integral <span class="math inline">\(I(R)= \iint\limits_{D(R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y\)</span>, because the symmetry the integral equals to <span class="math inline">\(4(\int_{0}^{R}\mathrm{e}^{-x^2}\mathrm{d}x)^2\)</span></p>
+<p>Let area <span class="math inline">\(B(0,R) = \left\{ \left.(x,y) \right| x^2+y^2 \leq R^2 \right\}\)</span>, <span class="math inline">\(B(0,\sqrt2R) = \left\{ \left.(x,y) \right| x^2+y^2 \leq 2R^2 \right\}\)</span> , the area <span class="math inline">\(D(R)\)</span> is between them.</p>
+<p>So with polar coordinate transform,</p>
+<p><span class="math display">\[
+\iint\limits_{B(0,R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y = \int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R} \mathrm{e}^{-\rho^2}\rho \mathrm{d}\rho = \pi (1-\mathrm{e}^{-R^2})\nonumber 
+\]</span></p>
+<p><span class="math display">\[
+\iint\limits_{B(0,\sqrt 2R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y = \int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{\sqrt 2R} \mathrm{e}^{-\rho^2}\rho \mathrm{d}\rho = \pi (1-\mathrm{e}^{-2R^2})\nonumber 
+\]</span></p>
+<p>As <span class="math inline">\(R\to \infty\)</span>, these two integral both became <span class="math inline">\(\pi\)</span>. So the Euler-Passion Integral equals to <span class="math inline">\(\frac{\sqrt\pi}{2}\)</span></p>
 ]]></content>
       <tags>
         <tag>Analysis</tag>
       </tags>
   </entry>
   <entry>
+    <title>Quotients</title>
+    <url>/2020/10/16/Abstruct-algebra/</url>
+    <content><![CDATA[<h1 id="quotient">Quotient</h1>
+<blockquote>
+<p>Too much to learn</p>
+</blockquote>
+<h2 id="quotient-define-examples">Quotient Define &amp; Examples</h2>
+<p>In the algebra, many system has its quotient system, like <code>quotient group</code>,<code>quotient set</code>, and so on.</p>
+<p>### Quotient Group</p>
+<p>The quotient needs to define a relation just like <span class="math inline">\(R\)</span>, to simplify the argument, I use group to discuss.</p>
+<p>with the defined relationship, we have a <code>Left Coset</code> , the Left Cosets build up the <code>quotient group</code>, we can present each elements by the Representative of equivalence class, we write them as <span class="math inline">\(\bar a, \bar b \dots\)</span></p>
+<p><span class="math inline">\(\bar a\)</span> Represent each elements that equal to <span class="math inline">\(a\)</span> under the relationship <span class="math inline">\({R}\)</span></p>
+<p>the simplest example is the set <span class="math inline">\(\mathbb{Z}\)</span> under the calculate <code>+</code>, and <span class="math inline">\(\mathbb{Z}/m\mathbb{Z}\)</span>, the quotient group of it.</p>
+<p>the elements in $/m $, just like <span class="math inline">\(\bar 1, \bar 2, \cdots, \overline{m-1}\)</span>, in the <code>+</code>, the equation is presented as $  a - b = i$, so $a &amp; b $ is in the set <span class="math inline">\(\overline{i}\)</span>, in the <span class="math inline">\(\times\)</span> is the <span class="math inline">\(ab^{-1} \in \overline{i}\)</span>.</p>
+]]></content>
+      <tags>
+        <tag>Abstruct Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Catenary</title>
+    <url>/2020/11/11/Catenary/</url>
+    <content><![CDATA[<h1 id="catenary-equation">Catenary Equation</h1>
+<blockquote>
+<p>算是高中未解决问题的回应吧。</p>
+</blockquote>
+<h2 id="question">Question</h2>
+<p>空间中，固定两个点，在这两个点之间连接一根质量分布均匀，长度为<span class="math inline">\(L\)</span>的绳子，记单位长度的质量，即线密度为<span class="math inline">\(\lambda\)</span>，考虑其自然状态下，绳子所成曲线的方程 <span class="math inline">\(y = y(x)\)</span>。</p>
+<figure>
+<img src="/Users/yulongyi/Library/Application%20Support/typora-user-images/image-20201111203934406.png" alt="" /><figcaption>image-20201111203934406</figcaption>
+</figure>
+<p>略去固定点<span class="math inline">\(z_{1}(x_{1},y_{1}),z_{2}(x_{2},y_{2})\)</span>，仅考虑悬链线的部分即上图所示。同时作出一小段<span class="math inline">\(\overset{\frown}{AB}\)</span>其端点的切线。</p>
+<h2 id="solution">Solution</h2>
+<p>对这一小段作出受力分析，即在<span class="math inline">\(A，B\)</span>点受到的绳内拉力，以及这一段绳自身的重力。</p>
+<p>设<span class="math inline">\(A,B\)</span>点受力分别是<span class="math inline">\((H(x_{1}),V(x_{1})),(H(x_{2}),V(x_{2}))\)</span>，力的两个分量分别是水平，垂直方向的力。</p>
+<p>不妨取极小的一段绳子，即<span class="math inline">\(x_{2}=x_{1}+\Delta x\)</span>，</p>
+<h3 id="horizontal">Horizontal</h3>
+<p>由于取点的任意性，即对所有小段，<span class="math inline">\(\forall x, H(x)=H(x+\Delta x)\)</span>，<strong>可知<span class="math inline">\(H(x)\)</span>是常数函数</strong>。</p>
+<h3 id="vertical">Vertical</h3>
+<p>自然，取<span class="math inline">\(y\)</span>轴向上为正方向，可以列出垂直方向方程 <span class="math display">\[
+V(x_{1}+\Delta x)= V(x_{1})+\lambda \Delta s g \nonumber
+\]</span> 其中，<span class="math inline">\(\Delta s\)</span>为这一小段绳子的绳长。</p>
+<p>移项化简并取极限可以得到： <span class="math display">\[
+V^{\prime}(x) = \lambda \frac{\mathrm{d}s}{\mathrm{d}x} \nonumber
+\]</span> 运用弧长公式，上式右边就可以转化成 <span class="math display">\[
+V^{\prime}(x) = \lambda \sqrt{1+ [y^{\prime}(x)]^2}\nonumber
+\]</span></p>
+<p>因为端点受力方向沿着这点切线，有如下关系式： <span class="math display">\[
+\frac{V(x)}{H(x)} = y^{\prime}(x) \nonumber
+\]</span></p>
+<p>这样，考虑水平和垂直方向力的关系，将两个方程整合起来，就有 <span class="math display">\[
+\begin{align}
+V^{\prime}(x) &amp;= H_{0}y^{\prime \prime}{(x)}  \nonumber\\
+H_{0}y^{\prime \prime}{(x)} &amp;=  \lambda \sqrt{1+ [y^{\prime}(x)]^2}\tag{🤖️}
+\end{align} \nonumber
+\]</span> 这样，接下来的工作就是处理这个二阶微分方程🤖️。</p>
+<h3 id="second-order-differential-equation">Second Order Differential Equation</h3>
+<p>换元，令<span class="math inline">\(z = y^\prime\)</span>，移项，🤖️变为 <span class="math display">\[
+\frac{\mathrm{d}z}{\sqrt{1+ z^2}} = \frac{\lambda}{H_{0}}\mathrm{d}x \tag{👽}
+\]</span></p>
+<p>这里，用刚刚学会的<strong>双曲函数</strong>换元，</p>
+<blockquote>
+<p><span class="math display">\[
+\cosh ^{2} x-\sinh ^{2} x=1 \nonumber
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{l}(\sinh x)^{\prime}=\cosh x \\ (\cosh x)^{\prime}=\sinh x\end{array} \nonumber
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{l}\int \sinh x d x=\cosh x+C \\ \int \cosh x d x=\sinh x+C \\ \int \tanh x d x=\ln (\cosh x)+C \\ \int \operatorname{coth} x d x=\ln (\sinh x)+C \\ \int \operatorname{sech} x d x=\arctan (\sinh x)+C \\ \int \operatorname{csch} x d x=\ln \left|\tanh \frac{x}{2}\right|+C\end{array} \nonumber
+\]</span></p>
+</blockquote>
+<p>这样就很简单了，令<span class="math inline">\(z = \sinh \theta\)</span>一通操作之后，就可以求出通解： <span class="math display">\[
+z= \sinh \frac{\lambda}{H_{0}}(x+C_{1}) \nonumber
+\]</span> 再进行积分，就可以得到初步的答案： <span class="math display">\[
+y= \frac{H_{0}}{\lambda}\cosh(x+C_{1}) +C_{2}\nonumber
+\]</span> 带入固定的两点坐标，就可以确定其中的<span class="math inline">\(C_{1},C_{2}\)</span>两个参数。</p>
+<p>再需要出绳子内部的水平力<span class="math inline">\(H_{0}\)</span>，目前看到的解法是使用曲线弧长积分，运用双曲函数的和差化积消去函数内部的<span class="math inline">\(C_{1}\)</span>。</p>
+<p>个人觉得，从纯物理角度来看，整体分析悬挂点所受的力也是一种解出水平内力<span class="math inline">\(H_{0}\)</span>的一种方案。但是这种计算的时候需要一定解方程组的技巧。</p>
+]]></content>
+      <tags>
+        <tag>Analysis &amp; Equation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MATLAB Notes</title>
+    <url>/2020/10/10/MATLAB-Notes/</url>
+    <content><![CDATA[<h1 id="matlab-notes">MATLAB Notes</h1>
+<blockquote>
+<p>Noob</p>
+</blockquote>
+<h2 id="syntax-difference">Syntax Difference</h2>
+<h3 id="if-else-in-matlab">if-else in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
+<p>and list if else in other language:</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We don't need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code> at the end of the line.</p>
+<h3 id="switch-in-matlab">switch in MATLAB</h3>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>the expression <code>end</code> just like the close braces,</p>
+<h2 id="math-caculation">Math caculation</h2>
+<h3 id="matrix-devision">Matrix devision</h3>
+<blockquote>
+<p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
+</blockquote>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
+<p>$$ </p>
+<p>e $$</p>
+<p>Solve</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>Jacobian</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>MATLAB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jocabian &amp; Hessian</title>
+    <url>/2020/11/06/Jocabian-Hessian/</url>
+    <content><![CDATA[<h1 id="usage-and-meaning-of-jocabian-hessian">Usage and Meaning of Jocabian &amp; Hessian</h1>
+<blockquote>
+<p>Some quoit may fail to load, so here to type: "https://ccjou.wordpress.com/2012/11/26/jacobian-%E7%9F%A9%E9%99%A3%E8%88%87%E8%A1%8C%E5%88%97%E5%BC%8F/" &amp; "http://jacoxu.com/jacobian%e7%9f%a9%e9%98%b5%e5%92%8chessian%e7%9f%a9%e9%98%b5/"</p>
+</blockquote>
+<h2 id="in-the-derivation-of-implicit-function">In the Derivation of Implicit Function</h2>
+<p>Introduced by the Implicit Function, we have the concept of Jocabian, given a system of equations, just like <span class="math display">\[
+\left\{\begin{array}{l}y_{1}=f_{1}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ y_{2}=f_{2}\left(x_{1}, x_{2}, \ldots, x_{n}\right) \\ \cdots \\ y_{n}=f_{n}\left(x_{1}, x_{2}, \ldots, x_{n}\right)\end{array}\right.\nonumber
+\]</span></p>
+<p>And we have the partial derivate of each <span class="math inline">\(f_{i}\)</span> by each <span class="math inline">\(x_{i}\)</span> at the point <span class="math inline">\(\mathbf{P}\)</span>,</p>
+<p>we write them in a matrix: <span class="math display">\[
+A=\left[\begin{array}{cccc}\frac{\partial f_{1}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{1}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{1}}{\partial x_{n}}(\mathbf{p}) \\ \frac{\partial f_{2}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{2}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{2}}{\partial x_{n}}(\mathbf{p}) \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial f_{m}}{\partial x_{1}}(\mathbf{p}) &amp; \frac{\partial f_{m}}{\partial x_{2}}(\mathbf{p}) &amp; \cdots &amp; \frac{\partial f_{m}}{\partial x_{n}}(\mathbf{p})\end{array}\right]\nonumber
+\]</span></p>
+<p>In this situation, in my text book at first, it just used as a symbol to simplify the result of implicit function partial derivation, by Cramer's Rule.</p>
+<h2 id="in-the-double-integral">In the Double Integral</h2>
+<p>Like integral with only one variable, we can have some variable transform while calculating. In the one variable integral, we use this skill to simplify the function, while in the Double even Triple integral, we prefer to use it to change the area where we are integrating.</p>
+<p>In the normal integral, the change of variable follows the rules like:</p>
+<p><span class="math display">\[
+\int_{a}^{b}f(x)\mathrm{d}x\nonumber
+\]</span></p>
+<p>Let <span class="math inline">\(x = \varphi(t),a= \varphi(\alpha), b=\varphi(\beta)\)</span> , the integral can be turned into: <span class="math display">\[
+\int_{\alpha}^{\beta}f(\varphi(t))\varphi^{\prime}(t)\mathrm{d}x\nonumber
+\]</span> Considering the area change <span class="math inline">\((a,b) \to (\alpha, \beta)\)</span>, we can learn that in each small interval, we have <span class="math display">\[
+\begin{align}
+\delta a-\delta b &amp;= \varphi^{\prime}(\alpha)(\delta \alpha-\delta \beta), \forall \alpha_{0} \in (\delta \alpha,\delta \beta)\nonumber \\ 
+\Delta x &amp;= \varphi^{\prime}(\alpha)\Delta t \nonumber
+\end{align}\tag{*}
+\]</span></p>
+<p>At this time, the derivation plays the role who controls the transform.</p>
+<p>While in the mutipul function, we also have the transform, the function with two variable <span class="math inline">\(F: \mathbb{R}^{2} \rightarrow \mathbb{R}^{2}\)</span> <span class="math display">\[
+F :\left\{\begin{array}{l}x=X\left(u, v\right) \\ y=Y\left(u, v\right) \end{array}\right.\nonumber
+\]</span> In the <span class="math inline">\((u,v)\)</span> system, we can cut a small rectangle, with four points: <span class="math inline">\((u_{0},v_{0})(u_{0}+h,v_{0})(u_{0},v_{0}+k)(u_{0}+h,v_{0}+k)\)</span>, <span class="math inline">\(h,k \to 0\)</span>.</p>
+<p>Like the relationship in <span class="math inline">\(*\)</span>,</p>
+<p>let the area in $(x,y) $ equals to <span class="math inline">\(S_{\star}\)</span>, the area in <span class="math inline">\((u,v)\)</span> equals to <span class="math inline">\(S\)</span> <span class="math display">\[
+S_{\star} = \frac{\partial(X,Y)}{\partial(u,v)} S \nonumber
+\]</span> Here is a proof:</p>
+<p><span class="math display">\[
+\text{some proof} \nonumber
+\]</span></p>
+<p>so the Jocabian can be seen as <strong>the derivation of vector valued function.</strong></p>
+<h2 id="jocabian">Jocabian</h2>
+<p>In the single variable function, we can use a straight line to approximately express any complex function at the area near the point <span class="math inline">\(P\)</span>. The Jocabian can solve the problem in the vector valued function.</p>
+<p><span class="math display">\[
+T(\mathbf{x})=A \mathbf{x}+\mathbf{b}
+\]</span> That <span class="math inline">\(A\)</span> is the Jocabian at the point of function <span class="math inline">\(F: \mathbb{R}^{n} \rightarrow \mathbb{R}^{m}\)</span>.</p>
+<p>It is natural that at the point <span class="math inline">\(P\)</span>, <span class="math inline">\(T(P)= F(P)\)</span>, at other points, we wish that <span class="math display">\[
+T(\mathbf{x})=A(\mathbf{x}-\mathbf{p})+F(\mathbf{p})
+\]</span> Further more, <span class="math display">\[
+\lim _{\mathbf{x} \rightarrow \mathbf{p}} \frac{F(\mathbf{x})-F(\mathbf{p})-A(\mathbf{x}-\mathbf{p})}{\|\mathbf{x}-\mathbf{p}\|}=\mathbf{0} \nonumber
+\]</span> We can see, the Jocabian is the matrix who shows the linear relationship while we linearize the nonlinear function.</p>
+<p>The rigorous proof can be find in the blog :</p>
+<h2 id="hessian">Hessian</h2>
+<p>During the study of multiple function's extremum, the Hessian is introduced. The form of Jocanian and Hessian is so similar, let's find the relation between them.</p>
+<p>Here is the Hessian: <span class="math display">\[
+\left[\begin{array}{cccc}\frac{\partial^{2} f}{\partial x_{1}^{2}} &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{1} \partial x_{n}} \\ \frac{\partial^{2} f}{\partial x_{2} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{2}^{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{2} \partial x_{n}} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ \frac{\partial^{2} f}{\partial x_{n} \partial x_{1}} &amp; \frac{\partial^{2} f}{\partial x_{n} \partial x_{2}} &amp; \cdots &amp; \frac{\partial^{2} f}{\partial x_{n}^{2}}\end{array}\right] \nonumber
+\]</span> We can find that, in the Hessian, the function <span class="math inline">\(f\)</span> is no longer a vector valued function, it is just a simple multiple function <span class="math inline">\(\mathbb{F}^{n}\to \mathbb{F}\)</span>. And <span class="math inline">\(f\)</span> is able to derivate twice in the area.</p>
+<p>The gradient of <span class="math inline">\(f\)</span> about <span class="math inline">\(\mathbf{x}\)</span> can be writen as: <span class="math display">\[
+\nabla f(\mathbf{x})=\left[\begin{array}{c}\frac{\partial f}{\partial x_{1}} \\ \frac{\partial f}{\partial x_{2}} \\ \vdots \\ \frac{\partial f}{\partial x_{n}}\end{array}\right] \nonumber
+\]</span> Here we get a vector valued function <span class="math inline">\(\nabla f(\mathbf{x})\)</span>. And it's Jocabian is the Hessian of <span class="math inline">\(f\)</span>.</p>
+<p>To understanding the Hessian, Jocabian, and <span class="math inline">\(\nabla f(\mathbf{x})\)</span>, here is an example.</p>
+<blockquote>
+<p>we consider a house with coordinate System, each point' temperature is given by a function <span class="math inline">\(T(x,y,z)\)</span>, the gradient <span class="math inline">\(\nabla T\)</span> shows which direction the temperature changing fastest, and the changing rate.</p>
+<p>Also, you know the Jocabian is also shows the changing rate of a function, so the Hessian is the 'acceleration' of temperature.</p>
+</blockquote>
+<h2 id="application">Application</h2>
+<h3 id="solve-a-equation">Solve a equation</h3>
+<p>When the equation is hard to solve with normal skills, iteration is a good way.</p>
+<p>In the single value function, with Taylor Formula <span class="math display">\[
+f(x)=f\left(x_{0}\right)+\left(x-x_{0}\right) f^{\prime}\left(x_{0}\right) \nonumber
+\]</span> <img src="/Users/yulongyi/myBlog/screenshot/Screen%20Shot%202020-11-07%20at%2017.13.05.png" style="zoom:25%;" /></p>
+<p>Find the solution of the liner equation: <span class="math inline">\(f(x)= 0\)</span>, let the answer be the <span class="math inline">\(x_{1}\)</span></p>
+<p>we can do this so many times, until the answer <span class="math inline">\(x_{n}\)</span> to satisfy the restrictions.</p>
+<p>In vector valued function, the iteration is in the form of: <span class="math display">\[
+x_{n+1}=x_{n}-\left[H f\left(x_{n}\right)\right]^{-1} \nabla f\left(x_{n}\right), n \geq 0 \nonumber
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LaTeX Expressions</title>
     <url>/2020/06/08/LaTeXExpressions/</url>
-    <content><![CDATA[<h1 id="不太好记的LaTeX符号表达"><a href="#不太好记的LaTeX符号表达" class="headerlink" title="不太好记的LaTeX符号表达"></a>不太好记的LaTeX符号表达</h1><h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><div class="table-container">
+    <content><![CDATA[<h1 id="不太好记的latex符号表达">不太好记的LaTeX符号表达</h1>
+<h2 id="希腊字母">希腊字母</h2>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\alpha$ $\Alpha$</td>
+<tr class="odd">
+<td><span class="math inline">\(\alpha\)</span> <span class="math inline">\(\Alpha\)</span></td>
 <td><code>\alpha</code></td>
 </tr>
-<tr>
-<td>$\beta$ $\Beta$</td>
+<tr class="even">
+<td><span class="math inline">\(\beta\)</span> <span class="math inline">\(\Beta\)</span></td>
 <td><code>\beta</code></td>
 </tr>
-<tr>
-<td>$\gamma$ $\Gamma$</td>
+<tr class="odd">
+<td><span class="math inline">\(\gamma\)</span> <span class="math inline">\(\Gamma\)</span></td>
 <td><code>\gamma</code></td>
 </tr>
-<tr>
-<td>$\delta$ $\Delta$</td>
+<tr class="even">
+<td><span class="math inline">\(\delta\)</span> <span class="math inline">\(\Delta\)</span></td>
 <td><code>\delta</code></td>
 </tr>
-<tr>
-<td>$\epsilon$ $\Epsilon$</td>
+<tr class="odd">
+<td><span class="math inline">\(\epsilon\)</span> <span class="math inline">\(\Epsilon\)</span></td>
 <td><code>\epsilon</code></td>
 </tr>
-<tr>
-<td>$\varepsilon$</td>
+<tr class="even">
+<td><span class="math inline">\(\varepsilon\)</span></td>
 <td><code>\varepsilon</code></td>
 </tr>
-<tr>
-<td>$\zeta$ $\Zeta$</td>
+<tr class="odd">
+<td><span class="math inline">\(\zeta\)</span> <span class="math inline">\(\Zeta\)</span></td>
 <td><code>\zeta</code></td>
 </tr>
-<tr>
-<td>$\eta$ $\Eta$</td>
+<tr class="even">
+<td><span class="math inline">\(\eta\)</span> <span class="math inline">\(\Eta\)</span></td>
 <td><code>\eta</code></td>
 </tr>
-<tr>
-<td>$\theta$ $\Theta$</td>
+<tr class="odd">
+<td><span class="math inline">\(\theta\)</span> <span class="math inline">\(\Theta\)</span></td>
 <td><code>\theta</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="table-container">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\iota$ $\Iota$</td>
+<tr class="odd">
+<td><span class="math inline">\(\iota\)</span> <span class="math inline">\(\Iota\)</span></td>
 <td><code>\iota</code></td>
 </tr>
-<tr>
-<td>$\kappa$ $\Kappa$</td>
+<tr class="even">
+<td><span class="math inline">\(\kappa\)</span> <span class="math inline">\(\Kappa\)</span></td>
 <td><code>\kappa</code></td>
 </tr>
-<tr>
-<td>$\lambda$ $\Lambda$</td>
+<tr class="odd">
+<td><span class="math inline">\(\lambda\)</span> <span class="math inline">\(\Lambda\)</span></td>
 <td><code>\lambda</code></td>
 </tr>
-<tr>
-<td>$\mu$ $\Mu$</td>
+<tr class="even">
+<td><span class="math inline">\(\mu\)</span> <span class="math inline">\(\Mu\)</span></td>
 <td><code>\mu</code></td>
 </tr>
-<tr>
-<td>$\nu$ $\Nu$</td>
+<tr class="odd">
+<td><span class="math inline">\(\nu\)</span> <span class="math inline">\(\Nu\)</span></td>
 <td><code>\nu</code></td>
 </tr>
-<tr>
-<td>$\xi$ $\Xi$</td>
+<tr class="even">
+<td><span class="math inline">\(\xi\)</span> <span class="math inline">\(\Xi\)</span></td>
 <td><code>\xi</code></td>
 </tr>
-<tr>
-<td>$\omicron$ $\Omicron$</td>
+<tr class="odd">
+<td><span class="math inline">\(\omicron\)</span> <span class="math inline">\(\Omicron\)</span></td>
 <td><code>\omicron</code></td>
 </tr>
-<tr>
-<td>$\pi$ $\Pi$</td>
+<tr class="even">
+<td><span class="math inline">\(\pi\)</span> <span class="math inline">\(\Pi\)</span></td>
 <td><code>\pi</code></td>
 </tr>
-<tr>
-<td>$\rho$ $\Rho$</td>
+<tr class="odd">
+<td><span class="math inline">\(\rho\)</span> <span class="math inline">\(\Rho\)</span></td>
 <td><code>\rho</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="table-container">
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>希腊字母</th>
 <th>latex输入方法</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>$\sigma$ $\Sigma$</td>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span> <span class="math inline">\(\Sigma\)</span></td>
 <td><code>\sigma</code></td>
 </tr>
-<tr>
-<td>$\tau$ $\Tau$</td>
+<tr class="even">
+<td><span class="math inline">\(\tau\)</span> <span class="math inline">\(\Tau\)</span></td>
 <td><code>\tau</code></td>
 </tr>
-<tr>
-<td>$\upsilon$ $\Upsilon$</td>
+<tr class="odd">
+<td><span class="math inline">\(\upsilon\)</span> <span class="math inline">\(\Upsilon\)</span></td>
 <td><code>\upsilon</code></td>
 </tr>
-<tr>
-<td>$\phi$ $\Phi$</td>
+<tr class="even">
+<td><span class="math inline">\(\phi\)</span> <span class="math inline">\(\Phi\)</span></td>
 <td><code>\phi</code></td>
 </tr>
-<tr>
-<td>$\varphi$</td>
+<tr class="odd">
+<td><span class="math inline">\(\varphi\)</span></td>
 <td><code>\varphi</code></td>
 </tr>
-<tr>
-<td>$\chi$ $\Chi$</td>
+<tr class="even">
+<td><span class="math inline">\(\chi\)</span> <span class="math inline">\(\Chi\)</span></td>
 <td><code>\chi</code></td>
 </tr>
-<tr>
-<td>$\psi$ $\Psi$</td>
+<tr class="odd">
+<td><span class="math inline">\(\psi\)</span> <span class="math inline">\(\Psi\)</span></td>
 <td><code>\psi</code></td>
 </tr>
-<tr>
-<td>$\omega$ $\Omega$</td>
+<tr class="even">
+<td><span class="math inline">\(\omega\)</span> <span class="math inline">\(\Omega\)</span></td>
 <td><code>\omega</code></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2>]]></content>
+<p>## 数学函数</p>
+]]></content>
       <tags>
         <tag>LaTeX</tag>
       </tags>
@@ -283,7 +433,9 @@ I_{n}=\frac{n-1}{n} I_{n-2}</script><p>With the monotonicity of $\sin^{n}x$, we 
   <entry>
     <title>Thread 1: signal SIGABRT</title>
     <url>/2020/04/26/Thread-1-signal-SIGABRT/</url>
-    <content><![CDATA[<h1 id="遇见的Thread-1-signal-SIGABRT问题记录"><a href="#遇见的Thread-1-signal-SIGABRT问题记录" class="headerlink" title="遇见的Thread 1: signal SIGABRT问题记录"></a>遇见的Thread 1: signal SIGABRT问题记录</h1><h2 id="C-数组中"><a href="#C-数组中" class="headerlink" title="C++数组中"></a>C++数组中</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h1 id="遇见的thread-1-signal-sigabrt问题记录">遇见的Thread 1: signal SIGABRT问题记录</h1>
+<h2 id="c数组中">C++数组中</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> iArray[<span class="number">2</span>][<span class="number">2</span>];   <span class="comment">// 这里定义数组出问题，报错太奇怪了。。。找半天</span></span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">int</span> j;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> q = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"what is your matrix"</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; iArray[i][j];</span><br><span class="line">            <span class="keyword">if</span> (i == j) &#123;</span><br><span class="line">                n = iArray[i][j];</span><br><span class="line">                m += n;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == (<span class="number">2</span> - i)) &#123;</span><br><span class="line">                p = iArray[i][j];</span><br><span class="line">                q += p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; m&lt;&lt; <span class="string">" is the first trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; q&lt;&lt;<span class="string">" is the secone trace"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里，使用Xcode编译的时候，虽然可以正常输出想要的两个“秩”，但是会爆出<strong>Thread 1: signal SIGABRT</strong></p>
 <p>对应行好像是一个地址（指针）类型的量，大概猜到是和数组相关的问题，在朋友的🆚帮助下，爆出<code>iArray</code>的问题，OK，数组越界就是这次错误的答案。·</p>
 <blockquote>
@@ -295,46 +447,22 @@ I_{n}=\frac{n-1}{n} I_{n-2}</script><p>With the monotonicity of $\sin^{n}x$, we 
       </tags>
   </entry>
   <entry>
-    <title>MATLAB Notes</title>
-    <url>/2020/10/10/MATLAB-Notes/</url>
-    <content><![CDATA[<h1 id="MATLAB-Notes"><a href="#MATLAB-Notes" class="headerlink" title="MATLAB Notes"></a>MATLAB Notes</h1><blockquote>
-<p>Noob </p>
-</blockquote>
-<h2 id="Syntax-Difference"><a href="#Syntax-Difference" class="headerlink" title="Syntax Difference"></a>Syntax Difference</h2><h3 id="if-else-in-MATLAB"><a href="#if-else-in-MATLAB" class="headerlink" title="if-else in MATLAB"></a>if-else in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span>;</span><br><span class="line">b = <span class="number">200</span>;</span><br><span class="line">   <span class="keyword">if</span>( a == <span class="number">100</span> )</span><br><span class="line"> </span><br><span class="line">       <span class="keyword">if</span>( b == <span class="number">200</span> )</span><br><span class="line">        </span><br><span class="line">          fprintf(<span class="string">'Value of a is 100 and b is 200 \n'</span> );</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       </span><br><span class="line">   <span class="keyword">end</span></span><br><span class="line">   fprintf(<span class="string">'Exact value of a is : %d '</span>, a, <span class="string">'\n'</span>);</span><br><span class="line">   fprintf(<span class="string">'Exact value of b is : %d'</span>, b );</span><br></pre></td></tr></table></figure>
-<p> and list if else in other language:</p>
-<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">100</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">100</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">200</span> &#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Value of a is 100 and b is 200"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of a is \(a)"</span>)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">"Exact value of b is \(b)"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p> We don’t need to use the <code>{}</code>, but the end expression is needed. Like it in <code>C++</code>, we need to write <code>;</code>  at the end of the line.</p>
-<h3 id="switch-in-MATLAB"><a href="#switch-in-MATLAB" class="headerlink" title="switch in MATLAB"></a>switch in MATLAB</h3><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">grade = <span class="string">'B'</span>;</span><br><span class="line">   <span class="keyword">switch</span>(grade)</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'A'</span> </span><br><span class="line">      fprintf(<span class="string">'Excellent!'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'B'</span> </span><br><span class="line">       fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'C'</span> </span><br><span class="line">      fprintf(<span class="string">'Well done'</span> );</span><br><span class="line">   <span class="keyword">case</span> <span class="string">'D'</span></span><br><span class="line">      fprintf(<span class="string">'You passed'</span> );</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">case</span> <span class="string">'F'</span> </span><br><span class="line">     fprintf(<span class="string">'Better try again'</span> );</span><br><span class="line">     </span><br><span class="line">   <span class="keyword">otherwise</span></span><br><span class="line">     fprintf(<span class="string">'Invalid grade'</span> );</span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<p>the expression <code>end</code> just like the close braces, </p>
-<h2 id="Math-caculation"><a href="#Math-caculation" class="headerlink" title="Math caculation"></a>Math caculation</h2><h3 id="Matrix-devision"><a href="#Matrix-devision" class="headerlink" title="Matrix devision"></a>Matrix devision</h3><blockquote>
-<p>MATLAB 中有两种矩阵除法符号：即左除“＼” 和右除 “／” 。</p>
-</blockquote>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">a = [ <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> ; <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>; <span class="number">7</span> <span class="number">8</span> <span class="number">9</span>];</span><br><span class="line">b = [ <span class="number">7</span> <span class="number">5</span> <span class="number">6</span> ; <span class="number">2</span> <span class="number">0</span> <span class="number">8</span>; <span class="number">5</span> <span class="number">7</span> <span class="number">1</span>];</span><br><span class="line">c = a / b <span class="comment">%左除</span></span><br><span class="line">d = a \ b <span class="comment">%右除</span></span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\text {原式可转化成}
-
-e</script><p>Solve</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y(x)</span><br><span class="line"></span><br><span class="line">eql = diff(y, x, <span class="number">3</span>) - (diff(y, x, <span class="number">2</span>))/(x)</span><br><span class="line"></span><br><span class="line">solve(eql, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p>Jacobian</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">syms x y</span><br><span class="line"></span><br><span class="line">f1 = x^<span class="number">2</span> + y^<span class="number">2</span> - <span class="number">4</span></span><br><span class="line">f2 = <span class="built_in">exp</span>(-x) + y - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = [f1, f2]</span><br><span class="line"></span><br><span class="line">v = [x, y]</span><br><span class="line"></span><br><span class="line">jacobian(f, v)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
-        <tag>MATLAB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>指针操作相关</title>
     <url>/2020/05/17/%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h1 id="指针操作相关"><a href="#指针操作相关" class="headerlink" title="指针操作相关"></a>指针操作相关</h1><blockquote>
+    <content><![CDATA[<h1 id="指针操作相关">指针操作相关</h1>
+<blockquote>
 <p>一下午速成计划</p>
 </blockquote>
-<h2 id="指针定义"><a href="#指针定义" class="headerlink" title="指针定义"></a>指针定义</h2><p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
-<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="指针定义">指针定义</h2>
+<p>因为<code>*</code>的位置比较奇怪，与朋友交流下感觉可以把指针定义<code>int * p</code>看成<code>int* p</code>，即，把<code>int*</code>看成<code>int</code>一样的类型名称。</p>
+<h2 id="常量指针">常量指针</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> a = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span>* p;</span><br><span class="line">    p = &amp;b;</span><br><span class="line">    *p = <span class="number">20</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *p&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里是一个常量指针的例子的<code>const int*</code>定义的<code>p</code>指代的是一个量的地址，你可以改变原本变量的值，但是不能从<code>p</code>的间接引用来改变所指，可以改变<code>p</code>的指代对象来改变<code>*p</code>的值。</p>
 <p>这里一个例子关于常量指针，但是问题重点不在指针：</p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">mystrcopy</span><span class="params">(<span class="keyword">char</span>* copy, <span class="keyword">const</span> <span class="keyword">char</span>* source)</span></span>&#123;</span><br><span class="line">  <span class="keyword">while</span>(*copy++ = *source)&#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> a[<span class="number">20</span>] = <span class="string">"How are you?"</span>;</span><br><span class="line">  <span class="keyword">char</span> b[<span class="number">20</span>];</span><br><span class="line">  mystrcopy(b,a);</span><br><span class="line">  <span class="built_in">cout</span>&lt;&lt; b&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里的循环条件，先赋值再判断再<code>++</code>，即判断左值是否为零。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2>]]></content>
+<h2 id="指针常量">指针常量</h2>
+]]></content>
       <tags>
         <tag>c++</tag>
       </tags>
@@ -342,18 +470,20 @@ e</script><p>Solve</p>
   <entry>
     <title>Sylow Theorems</title>
     <url>/2020/10/24/sylow-theorems/</url>
-    <content><![CDATA[<h1 id="Sylow-Theorems"><a href="#Sylow-Theorems" class="headerlink" title="Sylow Theorems"></a>Sylow Theorems</h1><blockquote>
+    <content><![CDATA[<h1 id="sylow-theorems">Sylow Theorems</h1>
+<blockquote>
 <p>Too much to learn</p>
 </blockquote>
-<h2 id="Lemmas-for-Sylow-Theorems"><a href="#Lemmas-for-Sylow-Theorems" class="headerlink" title="Lemmas for Sylow Theorems"></a>Lemmas for Sylow Theorems</h2><p><strong>Define 1 <em>p-Group</em></strong>  Let $p$ a prime number, if the <code>order</code> of Group <code>G</code> is $p^{k}, k&gt; 0$, then we called <code>G</code> $p-group$.</p>
-<p>All we discussion is based on the $p-group$.</p>
-<p><strong>Lemma 1</strong> Let a $p-group$ acting on set $X$, the order of $X$ equals to $n$, which written as $|X| = n$, we have result listed below:</p>
-<ol>
-<li>$t \equiv n\mod p$, in the equation, $t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|$;</li>
-<li>When $(n,p) = 1$, then $t \geq 1$, and there are some Fixed points in $X$;</li>
-<li>The center of <code>G</code> $C(G) \neq \lbrace e \rbrace$.</li>
+<h2 id="lemmas-for-sylow-theorems">Lemmas for Sylow Theorems</h2>
+<p><strong>Define 1 <em>p-Group</em></strong> Let <span class="math inline">\(p\)</span> a prime number, if the <code>order</code> of Group <code>G</code> is <span class="math inline">\(p^{k}, k&gt; 0\)</span>, then we called <code>G</code> <span class="math inline">\(p-group\)</span>.</p>
+<p>All we discussion is based on the <span class="math inline">\(p-group\)</span>.</p>
+<p><strong>Lemma 1</strong> Let a <span class="math inline">\(p-group\)</span> acting on set <span class="math inline">\(X\)</span>, the order of <span class="math inline">\(X\)</span> equals to <span class="math inline">\(n\)</span>, which written as <span class="math inline">\(|X| = n\)</span>, we have result listed below:</p>
+<ol type="1">
+<li><span class="math inline">\(t \equiv n\mod p\)</span>, in the equation, <span class="math inline">\(t = \left |\{x | x \in X, g(x) = x, \forall g\in G\}\right|\)</span>;</li>
+<li>When <span class="math inline">\((n,p) = 1\)</span>, then <span class="math inline">\(t \geq 1\)</span>, and there are some Fixed points in <span class="math inline">\(X\)</span>;</li>
+<li>The center of <code>G</code> <span class="math inline">\(C(G) \neq \lbrace e \rbrace\)</span>.</li>
 </ol>
-<p><strong>proof</strong> </p>
+<p><strong>proof</strong></p>
 ]]></content>
       <tags>
         <tag>Abstruct Algebra</tag>
@@ -362,7 +492,9 @@ e</script><p>Solve</p>
   <entry>
     <title>正则表达式</title>
     <url>/2020/05/03/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="正则表达式学习记录"><a href="#正则表达式学习记录" class="headerlink" title="正则表达式学习记录"></a>正则表达式学习记录</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1>]]></content>
+    <content><![CDATA[<h1 id="正则表达式学习记录">正则表达式学习记录</h1>
+<h2 id="section"></h2>
+]]></content>
       <tags>
         <tag>开发</tag>
       </tags>

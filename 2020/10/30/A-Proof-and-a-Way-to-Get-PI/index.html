@@ -226,47 +226,73 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Euler-Poisson-Intergal-and-Wallis-Formula"><a href="#Euler-Poisson-Intergal-and-Wallis-Formula" class="headerlink" title="Euler-Poisson Intergal and Wallis Formula"></a>Euler-Poisson Intergal and Wallis Formula</h1><blockquote>
-<p>This passage  comes from Euler-Poisson Integral:</p>
+            <h1 id="euler-poisson-intergal-and-wallis-formula">Euler-Poisson Intergal and Wallis Formula</h1>
+<blockquote>
+<p>This passage comes from Euler-Poisson Integral:</p>
 </blockquote>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}</script><h2 id="An-analysis-question"><a href="#An-analysis-question" class="headerlink" title="An analysis question"></a>An analysis question</h2><p>Let</p>
-<p> $f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x$, and $g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}$, and $f+g=\frac{\pi}{4}$,(with derivation we can find $f+g$ is a constant function), we can proof the Euler-Poisson Integral.</p>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x =\frac{\sqrt{\pi}}{2}\nonumber
+\]</span></p>
+<h2 id="an-analysis-question">An analysis question</h2>
+<p>Let</p>
+<p><span class="math inline">\(f(x)=\int_{0}^{1} \frac{e^{-x^{2}(y^{2}+1)}}{y^2+1}\mathrm{d}x\)</span>, and <span class="math inline">\(g(x)=(\int_{0}^{x}\mathrm{e}^{-y^{2}}\mathrm{d}y)^{2}\)</span>, and <span class="math inline">\(f+g=\frac{\pi}{4}\)</span>,(with derivation we can find <span class="math inline">\(f+g\)</span> is a constant function), we can proof the Euler-Poisson Integral.</p>
 <p>And this is the first meet between me and E-P Integral.</p>
-<h2 id="Solve-the-Integral-Directly"><a href="#Solve-the-Integral-Directly" class="headerlink" title="Solve the Integral Directly?"></a>Solve the Integral Directly?</h2><p>From the book of Demidovich, I saw a question below:</p>
-<script type="math/tex; mode=display">
-\text{Use the Transposition of integral and limit operations to solve it}</script><script type="math/tex; mode=display">
-\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x</script><p>So we can have a try:</p>
+<h2 id="solve-the-integral-directly">Solve the Integral Directly?</h2>
+<p>From the book of Demidovich, I saw a question below: <span class="math display">\[
+\text{Use the Transposition of integral and limit operations to solve it}\nonumber
+\]</span></p>
+<p><span class="math display">\[
+\int_{0}^{+\infty} \mathrm{e}^{-x^{2}}\mathrm{d}x=\int_{0}^{+\infty} \lim_{n \to \infty}\left [ \left( 1+ \frac{x^{2}}{n}\right)^{-n}\right ]\mathrm{d}x\nonumber
+\]</span></p>
+<p>So we can have a try:</p>
 <p>Easy to judge that the function under the limit operation is continuous and uniform convergence, so we can safely exchange the order of two operations.</p>
 <p>That comes a big problem, <strong>HOW TO CALCULATE THE INGERAL INSIDE</strong>?</p>
 <p>That is why I write.</p>
-<p>We write it outside of the limit. What I need to deal with is:</p>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}</script><p>Use $t$ to replace $x$, $t=\frac{x}{\sqrt{n}}$, the integral comes to:</p>
-<script type="math/tex; mode=display">
-\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}</script><p>Then we create a function sequence $I_{n}$, and let the $ \sqrt{n}I_{n} = \sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}$.</p>
-<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} \&amp; I_{n-1}   $.</p>
-<p>Luckily,</p>
-<script type="math/tex; mode=display">
-I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x</script><p>We find the former is equal to 0, and the latter can be written as $2(n-1)I_{n-1}-2(n-1)I_{n}$</p>
-<script type="math/tex; mode=display">
-I_{n} = \frac{2n-3}{2n-2}I_{n-1}</script><p>Just to calculate $I_{1}$ and everything is solved.</p>
-<script type="math/tex; mode=display">
-I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}</script><p>While after we bring back the $I_{n}$ to the Integral, </p>
-<script type="math/tex; mode=display">
-\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}</script><p>something strange happened, maybe we have to do something with $\frac{\pi}{2}$?</p>
-<h2 id="Wallis-Formula"><a href="#Wallis-Formula" class="headerlink" title="Wallis Formula"></a>Wallis Formula</h2><blockquote>
+<p>We write it outside of the limit. What I need to deal with is: <span class="math display">\[
+\int_{0}^{+\infty}\frac{\mathrm{d}x}{\left (1 +\frac{x^2}{n} \right )^{n}}\nonumber
+\]</span> Use <span class="math inline">\(t\)</span> to replace <span class="math inline">\(x\)</span>, <span class="math inline">\(t=\frac{x}{\sqrt{n}}\)</span>, the integral comes to: <span class="math display">\[
+\sqrt{n}\int_{0}^{+\infty}\frac{\mathrm{d}t}{(1+t^{2})^{n}}\nonumber
+\]</span></p>
+<p>Then we create a function sequence <span class="math inline">\(I_{n}\)</span>, and let the $ I_{n} = _{0}^{+}$.</p>
+<p>Thus we need to deal with the sequence. We can try <strong>integration by parts</strong> to find the relations between $I_{n} &amp; I_{n-1} $.</p>
+<p>Luckily, <span class="math display">\[
+I_{n-1} = \left.\frac{t}{(1+t^{2})^{n-1}}\right|_{0} ^{+\infty} + 2(n-1)\int_{0}^{+\infty}\frac{t^{2}}{(1+t^{2})^{n}}\mathrm{d}x\nonumber
+\]</span> We find the former is equal to 0, and the latter can be written as <span class="math inline">\(2(n-1)I_{n-1}-2(n-1)I_{n}\)</span> <span class="math display">\[
+I_{n} = \frac{2n-3}{2n-2}I_{n-1}\nonumber
+\]</span></p>
+<p>Just to calculate <span class="math inline">\(I_{1}\)</span> and everything is solved. <span class="math display">\[
+I_{n}=\frac{(2n -3)!!}{(2n-2)!!}\cdot \frac{\pi}{2}\nonumber
+\]</span> While after we bring back the <span class="math inline">\(I_{n}\)</span> to the Integral, <span class="math display">\[
+\int_{0}^{+\infty}\mathrm{e}^{-x^{2}}\mathrm{d}x = \lim_{n \to \infty} \frac{(2n -3)!!}{(2n-2)!!}\frac{\pi \sqrt{n}}{2}\nonumber
+\]</span> something strange happened, maybe we have to do something with <span class="math inline">\(\frac{\pi}{2}\)</span>?</p>
+<h2 id="wallis-formula">Wallis Formula</h2>
+<blockquote>
 <p>The Wallis Formula is here:</p>
 </blockquote>
-<script type="math/tex; mode=display">
-\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}</script><p>It comes from the integral </p>
-<script type="math/tex; mode=display">
-S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x</script><p>Yes, this can use the same way to solve, we can get a relation between $S_{n} \&amp; S_{n-2} $, </p>
-<script type="math/tex; mode=display">
-I_{n}=\frac{n-1}{n} I_{n-2}</script><p>With the monotonicity of $\sin^{n}x$, we have a unequal relationship:</p>
-<script type="math/tex; mode=display">
-\frac{2 k ! !}{(2 k+1) ! !}<\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}<\frac{(2 k-2) ! !}{(2 k-1) ! !}</script><p>Let $n \to \infty$ so the Wallis Formula is proofed.</p>
+<p><span class="math display">\[
+\lim _{n \rightarrow+\infty}\left(\frac{(2 n) ! !}{(2 n-1) ! !}\right)^{2} \frac{1}{2 n+1}=\frac{\pi}{2}\nonumber
+\]</span></p>
+<p>It comes from the integral <span class="math display">\[
+S_{n}=\int_{0}^{\frac{\pi}{2}}\sin^{n}{x}\mathrm{d}x\nonumber
+\]</span></p>
+<p>Yes, this can use the same way to solve, we can get a relation between $S_{n} &amp; S_{n-2} $, <span class="math display">\[
+I_{n}=\frac{n-1}{n} I_{n-2}\nonumber
+\]</span> With the monotonicity of <span class="math inline">\(\sin^{n}x\)</span>, we have a unequal relationship: <span class="math display">\[
+\frac{2 k ! !}{(2 k+1) ! !}&lt;\frac{(2 k-1) ! !}{2 k ! !} \frac{\pi}{2}&lt;\frac{(2 k-2) ! !}{(2 k-1) ! !}\nonumber
+\]</span> Let <span class="math inline">\(n \to \infty\)</span> so the Wallis Formula is proofed.</p>
 <p>Until now, the question of Euler-Possion Integral is finish.</p>
+<h2 id="with-double-integral">With Double Integral</h2>
+<p>Here is a double integral's way to solve the problem,</p>
+<p>For <span class="math inline">\(\forall R&gt; 0\)</span>, let area <span class="math inline">\(D(R) = [-R,R]\times[-R,R]\)</span>, and integral <span class="math inline">\(I(R)= \iint\limits_{D(R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y\)</span>, because the symmetry the integral equals to <span class="math inline">\(4(\int_{0}^{R}\mathrm{e}^{-x^2}\mathrm{d}x)^2\)</span></p>
+<p>Let area <span class="math inline">\(B(0,R) = \left\{ \left.(x,y) \right| x^2+y^2 \leq R^2 \right\}\)</span>, <span class="math inline">\(B(0,\sqrt2R) = \left\{ \left.(x,y) \right| x^2+y^2 \leq 2R^2 \right\}\)</span> , the area <span class="math inline">\(D(R)\)</span> is between them.</p>
+<p>So with polar coordinate transform,</p>
+<p><span class="math display">\[
+\iint\limits_{B(0,R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y = \int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{R} \mathrm{e}^{-\rho^2}\rho \mathrm{d}\rho = \pi (1-\mathrm{e}^{-R^2})\nonumber 
+\]</span></p>
+<p><span class="math display">\[
+\iint\limits_{B(0,\sqrt 2R)}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x\mathrm{d}y = \int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{\sqrt 2R} \mathrm{e}^{-\rho^2}\rho \mathrm{d}\rho = \pi (1-\mathrm{e}^{-2R^2})\nonumber 
+\]</span></p>
+<p>As <span class="math inline">\(R\to \infty\)</span>, these two integral both became <span class="math inline">\(\pi\)</span>. So the Euler-Passion Integral equals to <span class="math inline">\(\frac{\sqrt\pi}{2}\)</span></p>
 
         </div>
 
